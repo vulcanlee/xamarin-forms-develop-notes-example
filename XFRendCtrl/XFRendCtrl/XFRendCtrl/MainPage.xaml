@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFRendCtrl"
+             BackgroundColor="#F5D718"
+             Title="多奇菁英報名表"
+             x:Class="XFRendCtrl.MainPage">
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem x:Name="Menu1" Text="確定" Order="Primary" Priority="0" />
+    <ToolbarItem x:Name="Menu2" Text="取消" Order="Primary" Priority="1" />
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+    iOS="20, 40, 20, 20"
+    Android="20, 20, 20, 20"
+    WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+
+  <StackLayout
+    Orientation="Vertical"
+    >
+    <Label Text="姓名" />
+    <local:MyEntry Placeholder="請輸入您的大名" BackgroundColor="#FFEAC4" />
+    <Label Text="職業" />
+    <local:MyEntry Placeholder="請輸入您的職業名稱" BackgroundColor="#FFEAC4" />
+    <Label Text="專長" />
+    <local:MyEntry Placeholder="請輸入您擅長的程式語言" BackgroundColor="#FFEAC4" />
+    <Label Text="部落格" />
+    <local:MyEntry Placeholder="請輸入您的部落格網址" BackgroundColor="#FFEAC4" />
+    <Label Text="成就" />
+    <local:MyEntry Placeholder="請輸入您曾經做過的案子" BackgroundColor="#FFEAC4" />
+  </StackLayout>
+
+</ContentPage>
