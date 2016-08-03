@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM2"
+             x:Class="MVVM2.MainPage">
+
+  <ContentPage.BindingContext>
+    <local:MainPageViewModel />
+  </ContentPage.BindingContext>
+
+  <StackLayout
+  HorizontalOptions="Fill" VerticalOptions="Center">
+    <Label x:Name="lbl輸入文字"
+           Text="{Binding EntryText1}"/>
+    <Entry x:Name="eny輸入文字1"
+           Text="{Binding EntryText1, Mode=TwoWay}"/>
+    <Entry x:Name="eny輸入文字2"
+           Text="{Binding EntryText2, Mode=TwoWay}"/>
+    <Button x:Name="btn按鈕" Text="請按下我"
+            Command="{Binding PushMeCommand}"/>
+    <Label x:Name="lbl按鈕文字"
+           Text="{Binding LabelText1}"/>
+  </StackLayout>
+
+</ContentPage>

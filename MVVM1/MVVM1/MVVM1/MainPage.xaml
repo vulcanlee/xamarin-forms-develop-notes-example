@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MVVM1"
+             x:Class="MVVM1.MainPage">
+
+  <StackLayout
+    HorizontalOptions="Fill" VerticalOptions="Center">
+    <Label x:Name="lbl輸入文字" />
+    <Entry x:Name="eny輸入文字1" />
+    <Entry x:Name="eny輸入文字2" />
+    <Button x:Name="btn按鈕" Text="請按下我" />
+    <Label x:Name="lbl按鈕文字" />
+  </StackLayout>
+
+</ContentPage>
