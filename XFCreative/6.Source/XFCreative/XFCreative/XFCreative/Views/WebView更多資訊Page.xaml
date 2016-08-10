@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  Title="更多資訊"
+  x:Class="XFCreative.Views.WebView更多資訊Page">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform
+        x:Key="標題大小" x:TypeArguments="x:Double"
+        iOS="18" Android="18" WinPhone="18" />
+      <x:Double x:Key="標題大小1">18</x:Double>
+      <Thickness x:Key="項目距離">0,20,0,0</Thickness>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+    <StackLayout
+      VerticalOptions="Fill" HorizontalOptions="Fill"
+      Orientation="Vertical"
+    >
+      <Label
+        Text="{Binding 網頁資料NodeViewModel.標題名稱}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <WebView
+        Source="{Binding 網頁資料NodeViewModel.網頁內容, Converter={StaticResource StringToHtmlConverter}}"
+        VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+        />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  x:Class="XFCreative.Views.MainPage"
+  Title="進行系統初始化">
+  
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+  </ContentPage.Padding>
+
+  <Grid>
+    <Label 
+      HorizontalOptions="Center" VerticalOptions="Center"
+      Text="{Binding Title}" />
+    <ActivityIndicator 
+      HorizontalOptions="Center" VerticalOptions="Center"
+      Margin="0,150,0,0"
+      WidthRequest="100" HeightRequest="100"
+      IsRunning="True" />
+  </Grid>
+</ContentPage>

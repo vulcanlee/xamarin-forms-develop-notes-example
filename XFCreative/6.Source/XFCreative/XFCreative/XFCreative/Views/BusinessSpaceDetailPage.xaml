@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  x:Class="XFCreative.Views.BusinessSpaceDetailPage"
+  Title="創業空間明細">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform 
+        x:Key="標題大小" x:TypeArguments="x:Double"
+        iOS="18" Android="18" WinPhone="18" />
+      <x:Double x:Key="標題大小1">18</x:Double>
+      <Thickness x:Key="項目距離">0,20,0,0</Thickness>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Command="{Binding 查看地圖Command}" Text="查看地圖" Order="Secondary" Priority="0" />
+    <ToolbarItem Command="{Binding 撥打電話Command}" Text="撥打電話" Order="Secondary" Priority="0" />
+    <ToolbarItem Command="{Binding 發送簡訊Command}" Text="發送簡訊" Order="Secondary" Priority="0" />
+    <ToolbarItem Command="{Binding 發送電子郵件Command}" Text="發送電子郵件" Order="Secondary" Priority="0" />
+    <ToolbarItem Command="{Binding 分享內容Command}" Text="分享內容" Order="Secondary" Priority="0" />
+    <ToolbarItem Command="{Binding 分享連結Command}" Text="分享連結" Order="Secondary" Priority="0" />
+    <ToolbarItem Command="{Binding 查看官網Command}" Text="查看官網" Order="Secondary" Priority="0" />
+  </ContentPage.ToolbarItems>
+
+  <ScrollView
+    Orientation="Vertical"
+    >
+    <StackLayout
+      Orientation="Vertical"
+      Margin="20,0"
+      >
+      <Image
+        Margin="0,20,0,20"
+        >
+        <Image.Source>
+          <OnPlatform x:TypeArguments="ImageSource"
+            iOS="info.png" 
+            Android="info.png"
+            WinPhone="refresh/info.png" />
+        </Image.Source>
+
+      </Image>
+      <Label
+        Text="創業空間名稱"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"/>
+      <Label
+        Text="{Binding 創業空間明細.創業空間名稱}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="所屬單位"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.所屬單位}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="創業空間類型"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.創業空間類型}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="招募團隊類型"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.招募團隊類型}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="座標經緯度"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.座標經度, StringFormat='經度: {0}'}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+      <Label
+        Text="{Binding 創業空間明細.座標緯度, StringFormat='緯度: {0}'}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="空間是否出租"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.空間是否出租}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="空間主照片"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Image
+        Source="{Binding 創業空間明細.空間主照片}"
+        Aspect="AspectFit"
+        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+        />
+
+      <Label
+        Text="縣市區域"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.縣市區域}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="地址"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.地址}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="標籤"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.標籤}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="詳細照片"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Image
+        Source="{Binding 創業空間明細.詳細照片}"
+        Aspect="AspectFit"
+        VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
+        />
+
+      <Label
+        Text="聯絡人"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.聯絡人}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="連絡電話"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.連絡電話}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="聯絡email"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.聯絡email}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="官方網站"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.官方網站}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="建築類型"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.建築類型}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="建造材質"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.建造材質}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="建物現況"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.建物現況}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="樓別樓高"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.樓別樓高}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="使用坪數"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.使用坪數}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="空間資訊"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Button Text="查看 空間資訊" Command="{Binding 查看空間資訊Command}" />
+
+      <Label
+        Text="進駐使用人數"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.進駐使用人數}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="價格方案"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Button Text="查看 價格方案" Command="{Binding 查看價格方案Command}" />
+
+      <Label
+        Text="使用時間"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.使用時間}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="備註"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.備註}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="建立時間"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.建立時間}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+      <Label
+        Text="修改時間"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        FontSize="{Binding Source={StaticResource 標題大小}}"
+        Margin="{Binding Source={StaticResource 項目距離}}"
+        />
+      <Label
+        Text="{Binding 創業空間明細.修改時間}"
+        VerticalOptions="Center" HorizontalOptions="Start"
+        />
+
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

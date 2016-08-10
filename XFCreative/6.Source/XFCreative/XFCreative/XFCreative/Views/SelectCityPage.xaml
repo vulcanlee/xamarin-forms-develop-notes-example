@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+  prism:ViewModelLocator.AutowireViewModel="True"
+  Title="請選擇要篩選的縣市"
+  x:Class="XFCreative.Views.SelectCityPage">
+
+  <Grid
+    HorizontalOptions="Fill" VerticalOptions="Fill"
+    >
+    <ListView
+  x:Name="listview所有縣市"
+  ItemsSource="{Binding 所有縣市, Mode=TwoWay}"
+  SelectedItem="{Binding 所有縣市Selected, Mode=TwoWay}"
+  CachingStrategy="RecycleElement" 
+      >
+      <ListView.Behaviors>
+        <behaviors:EventHandlerBehavior EventName="ItemTapped">
+          <behaviors:InvokeCommandAction Command="{Binding 所有縣市ItemSelectedCommand}"  />
+        </behaviors:EventHandlerBehavior>
+      </ListView.Behaviors>
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <Grid
+                VerticalOptions="Center"
+                  >
+                <Label
+                  Text ="{Binding 縣市}"
+                  Margin="10,5"
+                  FontSize="22"
+                  HorizontalOptions="Start" VerticalOptions="Center"
+                  LineBreakMode="WordWrap"
+                    />
+              </Grid>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </Grid>
+</ContentPage>
