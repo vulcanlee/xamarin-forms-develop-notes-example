@@ -4,8 +4,6 @@
              xmlns:local="clr-namespace:XFLayoutOptions"
              x:Class="XFLayoutOptions.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />
 
 </ContentPage>
