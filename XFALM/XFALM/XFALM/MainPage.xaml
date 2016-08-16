@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFALM"
+             x:Class="XFALM.MainPage"
+             Title="主頁面"
+             >
+
+  <StackLayout>
+    <Label Text="Welcome to Xamarin Forms!"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+    <Button x:Name="btnNavi" Text="開啟新頁面" />
+  </StackLayout>
+
+</ContentPage>
