@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFAttBehavior"
+             x:Class="XFAttBehavior.MainPage">
+
+  <ContentPage.Padding>40</ContentPage.Padding>
+
+  <StackLayout>
+    
+  <Label 
+    Text="請登入系統"
+    VerticalOptions="Center" HorizontalOptions="Center" />
+
+    <Entry
+      Placeholder="請輸入帳號"
+      local:EmptyHighlightBehavior.EmptyHighlight="true"
+      />
+
+    <Entry
+      Placeholder="請輸入密碼"
+      IsPassword="True"
+      local:EmptyHighlightBehavior.EmptyHighlight="true"
+      />
+    
+    
+
+  </StackLayout>
+
+</ContentPage>
