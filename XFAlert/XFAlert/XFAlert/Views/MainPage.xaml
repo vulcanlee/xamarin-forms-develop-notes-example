@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFAlert.Views.MainPage"
+             Title="MainPage">
+  <StackLayout
+    HorizontalOptions="Center" VerticalOptions="Center">
+    <Button
+      x:Name="btnAlert"
+      Text="顯示 Xamarin.Forms 警告視窗"
+      />
+    <Label
+      x:Name="lblXF選擇結果"
+      Text="Xamarin.Forms 選擇結果"
+      />
+    <Button
+      x:Name="btnActionSheet"
+      Text="顯示 Xamarin.Forms 動作表單"
+      />
+     <Label
+      x:Name="lblXF動作表單選擇結果"
+      Text="Xamarin.Forms 動作表單 選擇結果"
+      />
+    <Button
+      Text="顯示 Prism 警告視窗"
+      Command="{Binding PrismAlertCommand}"
+      />
+    <Label
+      Text="{Binding PrismAlert輸出結果}"
+      />
+    <Button
+      Text="顯示 Prism 動作表單"
+      Command="{Binding PrismActionSheetCommand}"
+      />
+    <Label
+      Text="{Binding PrismActionSheet輸出結果}"
+      />
+ </StackLayout>
+</ContentPage>
