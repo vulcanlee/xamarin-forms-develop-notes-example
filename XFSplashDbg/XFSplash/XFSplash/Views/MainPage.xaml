@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:Renderers="clr-namespace:XFSplash.Renderers;assembly=XFSplash"
+             x:Class="XFSplash.Views.MainPage"
+             Title="MainPage">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:Key="FontAwesome"
+               x:TypeArguments="x:String"
+               iOS="fontawesome"
+               Android="fontawesome"
+               WinPhone="/Assets/Fonts/fontawesome.ttf#FontAwesome" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <Grid>
+    <Image
+      Aspect="AspectFill"
+      >
+      <Image.Source>
+        <OnPlatform
+          x:TypeArguments="ImageSource"
+          iOS="MainPageImg.jpg"
+          Android="MainPageImg.jpg"
+          WinPhone="Assets/MainPageImg.jpg"
+          />
+      </Image.Source>
+    </Image>
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+      <Label Text="{Binding Title}" FontSize="30"
+             HorizontalTextAlignment="Center"
+             TextColor="#a64dff"
+             />
+      <StackLayout
+        Orientation="Horizontal"
+        HorizontalOptions="Center"
+        >
+        <Renderers:FontAwesomeLabel Text="&#xf164;"
+             TextColor="#ff3333"
+             HorizontalOptions="Center"
+             FontSize="60"
+             Margin="0,0,20,0"
+           />
+        <Label Text="&#xf164;"
+               TextColor="#ff3333"
+               HorizontalOptions="Center"
+               FontSize="60"
+               Margin="0,0,20,0"
+          >
+          <Label.FontFamily>
+            <OnPlatform
+            x:TypeArguments="x:String"
+            iOS="fontawesome"
+            Android="fontawesome"
+            WinPhone="/Assets/Fonts/fontawesome.ttf#FontAwesome"
+          />
+          </Label.FontFamily>
+        </Label>
+        <Label Text="&#xf164;"
+             TextColor="#ff3333"
+             HorizontalOptions="Center"
+             FontSize="60"
+             FontFamily="{StaticResource FontAwesome}"
+             Margin="0,0,20,0"
+          />
+      </StackLayout>
+
+    </StackLayout>
+  </Grid>
+</ContentPage>

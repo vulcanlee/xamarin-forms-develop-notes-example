@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFSplash.Views.SplashPage">
+
+  <ContentPage.Padding>
+    <OnPlatform
+      x:TypeArguments="Thickness"
+      iOS="0,20,0,0"
+      Android="0"
+      WinPhone="0,0"
+      />
+  </ContentPage.Padding>
+
+  <Grid
+    >
+    <Image
+      Aspect="AspectFill"
+      >
+      <Image.Source>
+        <OnPlatform
+          x:TypeArguments="ImageSource"
+          iOS="SplashBG.jpg"
+          Android="SplashBG.jpg"
+          WinPhone="Assets/SplashBG.jpg"
+          />
+      </Image.Source>
+    </Image>
+
+    <Grid
+      Margin="20,50,20,30"
+      >
+      <Grid.RowDefinitions>
+        <RowDefinition Height="200"/>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="50" />
+      </Grid.RowDefinitions>
+      <Label
+        Grid.Row="0" Grid.Column="0"
+        Text="多奇創意行動應用"
+        TextColor="White"
+        FontSize="40"
+        Opacity="0.3"
+        HorizontalOptions="Center" VerticalOptions="Center"
+        />
+      <ProgressBar
+        Grid.Row="1" Grid.Column="0"
+        Progress="{Binding 處理進度百分比, Mode=TwoWay}"
+      />
+      <Label
+        Grid.Row="2" Grid.Column="0"
+        HorizontalOptions="Center" VerticalOptions="Start"
+        Text="{Binding 處理訊息, Mode=TwoWay}"
+        TextColor="White"
+        FontSize="20"
+        LineBreakMode="TailTruncation"
+        />
+      <Label
+        Grid.Row="3" Grid.Column="0"
+        HorizontalOptions="End" VerticalOptions="Start"
+        Margin="0,0,0,0"
+        Text="{Binding 版本資訊, Mode=TwoWay}"
+        TextColor="Yellow"
+      />
+    </Grid>
+  </Grid>
+</ContentPage>
