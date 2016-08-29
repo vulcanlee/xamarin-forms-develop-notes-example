@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:themes="clr-namespace:MergedDict.Themes"
+             x:Class="MergedDict.App">
+  <Application.Resources>
+    <ResourceDictionary MergedWith="themes:RedTheme">
+      <!--在合併內定義的預設 Label 樣式，將無法在頁面中使用；
+      需要在頁面使用 MergedWith 引用合併樣式，才能夠使用
+      若要定義全域樣式，需要類似底下方式宣告(合併無法成為預設樣式)
+      -->
+      <Style x:Key="PinkLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="Pink" />
+        <Setter Property="FontSize" Value="24" />
+      </Style>
+
+      <!--底下說明，如何根據不同平台特性，設定不同的樣式內容-->
+      <OnPlatform x:TypeArguments="Color" Android="Lime" iOS="Olive" WinPhone="Fuchsia" x:Key="ByPlatformColor" />
+      <OnPlatform x:TypeArguments="x:Double" Android="30" iOS="15" WinPhone="50" x:Key="ByPlatformSize" />
+      <Style x:Key="MyTitleLabel" TargetType="Label" BaseResourceKey="PinkLabel">
+        <Setter Property="TextColor" Value="{StaticResource ByPlatformColor}" />
+        <Setter Property="FontSize" Value="{StaticResource ByPlatformSize}" />
+      </Style>
+    </ResourceDictionary>
+
+    <!-- Application resource dictionary -->
+
+  </Application.Resources>
+</Application>

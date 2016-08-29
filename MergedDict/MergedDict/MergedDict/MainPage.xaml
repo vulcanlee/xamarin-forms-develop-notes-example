@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MergedDict"
+             xmlns:themes="clr-namespace:MergedDict.Themes"
+             Title="有資料字典合併"
+             x:Class="MergedDict.MainPage">
+
+  <ContentPage.Resources>
+    <!--在這個頁面，會合併其他樣式資源-->
+    <ResourceDictionary MergedWith="themes:BlueTheme">
+      <!--解除底下註解，將會導致預設 Label 的樣式為 Xamarin.Forms 內建，
+      不會從 全域樣式中繼承而來
+      -->
+      <!--<Style TargetType="Label">
+        <Setter Property="TextColor" Value="Purple" />
+      </Style>-->
+
+      <!--這個樣式，將會從 BlueLabel 繼承而來，而該樣式，則是合併而來-->
+      <Style x:Key="GrayLabel" TargetType="Label"
+             BasedOn="{StaticResource BlueLabel}">
+        <Setter Property="TextColor" Value="Gray" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout
+    VerticalOptions="Center" 
+    HorizontalOptions="Center">
+
+    <!--加入其他 GreenLabel 樣式定義
+    若把底下 XAML 註解解除，則預設的 Label 樣式，會變成 Green
+    -->
+    <!--<StackLayout.Resources>
+      <ResourceDictionary MergedWith="themes:GreenTheme">
+      </ResourceDictionary>
+    </StackLayout.Resources>
+    <Label Text="使用 頁面GreenLabel 樣式"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Style="{StaticResource GreenLabel}" />-->
+
+    <!--這裡 Label 的樣式，將會由頁面合併樣式中定義-->
+    <Label Text="沒有設定任何 樣式"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+    <Label Text="使用 全域PinkLabel 樣式"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Style="{StaticResource PinkLabel}" />
+    <Label Text="使用 頁面BlueLabel 樣式"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Style="{StaticResource BlueLabel}" />
+    <!--底下 Label 定義會產生錯誤，這是因為 RedLabel 
+    是在全域使用 合併方式進來的-->
+    <!--<Label Text="使用 頁面RedLabel 樣式"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             Style="{StaticResource RedLabel}" />-->
+    <Label Text="使用 GrayLabel 樣式(繼承 BlueLabel)"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           Style="{StaticResource GrayLabel}"/>
+    <Label Text="使用 RedLabel 樣式(自已引用資源)"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           Style="{StaticResource RedLabel}">
+      <Label.Resources>
+        <ResourceDictionary MergedWith="themes:RedTheme">
+        </ResourceDictionary>
+      </Label.Resources>
+    </Label>
+    <Label Text="沒有設定任何 樣式(自已引用資源)"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           Style="{StaticResource RedLabel}">
+      <Label.Resources>
+        <ResourceDictionary MergedWith="themes:RedTheme">
+        </ResourceDictionary>
+      </Label.Resources>
+    </Label>
+    <Label Text="使用不同平台特性定義樣式"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           HorizontalTextAlignment="Center"
+           Style="{StaticResource MyTitleLabel}"/>
+
+    <Button x:Name="btn" Text="下一頁" />
+
+  </StackLayout>
+
+</ContentPage>
