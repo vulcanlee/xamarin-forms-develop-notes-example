@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DynaStat"
+             x:Class="DynaStat.MainPage">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Color x:Key="backgroundColor">#ccffcc</Color>
+      <Color x:Key="textColor">#ff6600</Color>
+      <x:Double x:Key="fontSize">24</x:Double>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <StackLayout
+    Orientation="Vertical"
+    HorizontalOptions="Center"
+    VerticalOptions="Center"
+  >
+    <Label Text="使用 StaticResource"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           TextColor="{StaticResource textColor}"
+           BackgroundColor="{StaticResource backgroundColor}"
+           FontSize="{StaticResource fontSize}"
+         />
+    <Label Text="使用 DynamicResource"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           TextColor="{DynamicResource textColor}"
+           BackgroundColor="{DynamicResource backgroundColor}"
+           FontSize="{DynamicResource fontSize}"
+         />
+    <Button x:Name="btnDynamic" Text="變更動態資源"/>
+    <Label Text="使用全域 DynamicResource"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           TextColor="{DynamicResource GlobaltextColor}"
+           BackgroundColor="{DynamicResource GlobalbackgroundColor}"
+           FontSize="{DynamicResource GlobalfontSize}"
+         />
+    <Button x:Name="btnGlobalDynamic" Text="變更全域動態資源"/>
+    <Label Text="使用 公開靜態屬性"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           TextColor="{x:Static local:PubStat.文字顏色}"
+           BackgroundColor="{x:Static local:PubStat.背景顏色}"
+           FontSize="{x:Static local:PubStat.文字尺寸}"
+         />
+    <Button x:Name="btnStatic" Text="變更公開靜態屬性"/>
+    <Button x:Name="btnReset" Text="重新啟動該頁面"/>
+  </StackLayout>
+
+</ContentPage>

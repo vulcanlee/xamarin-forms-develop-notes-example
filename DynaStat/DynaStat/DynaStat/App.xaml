@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DynaStat.App">
+  <Application.Resources>
+
+    <ResourceDictionary>
+      <Color x:Key="GlobalbackgroundColor">#ccffcc</Color>
+      <Color x:Key="GlobaltextColor">#ff6600</Color>
+      <x:Double x:Key="GlobalfontSize">24</x:Double>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
