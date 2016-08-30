@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ElementTree"
+             x:Class="ElementTree.MainPage">
+
+  <StackLayout
+    Orientation="Vertical"
+    VerticalOptions="Center"
+    >
+    <Label Style="{StaticResource StyleForLabel}"/>
+    <StackLayout
+      Orientation="Vertical">
+      <StackLayout.Resources>
+        <ResourceDictionary>
+          <Style x:Key="StyleForLabel" TargetType="Label">
+            <Setter Property="Text" Value="StackLayour 資源字典" />
+            <Setter Property="TextColor" Value="Red" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+          </Style>
+        </ResourceDictionary>
+      </StackLayout.Resources>
+      <Label Style="{StaticResource StyleForLabel}" />
+      <Label Style="{StaticResource StyleForLabel}" >
+        <Label.Resources>
+          <ResourceDictionary>
+            <Style x:Key="StyleForLabel" TargetType="Label">
+              <Setter Property="Text" Value="Label 資源字典" />
+              <Setter Property="TextColor" Value="Green" />
+              <Setter Property="FontSize" Value="24" />
+              <Setter Property="VerticalOptions" Value="Center" />
+              <Setter Property="HorizontalOptions" Value="Center" />
+            </Style>
+          </ResourceDictionary>
+        </Label.Resources>
+      </Label>
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>

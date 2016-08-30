@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ElementTree.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <Style x:Key="StyleForLabel" TargetType="Label">
+        <Setter Property="Text" Value="App 資源字典" />
+        <Setter Property="TextColor" Value="Blue" />
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
