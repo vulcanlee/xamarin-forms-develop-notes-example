@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:CustomAttached="clr-namespace:AttProp"
+             x:Class="AttProp.Views.MainPage"
+             Title="MainPage">
+  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <Label Text="自訂附加屬性 Attached Property" />
+    <Entry />
+    <Entry CustomAttached:EntryTypeAttached.EntryType="Email" />
+    <Entry CustomAttached:EntryTypeAttached.EntryType="Phone" />
+    <Entry CustomAttached:EntryTypeAttached.EntryType="Number" />
+  </StackLayout>
+</ContentPage>
