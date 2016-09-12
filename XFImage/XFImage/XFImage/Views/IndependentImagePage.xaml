@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:extMark="clr-namespace:XFImage.Services"
+             xmlns:Converters="clr-namespace:XFImage.Converters"
+             x:Class="XFImage.Views.IndependentImagePage"
+             Title="平台專屬、PCL、本機圖片資源"
+  >
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Converters:StringToLocalImage x:Key="StringToLocalImage" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <!--這是讀取網路圖片的簡單用法-->
+    <!--<Image Source="https://developer.xamarin.com/demo/IMG_3256.JPG?width=640" />-->
+
+    <Image Grid.Row="0" Grid.Column="0">
+      <Image.Source>
+        <UriImageSource Uri="https://developer.xamarin.com/demo/IMG_3256.JPG?width=640" />
+      </Image.Source>
+    </Image>
+    <Label Grid.Row="0" Grid.Column="0" Text="這是網路圖片" FontSize="24" TextColor="Black"/>
+
+    <Image Grid.Row="0" Grid.Column="1" Source="{extMark:ImageResource XFImage.Assets.platformImage.jpg}"/>
+    <Label Grid.Row="0" Grid.Column="1" Text="這是PCL內圖片" FontSize="24" TextColor="Black"/>
+
+    <Image Grid.Row="1" Grid.Column="0" Source="platformImage.jpg" />
+    <Label Grid.Row="1" Grid.Column="0" Text="平台專屬圖片-指定" FontSize="18" TextColor="Red" />
+    
+    <BoxView Grid.Row="1" Grid.Column="1" Color="{Binding 下載背景顏色}" />
+    <Button Grid.Row="1" Grid.Column="1" Text="下載圖片" Command="{Binding 下載圖片Command}" 
+            HorizontalOptions="Center" VerticalOptions="Center"/>
+    <!--<Button Grid.Row="1" Grid.Column="1" Text="下載圖片" x:Name="btn" 
+            HorizontalOptions="Center" VerticalOptions="Center"/>-->
+
+    <Image Grid.Row="2" Grid.Column="0" Source="{Binding LocalImage1}" />
+    <Label Grid.Row="2" Grid.Column="0" Text="平台專屬圖片-綁定" FontSize="18" TextColor="Red" />
+
+    <Image Grid.Row="1" Grid.Column="1"  
+           Source="{Binding MyImageSource}" />
+    <Label Grid.Row="1" Grid.Column="1" Text="本地圖片-使用綁定" FontSize="18" TextColor="Black" />
+
+    <Image Grid.Row="2" Grid.Column="1"
+          Source="{Binding LocalImage2, Converter={StaticResource StringToLocalImage}}" />
+    <Label Grid.Row="2" Grid.Column="1" Text="本地圖片-使用轉換器" FontSize="18" TextColor="Black" />
+
+  </Grid>
+</ContentPage>

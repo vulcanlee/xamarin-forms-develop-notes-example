@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:extMark="clr-namespace:XFImage.Services"
+             x:Class="XFImage.Views.AspectPage"
+             Title="圖片大小與填滿"
+             >
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Image Grid.Row="0"
+           Aspect="{Binding ImgAspect}"
+           HorizontalOptions="{Binding ImgAligment}"
+           VerticalOptions="{Binding ImgAligment}"
+           >
+      <Image.Source>
+        <UriImageSource Uri="{Binding DemoImage}" />
+      </Image.Source>
+    </Image>
+
+    <StackLayout Grid.Row="1"
+                 BackgroundColor="Yellow"
+      Orientation="Vertical">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <!--Scale the image to fill the view. Some parts may be clipped in order to fill the view.-->
+        <Button Grid.Column="0" Text="AspectFill" Command="{Binding ImgAspectFillCommand}" />
+        <!--Scale the image to fit the view. Some parts may be left empty (letter boxing).-->
+        <Button Grid.Column="1" Text="AspectFit" Command="{Binding ImgAspectFitCommand}"/>
+        <!--Scale the image so it exactly fill the view. Scaling may not be uniform in X and Y.-->
+        <Button Grid.Column="2" Text="Fill" Command="{Binding ImgFillCommand}"/>
+      </Grid>
+
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Text="橫式圖片" Command="{Binding 橫式圖片Command}"/>
+        <Button Grid.Column="1" Text="直式圖片" Command="{Binding 直式圖片Command}"/>
+      </Grid>
+
+      <Grid >
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Text="Start" Command="{Binding 圖片AlignmentCommand}" CommandParameter="Start"/>
+        <Button Grid.Column="1" Text="Center" Command="{Binding 圖片AlignmentCommandCommand}" CommandParameter="Center"/>
+        <Button Grid.Column="2" Text="End" Command="{Binding 圖片AlignmentCommand}" CommandParameter="End"/>
+        <Button Grid.Column="3" Text="Fill" Command="{Binding 圖片AlignmentCommand}" CommandParameter="Fill"/>
+      </Grid>
+
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Text="大圖片" Command="{Binding 大圖片Command}"/>
+        <Button Grid.Column="1" Text="小圖片" Command="{Binding 小圖片Command}"/>
+
+      </Grid>
+    </StackLayout>
+
+  </Grid>
+</ContentPage>

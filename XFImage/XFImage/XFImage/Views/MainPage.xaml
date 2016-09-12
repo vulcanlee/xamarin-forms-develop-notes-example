@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFImage.Views.MainPage"
+             Title="Xamarin.Forms 圖片控制項">
+  <StackLayout
+    Orientation="Vertical"
+    HorizontalOptions="Center" VerticalOptions="Center"
+    >
+    <Button Text="圖片大小與填滿" Command="{Binding 圖片大小與填滿Command}" />
+    <Button Text="平台專屬、PCL、本機圖片資源" Command="{Binding 圖片資源Command}" />
+  </StackLayout>
+</ContentPage>
