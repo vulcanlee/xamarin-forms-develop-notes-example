@@ -1,0 +1,111 @@
+﻿https://developer.xamarin.com/demo/stock.json
+
+(正方形)
+https://developer.xamarin.com/demo/IMG_1415.JPG
+
+https://developer.xamarin.com/demo/IMG_1415.JPG?width=125
+https://developer.xamarin.com/demo/IMG_1415.JPG?height=125
+
+https://developer.xamarin.com/demo/IMG_3256.JPG
+
+(直式的)
+https://developer.xamarin.com/demo/IMG_0563.JPG   
+
+(橫式的)
+https://developer.xamarin.com/demo/IMG_2527.JPG
+https://developer.xamarin.com/demo/IMG_1331.JPG
+https://developer.xamarin.com/demo/IMG_2068.JPG?width=640
+https://developer.xamarin.com/demo/IMG_2377.JPG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "photos": [
+        "https://developer.xamarin.com/demo/IMG_0074.JPG",
+        "https://developer.xamarin.com/demo/IMG_0078.JPG",
+        "https://developer.xamarin.com/demo/IMG_0308.JPG",
+        "https://developer.xamarin.com/demo/IMG_0437.JPG",
+        "https://developer.xamarin.com/demo/IMG_0462.JPG",
+        "https://developer.xamarin.com/demo/IMG_0475.JPG",
+        "https://developer.xamarin.com/demo/IMG_0563.JPG",
+        "https://developer.xamarin.com/demo/IMG_0565.JPG",
+        "https://developer.xamarin.com/demo/IMG_0580.JPG",
+        "https://developer.xamarin.com/demo/IMG_0613.JPG",
+        "https://developer.xamarin.com/demo/IMG_0718.JPG",
+        "https://developer.xamarin.com/demo/IMG_0722.JPG",
+        "https://developer.xamarin.com/demo/IMG_0866.JPG",
+        "https://developer.xamarin.com/demo/IMG_0925.JPG",
+        "https://developer.xamarin.com/demo/IMG_1010.JPG",
+        "https://developer.xamarin.com/demo/IMG_1022.JPG",
+        "https://developer.xamarin.com/demo/IMG_1101.JPG",
+        "https://developer.xamarin.com/demo/IMG_1223.JPG",
+        "https://developer.xamarin.com/demo/IMG_1302.JPG",
+        "https://developer.xamarin.com/demo/IMG_1323.JPG",
+        "https://developer.xamarin.com/demo/IMG_1331.JPG",
+        "https://developer.xamarin.com/demo/IMG_1378.JPG",
+        "https://developer.xamarin.com/demo/IMG_1405.JPG",
+        "https://developer.xamarin.com/demo/IMG_1408.JPG",
+        "https://developer.xamarin.com/demo/IMG_1412.JPG",
+        "https://developer.xamarin.com/demo/IMG_1415.JPG",
+        "https://developer.xamarin.com/demo/IMG_1462.JPG",
+        "https://developer.xamarin.com/demo/IMG_1480.JPG",
+        "https://developer.xamarin.com/demo/IMG_1694.JPG",
+        "https://developer.xamarin.com/demo/IMG_1847.JPG",
+        "https://developer.xamarin.com/demo/IMG_1943.JPG",
+        "https://developer.xamarin.com/demo/IMG_1996.JPG",
+        "https://developer.xamarin.com/demo/IMG_2068.JPG",
+        "https://developer.xamarin.com/demo/IMG_2138.JPG",
+        "https://developer.xamarin.com/demo/IMG_2159.JPG",
+        "https://developer.xamarin.com/demo/IMG_2188.JPG",
+        "https://developer.xamarin.com/demo/IMG_2225.JPG",
+        "https://developer.xamarin.com/demo/IMG_2261.JPG",
+        "https://developer.xamarin.com/demo/IMG_2267.JPG",
+        "https://developer.xamarin.com/demo/IMG_2268.JPG",
+        "https://developer.xamarin.com/demo/IMG_2273.JPG",
+        "https://developer.xamarin.com/demo/IMG_2313.JPG",
+        "https://developer.xamarin.com/demo/IMG_2350.JPG",
+        "https://developer.xamarin.com/demo/IMG_2361.JPG",
+        "https://developer.xamarin.com/demo/IMG_2371.JPG",
+        "https://developer.xamarin.com/demo/IMG_2377.JPG",
+        "https://developer.xamarin.com/demo/IMG_2412.JPG",
+        "https://developer.xamarin.com/demo/IMG_2451.JPG",
+        "https://developer.xamarin.com/demo/IMG_2506.JPG",
+        "https://developer.xamarin.com/demo/IMG_2527.JPG",
+        "https://developer.xamarin.com/demo/IMG_2709.JPG",
+        "https://developer.xamarin.com/demo/IMG_2721.JPG",
+        "https://developer.xamarin.com/demo/IMG_2798.JPG",
+        "https://developer.xamarin.com/demo/IMG_2859.JPG",
+        "https://developer.xamarin.com/demo/IMG_3182.JPG",
+        "https://developer.xamarin.com/demo/IMG_3214.JPG",
+        "https://developer.xamarin.com/demo/IMG_3223.JPG",
+        "https://developer.xamarin.com/demo/IMG_3256.JPG",
+        "https://developer.xamarin.com/demo/IMG_3321.JPG",
+        "https://developer.xamarin.com/demo/IMG_3327.JPG",
+        "https://developer.xamarin.com/demo/IMG_3535.JPG",
+        "https://developer.xamarin.com/demo/IMG_3588.JPG",
+        "https://developer.xamarin.com/demo/IMG_3673.JPG",
+        "https://developer.xamarin.com/demo/IMG_3681.JPG",
+        "https://developer.xamarin.com/demo/IMG_3686.JPG",
+        "https://developer.xamarin.com/demo/IMG_3768.JPG",
+        "https://developer.xamarin.com/demo/IMG_3890.JPG",
+        "https://developer.xamarin.com/demo/IMG_3943.JPG",
+        "https://developer.xamarin.com/demo/IMG_3983.JPG",
+        "https://developer.xamarin.com/demo/IMG_4023.JPG"
+    ]
+}
