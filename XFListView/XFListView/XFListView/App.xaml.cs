@@ -26,6 +26,7 @@ namespace XFListView
             Container.RegisterTypeForNavigation<HeaderFooterPage>();
             Container.RegisterTypeForNavigation<ScrollToPage>();
             Container.RegisterTypeForNavigation<PullToRefreshPage>();
+            Container.RegisterTypeForNavigation<ItemClickPage>();
         }
     }
 }

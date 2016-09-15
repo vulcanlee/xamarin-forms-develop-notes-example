@@ -4,11 +4,13 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFListView.Views.MainPage"
-             Title="MainPage">
+             Title="ListView 功能與特色">
 
   <ScrollView
     Orientation="Vertical">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center"
+                 Spacing="0"
+                 >
       <Button Text="基本應用不可修改紀錄" Command="{Binding ListView基本應用不可修改紀錄Command}" />
       <Button Text="基本應用可修改紀錄" Command="{Binding ListView基本應用可修改紀錄Command}" />
       <Button Text="固定紀錄列高" Command="{Binding 固定紀錄列高Command}" />
@@ -18,6 +20,8 @@
       <Button Text="頁首頁尾、自動捲動、互動功能表" Command="{Binding 頁首頁尾自動捲動互動功能表Command}" />
       <Button Text="自動捲動到指定紀錄" Command="{Binding 自動捲動到指定紀錄Command}" />
       <Button Text="下拉更新" Command="{Binding 下拉更新Command}" />
+      <Button Text="下拉更新" Command="{Binding 下拉更新Command}" />
+      <Button Text="點選與取消選取" Command="{Binding 點選與取消選取Command}" />
     </StackLayout>
   </ScrollView>
 </ContentPage>

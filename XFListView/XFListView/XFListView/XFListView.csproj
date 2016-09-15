@@ -45,6 +45,7 @@
     <Compile Include="ViewModels\CustomButton1PageViewModel.cs" />
     <Compile Include="ViewModels\CustomButtonPageViewModel.cs" />
     <Compile Include="ViewModels\HeaderFooterPageViewModel.cs" />
+    <Compile Include="ViewModels\ItemClickPageViewModel.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="ViewModels\PersonWithButtonViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
@@ -67,6 +68,9 @@
     </Compile>
     <Compile Include="Views\HeaderFooterPage.xaml.cs">
       <DependentUpon>HeaderFooterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemClickPage.xaml.cs">
+      <DependentUpon>ItemClickPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\NaviPage.xaml.cs">
       <DependentUpon>NaviPage.xaml</DependentUpon>
@@ -100,6 +104,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Behaviors, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Behaviors.Forms.1.1.0\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Behaviors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
@@ -186,6 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\PullToRefreshPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ItemClickPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

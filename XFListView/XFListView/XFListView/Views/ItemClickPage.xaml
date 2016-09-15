@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="XFListView.Views.PullToRefreshPage"
-             Title="下拉更新" >
- 
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             x:Class="XFListView.Views.ItemClickPage"
+             Title="ListView 點選與取消選取">
+
   <StackLayout>
     <ListView x:Name="listview"
       ItemsSource="{Binding MyData}"
@@ -15,6 +16,11 @@
               RefreshCommand="{Binding 更新資料Command}"
               IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
       >
+      <ListView.Behaviors>
+        <behaviors:EventHandlerBehavior EventName="ItemTapped">
+          <behaviors:InvokeCommandAction Command="{Binding MyDataClickedCommand}"  />
+        </behaviors:EventHandlerBehavior>
+      </ListView.Behaviors>
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>

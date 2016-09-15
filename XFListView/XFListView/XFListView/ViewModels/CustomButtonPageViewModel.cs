@@ -45,7 +45,7 @@ namespace XFListView.ViewModels
 
             _dialogService = dialogService;
             MyData = PersonRepository.SampleViewModel();
-
+            
             進行互動Command = new DelegateCommand<PersonViewModel>(進行互動);
         }
 

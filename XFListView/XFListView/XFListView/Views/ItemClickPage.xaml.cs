@@ -1,11 +1,10 @@
 ﻿using Xamarin.Forms;
-using XFListView.ViewModels;
 
 namespace XFListView.Views
 {
-    public partial class PullToRefreshPage : ContentPage
+    public partial class ItemClickPage : ContentPage
     {
-        public PullToRefreshPage()
+        public ItemClickPage()
         {
             InitializeComponent();
         }

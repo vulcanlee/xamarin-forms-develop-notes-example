@@ -21,6 +21,7 @@ namespace XFListView.ViewModels
         public DelegateCommand 頁首頁尾自動捲動互動功能表Command { get; private set; }
         public DelegateCommand 自動捲動到指定紀錄Command { get; private set; }
         public DelegateCommand 下拉更新Command { get; private set; }
+        public DelegateCommand 點選與取消選取Command { get; private set; }
 
         public MainPageViewModel(INavigationService navigationService)
         {
@@ -35,7 +36,13 @@ namespace XFListView.ViewModels
             頁首頁尾自動捲動互動功能表Command = new DelegateCommand(頁首頁尾自動捲動互動功能表);
             自動捲動到指定紀錄Command = new DelegateCommand(自動捲動到指定紀錄);
             下拉更新Command = new DelegateCommand(下拉更新);
+            點選與取消選取Command = new DelegateCommand(點選與取消選取);
     }
+
+        private async void 點選與取消選取()
+        {
+            await _navigationService.NavigateAsync("ItemClickPage");
+        }
 
         private async void 下拉更新()
         {
