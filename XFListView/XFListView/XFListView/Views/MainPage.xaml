@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFListView.Views.MainPage"
+             Title="MainPage">
+
+  <ScrollView
+    Orientation="Vertical">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+      <Button Text="基本應用不可修改紀錄" Command="{Binding ListView基本應用不可修改紀錄Command}" />
+      <Button Text="基本應用可修改紀錄" Command="{Binding ListView基本應用可修改紀錄Command}" />
+      <Button Text="固定紀錄列高" Command="{Binding 固定紀錄列高Command}" />
+      <Button Text="可變紀錄列高" Command="{Binding 可變紀錄列高Command}" />
+      <Button Text="客製化資料列與資料按鈕會失效" Command="{Binding 客製化資料列與資料按鈕會失效Command}" />
+      <Button Text="客製化資料列與資料按鈕" Command="{Binding 客製化資料列與資料按鈕Command}" />
+      <Button Text="頁首頁尾、自動捲動、互動功能表" Command="{Binding 頁首頁尾自動捲動互動功能表Command}" />
+      <Button Text="自動捲動到指定紀錄" Command="{Binding 自動捲動到指定紀錄Command}" />
+      <Button Text="下拉更新" Command="{Binding 下拉更新Command}" />
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

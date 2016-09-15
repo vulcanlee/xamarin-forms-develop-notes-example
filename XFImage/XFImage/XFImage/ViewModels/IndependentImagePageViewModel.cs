@@ -12,6 +12,13 @@ namespace XFImage.ViewModels
 {
     public class IndependentImagePageViewModel : BindableBase, INavigationAware
     {
+        private string pclImage;
+        public string PCLImage
+        {
+            get { return pclImage; }
+            set { SetProperty(ref pclImage, value); }
+        }
+
         private string localImage1;
         public string LocalImage1
         {
@@ -79,6 +86,8 @@ namespace XFImage.ViewModels
 
             下載背景顏色 = "Green";
             LocalImage2 = "MyLocalImage.jpg";
+
+            PCLImage = "";
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

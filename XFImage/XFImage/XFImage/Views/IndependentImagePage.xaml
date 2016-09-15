@@ -51,8 +51,7 @@
     <Image Grid.Row="2" Grid.Column="0" Source="{Binding LocalImage1}" />
     <Label Grid.Row="2" Grid.Column="0" Text="平台專屬圖片-綁定" FontSize="18" TextColor="Red" />
 
-    <Image Grid.Row="1" Grid.Column="1"  
-           Source="{Binding MyImageSource}" />
+    <Image Grid.Row="1" Grid.Column="1" Source="{Binding MyImageSource}" />
     <Label Grid.Row="1" Grid.Column="1" Text="本地圖片-使用綁定" FontSize="18" TextColor="Black" />
 
     <Image Grid.Row="2" Grid.Column="1"

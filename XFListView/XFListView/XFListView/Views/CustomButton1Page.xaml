@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFListView.Views.CustomButton1Page"
+             Title="客製化資料列與資料按鈕"
+             >
+
+  <StackLayout>
+    <ListView
+      ItemsSource="{Binding MyData}"
+      SelectedItem="{Binding MyDataSelected, Mode=TwoWay}"
+      Margin="20,0"
+      >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid
+              >
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="120" />
+              </Grid.ColumnDefinitions>
+              <BoxView Grid.Column="0" BackgroundColor="{Binding FavoriteColor}"
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       HeightRequest="40" WidthRequest="40"/>
+              <StackLayout Grid.Column="1" Orientation="Vertical">
+                <Label
+                  TextColor="Teal" FontSize="14"
+                  Text="{Binding Name}" />
+                <Label
+                  TextColor="Teal" FontSize="14"
+                  Text="{Binding Birthday, StringFormat='{0:yyyy-MM-dd}'}" />
+              </StackLayout>
+              <Button Grid.Column="2"
+                      Text="進行互動"
+                      Command="{Binding 進行互動Command}"
+                      CommandParameter="{Binding .}"
+                      />
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFListView.Views.PullToRefreshPage">
+  <StackLayout>
+    <ListView x:Name="listview"
+      ItemsSource="{Binding MyData}"
+      SelectedItem="{Binding MyDataSelected, Mode=TwoWay}"
+      Margin="20,0"
+      IsPullToRefreshEnabled="True"
+              RefreshCommand="{Binding 更新資料Command}"
+              IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+      >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <Grid
+              >
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <BoxView Grid.Column="0" BackgroundColor="{Binding FavoriteColor}"
+                       VerticalOptions="Center" HorizontalOptions="Center"
+                       HeightRequest="40" WidthRequest="40"/>
+              <StackLayout Grid.Column="1" Orientation="Vertical">
+                <Label
+                  TextColor="Teal" FontSize="14"
+                  Text="{Binding Name}" />
+                <Label
+                  TextColor="Teal" FontSize="14"
+                  Text="{Binding Birthday, StringFormat='{0:yyyy-MM-dd}'}" />
+              </StackLayout>
+            </Grid>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+
+</ContentPage>

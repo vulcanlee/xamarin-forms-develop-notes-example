@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFListView.Views.RowHeightPage"
+             Title="可變紀錄列高"  >
+
+  <StackLayout>
+    <ListView x:Name="lv"
+      ItemsSource="{Binding MyItemList, Mode=TwoWay}"
+      Margin="20,0"
+      HasUnevenRows="{Binding UseUneven, Mode=TwoWay}"
+              RowHeight="{Binding RowHeight}"
+      SeparatorColor="Red"
+      >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout>
+              <BoxView Color="Transparent" HeightRequest="10" />
+              <Label
+                TextColor="Teal" FontSize="30"
+                Text="{Binding FirstName}"  />
+              <BoxView Color="Transparent" HeightRequest="10" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+
+</ContentPage>
