@@ -24,6 +24,7 @@ namespace XFListView.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            var fooBehaviorBase = new Behaviors.BehaviorBase<Xamarin.Forms.ListView>();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App(new iOSInitializer()));
 
