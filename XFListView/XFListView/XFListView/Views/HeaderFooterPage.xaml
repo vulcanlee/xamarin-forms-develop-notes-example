@@ -7,65 +7,68 @@
              Title="頁首頁尾、自動捲動、互動功能表"
              >
 
-  <StackLayout>
-    <ListView
+    <StackLayout>
+        <ListView
       ItemsSource="{Binding MyData}"
       SelectedItem="{Binding MyDataSelected, Mode=TwoWay}"
       Margin="20,0"
       >
-      <ListView.Header>
-        <StackLayout Orientation="Horizontal">
-          <Label Text="頁首標題"
+            <ListView.Header>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="頁首標題"
           TextColor="Green" FontSize="40"
           BackgroundColor="Yellow" />
-        </StackLayout>
-      </ListView.Header>
-      <ListView.Footer>
-        <StackLayout Orientation="Horizontal">
-          <Label Text="頁尾標題"
+                </StackLayout>
+            </ListView.Header>
+            <ListView.Footer>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="頁尾標題"
           TextColor="White" FontSize="40"
           BackgroundColor="Gray" />
-        </StackLayout>
-      </ListView.Footer>
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <ViewCell.ContextActions>
-              <MenuItem Text="立即產生"
-                        Command="{Binding 立即產生Command}" CommandParameter="{Binding .}"
-                  />
-              <MenuItem Text="刪除"
-                        Command="{Binding 刪除Command}" CommandParameter="{Binding .}"
-                  IsDestructive="True" />
-            </ViewCell.ContextActions>
-            <Grid
+                </StackLayout>
+            </ListView.Footer>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="立即產生"
+                                      Command="{Binding 立即產生Command}" CommandParameter="{Binding .}"  />
+                            <MenuItem Text="刪除"
+                                      Command="{Binding 刪除Command}" CommandParameter="{Binding .}"
+                                      IsDestructive="True" />
+                        </ViewCell.ContextActions>
+
+                        <ViewCell.View>
+                            <Grid
               >
-              <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="70" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="120" />
-              </Grid.ColumnDefinitions>
-              <BoxView Grid.Column="0" BackgroundColor="{Binding FavoriteColor}"
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="120" />
+                                </Grid.ColumnDefinitions>
+                                <BoxView Grid.Column="0" BackgroundColor="{Binding FavoriteColor}"
                        VerticalOptions="Center" HorizontalOptions="Center"
                        HeightRequest="40" WidthRequest="40"/>
-              <StackLayout Grid.Column="1" Orientation="Vertical">
-                <Label
+                                <StackLayout Grid.Column="1" Orientation="Vertical">
+                                    <Label
                   TextColor="Teal" FontSize="14"
                   Text="{Binding Name}" />
-                <Label
+                                    <Label
                   TextColor="Teal" FontSize="14"
                   Text="{Binding Birthday, StringFormat='{0:yyyy-MM-dd}'}" />
-              </StackLayout>
-              <Button Grid.Column="2"
+                                </StackLayout>
+                                <Button Grid.Column="2"
                       Text="進行互動"
                       Command="{Binding 進行互動Command}"
                       CommandParameter="{Binding .}"
                       />
-            </Grid>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+                            </Grid>
+                        </ViewCell.View>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 
 </ContentPage>

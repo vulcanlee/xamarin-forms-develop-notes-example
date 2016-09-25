@@ -1,15 +1,15 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using XFListView.Repositories;
-using Prism.Navigation;
 
 namespace XFListView.ViewModels
 {
-    public class RowHeightPageViewModel : BindableBase, INavigationAware
+    public class VariRowHeithtPageViewModel : BindableBase, INavigationAware
     {
         private ObservableCollection<MyItemViewModel> myItemList;
         public ObservableCollection<MyItemViewModel> MyItemList
@@ -27,9 +27,9 @@ namespace XFListView.ViewModels
             set { SetProperty(ref myItemListSelected, value); }
         }
 
-        public DelegateCommand 可變列高Command { get; private set; } 
-        public DelegateCommand 固定列高Command { get; private set; } 
-        public RowHeightPageViewModel()
+        public DelegateCommand 可變列高Command { get; private set; }
+        public DelegateCommand 固定列高Command { get; private set; }
+        public VariRowHeithtPageViewModel()
         {
             MyItemList = MyItemRepository.SampleLongViewModel();
         }

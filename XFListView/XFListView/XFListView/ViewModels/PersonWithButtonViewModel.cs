@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace XFListView.ViewModels
 {
-    public class PersonWithButtonViewModel : BindableBase
+    public class PersonWithButtonViewModel : BindableBase 
     {
         #region Name
         private string name;

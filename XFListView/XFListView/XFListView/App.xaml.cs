@@ -21,6 +21,7 @@ namespace XFListView
             Container.RegisterTypeForNavigation<BasicPage>();
             Container.RegisterTypeForNavigation<Basic1Page>();
             Container.RegisterTypeForNavigation<RowHeightPage>();
+            Container.RegisterTypeForNavigation<VariRowHeithtPage>();
             Container.RegisterTypeForNavigation<CustomButtonPage>();
             Container.RegisterTypeForNavigation<CustomButton1Page>();
             Container.RegisterTypeForNavigation<HeaderFooterPage>();

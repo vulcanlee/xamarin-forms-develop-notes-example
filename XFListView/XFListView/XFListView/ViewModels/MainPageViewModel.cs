@@ -72,15 +72,13 @@ namespace XFListView.ViewModels
         private async void 固定紀錄列高()
         {
             // 使用 Query String 的方式來傳送參數
-            await _navigationService.NavigateAsync("RowHeightPage?UseUneven=false");
+            await _navigationService.NavigateAsync("RowHeightPage");
         }
 
         private async void 可變紀錄列高()
         {
             // 使用 NavigationParameters 物件來傳送參數
-            var fooPara = new NavigationParameters();
-            fooPara.Add("UseUneven", true);
-            await _navigationService.NavigateAsync("RowHeightPage", fooPara);
+            await _navigationService.NavigateAsync("VariRowHeithtPage");
         }
 
         private async void ListView基本應用可修改紀錄()

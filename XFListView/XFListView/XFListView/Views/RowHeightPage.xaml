@@ -4,14 +4,13 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFListView.Views.RowHeightPage"
-             Title="可變紀錄列高"  >
+             Title="固定紀錄列高"  >
 
   <StackLayout>
     <ListView x:Name="lv"
       ItemsSource="{Binding MyItemList, Mode=TwoWay}"
       Margin="20,0"
-      HasUnevenRows="{Binding UseUneven, Mode=TwoWay}"
-              RowHeight="{Binding RowHeight}"
+      RowHeight="60"
       SeparatorColor="Red"
       >
       <ListView.ItemTemplate>

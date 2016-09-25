@@ -20,7 +20,6 @@
       <Button Text="頁首頁尾、自動捲動、互動功能表" Command="{Binding 頁首頁尾自動捲動互動功能表Command}" />
       <Button Text="自動捲動到指定紀錄" Command="{Binding 自動捲動到指定紀錄Command}" />
       <Button Text="下拉更新" Command="{Binding 下拉更新Command}" />
-      <Button Text="下拉更新" Command="{Binding 下拉更新Command}" />
       <Button Text="點選與取消選取" Command="{Binding 點選與取消選取Command}" />
     </StackLayout>
   </ScrollView>

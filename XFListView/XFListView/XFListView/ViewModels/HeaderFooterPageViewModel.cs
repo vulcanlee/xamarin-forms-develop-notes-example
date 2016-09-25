@@ -11,7 +11,7 @@ using XFListView.Repositories;
 
 namespace XFListView.ViewModels
 {
-    public class HeaderFooterPageViewModel : BindableBase
+    public class HeaderFooterPageViewModel : BindableBase 
     {
         #region MyData
         private ObservableCollection<PersonWithButtonViewModel> myData;
