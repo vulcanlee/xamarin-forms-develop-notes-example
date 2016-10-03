@@ -5,19 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{11B3E0EC-5F48-4B69-B03F-8C8B28BF4E9E}</ProjectGuid>
+    <ProjectGuid>{FE6431E7-CEFE-432A-B7C8-8F1BE1B62AC9}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XFAttBehavior.Droid</RootNamespace>
-    <AssemblyName>XFAttBehavior.Droid</AssemblyName>
+    <RootNamespace>XFALM.Droid</RootNamespace>
+    <AssemblyName>XFALM.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
@@ -121,9 +121,9 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XFAttBehavior\XFAttBehavior.csproj">
-      <Project>{A3776B81-4606-44AD-AC2D-67237294D7E8}</Project>
-      <Name>XFAttBehavior</Name>
+    <ProjectReference Include="..\XFALM\XFALM.csproj">
+      <Project>{19D277F9-B131-46DA-891F-B4E68D6DD61D}</Project>
+      <Name>XFALM</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
