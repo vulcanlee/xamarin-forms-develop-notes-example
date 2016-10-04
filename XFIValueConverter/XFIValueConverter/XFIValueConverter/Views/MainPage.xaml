@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:XFIValueConverter"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFIValueConverter.Views.MainPage"
+             Title="MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ColorTypeToColorConverter x:Key="ColorTypeToColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="輸入數值，可以變換顏色" />
+        <Entry Text="{Binding ColorType, Mode=TwoWay}" />
+        <BoxView Color="{Binding ColorType, Converter={StaticResource ColorTypeToColorConverter}}"
+             WidthRequest="150" HeightRequest="150" />
+    </StackLayout>
+</ContentPage>
