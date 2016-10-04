@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFTransforms.Views.MainPage"
+             Title="MainPage"> 
+  <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Frame x:Name="frame" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" OutlineColor="Accent">
+            <Label Text="這是Xamarin.Forms" FontSize="Large" />
+        </Frame>
+        <StackLayout
+          HorizontalOptions="Fill" VerticalOptions="End">
+            <Grid
+                HorizontalOptions="Fill" VerticalOptions="Center"
+                >
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Slider Grid.Row="0" Grid.Column="0" Minimum="-200" Maximum="200" Value="{Binding Source={x:Reference frame}, Path=TranslationX}" />
+                <Slider Grid.Row="0" Grid.Column="1" Minimum="-200" Maximum="200" Value="{Binding Source={x:Reference frame}, Path=TranslationY}" />
+                <Slider Grid.Row="1" Grid.Column="0" Minimum="-10" Maximum="10" Value="{Binding Source={x:Reference frame}, Path=Scale}" />
+                <Slider Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="360" Value="{Binding Source={x:Reference frame}, Path=Rotation}" />
+                <Slider Grid.Row="2" Grid.Column="0" Minimum="-1" Maximum="2" Value="{Binding Source={x:Reference frame}, Path=AnchorX}" />
+                <Slider Grid.Row="2" Grid.Column="1" Minimum="-1" Maximum="2" Value="{Binding Source={x:Reference frame}, Path=AnchorY}" />
+                <Slider Grid.Row="3" Grid.Column="0" Maximum="360" Value="{Binding Source={x:Reference frame}, Path=RotationX}" />
+                <Slider Grid.Row="3" Grid.Column="1" Maximum="360" Value="{Binding Source={x:Reference frame}, Path=RotationY}" />
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>
