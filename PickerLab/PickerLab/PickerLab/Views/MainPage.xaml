@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:PickerLab"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PickerLab.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
+        <Label Text="{Binding Title}" HorizontalOptions="Center"/>
+        <!--https://developer.xamarin.com/api/type/Xamarin.Forms.Picker/-->
+        <local:BindablePicker 
+            ItemsSource="{Binding PickerVM}"
+            HorizontalOptions="Fill"
+            HeightRequest="34"
+            SelectedItem="{Binding PickerSelectedTitle}"
+            SelectedItemCommand="{Binding SelectedIndexChangedCommand}">
+        </local:BindablePicker>
+        <Label Text="{Binding PickerSelectedTitle}" HorizontalOptions="Center"/>
+    </StackLayout>
+</ContentPage>
