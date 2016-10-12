@@ -27,6 +27,7 @@ namespace MVVM2
                 if (_EntryText1 != value)
                 {
                     _EntryText1 = value;
+                    EntryText2 = value;
                     OnPropertyChanged("EntryText1");
                 }
             }
@@ -80,6 +81,8 @@ namespace MVVM2
 
         public MainPageViewModel()
         {
+            EntryText1 = "";
+            EntryText2 = "";
             PushMeCommand = new Command(() =>
             {
                 this.LabelText1 = $"您已經按下按鈕";

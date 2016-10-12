@@ -5,8 +5,8 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFPicker.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Picker>
+  <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
+        <Picker HorizontalOptions="Fill">
             <Picker.Items>
                     <x:String>Red</x:String>
                     <x:String>Blue</x:String>

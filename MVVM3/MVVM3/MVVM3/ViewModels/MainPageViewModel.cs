@@ -28,6 +28,10 @@ namespace MVVM3.ViewModels
             set
             {
                 SetProperty(ref _EntryText1, value);
+                if (EntryText1 != EntryText2)
+                {
+                    EntryText2 = value;
+                }
             }
         }
         #endregion
@@ -44,7 +48,10 @@ namespace MVVM3.ViewModels
             set
             {
                 SetProperty(ref _EntryText2, value);
-                EntryText1 = value;
+                if (EntryText1 != EntryText2)
+                {
+                    EntryText1 = value;
+                }
             }
         }
         #endregion
