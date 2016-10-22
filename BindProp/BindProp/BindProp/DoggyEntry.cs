@@ -10,12 +10,27 @@ namespace BindProp
     public class DoggyEntry : Entry
     {
         // https://developer.xamarin.com/guides/xamarin-forms/xaml/bindable-properties/
+
+        #region EntryType BindableProperty
         public static readonly BindableProperty EntryTypeProperty =
             BindableProperty.Create("EntryType", // 屬性名稱 
                 typeof(string), // 回傳類型 
                 typeof(DoggyEntry), // 宣告類型 
                 "None", // 預設值 
                 propertyChanged: OnEntryTypeChanged);
+
+        public string EntryType
+        {
+            set
+            {
+                SetValue(EntryTypeProperty, value);
+            }
+            get
+            {
+                return (string)GetValue(EntryTypeProperty);
+            }
+        }
+        #endregion
 
         private static void OnEntryTypeChanged(BindableObject bindable, object oldValue, object newValue)
         {

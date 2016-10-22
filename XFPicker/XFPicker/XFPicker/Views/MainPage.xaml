@@ -5,15 +5,17 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFPicker.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
         <Picker HorizontalOptions="Fill">
             <Picker.Items>
-                    <x:String>Red</x:String>
-                    <x:String>Blue</x:String>
-                    <x:String>Green</x:String>
-                    <x:String>Yellow</x:String>
-                    <x:String>Purple</x:String>
+                <x:String>Red</x:String>
+                <x:String>Blue</x:String>
+                <x:String>Green</x:String>
+                <x:String>Yellow</x:String>
+                <x:String>Purple</x:String>
             </Picker.Items>
         </Picker>
-  </StackLayout>
+
+        <Picker x:Name="MyPicker" />
+    </StackLayout>
 </ContentPage>

@@ -9,6 +9,7 @@ namespace AttProp
 {
     public class EntryTypeAttached
     {
+        #region EntryType Attached Property
         public static readonly BindableProperty EntryTypeProperty =
                BindableProperty.CreateAttached(
                    propertyName: "EntryType",
@@ -18,6 +19,16 @@ namespace AttProp
                    defaultBindingMode: BindingMode.OneWay,
                    validateValue: null,
                    propertyChanged: OnEntryTypeChanged);
+
+        public static void SetEntryType(BindableObject bindable, string entryType)
+        {
+            bindable.SetValue(EntryTypeProperty, entryType);
+        }
+        public static string GetEntryType(BindableObject bindable)
+        {
+            return (string)bindable.GetValue(EntryTypeProperty);
+        }
+        #endregion
 
         private static void OnEntryTypeChanged(BindableObject bindable, object oldValue, object newValue)
         {
@@ -56,13 +67,5 @@ namespace AttProp
         }
 
         // Helper methods for attached bindable property. 
-        public static void SetEntryType(BindableObject bindable, string entryType)
-        {
-            bindable.SetValue(EntryTypeProperty, entryType);
-        }
-        public static string GetEntryType(BindableObject bindable)
-        {
-            return (string)bindable.GetValue(EntryTypeProperty);
-        }
     }
 }
