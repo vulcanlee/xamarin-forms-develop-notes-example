@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:Zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:ZxingCommon="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             x:Class="XFGenBarcode.Views.MainPage"
+             Title="MainPage">
+    <StackLayout x:Name="stacklayout" HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Zxing:ZXingBarcodeImageView
+            BarcodeFormat="QR_CODE"
+            Margin="10"
+            WidthRequest="300" HeightRequest="300"
+            BarcodeValue="多奇數位創意有限公司 Vulcan Lee">
+            <Zxing:ZXingBarcodeImageView.BarcodeOptions>
+                <ZxingCommon:EncodingOptions Width="300" Height="300" />
+            </Zxing:ZXingBarcodeImageView.BarcodeOptions>
+        </Zxing:ZXingBarcodeImageView>
+        <Zxing:ZXingBarcodeImageView
+            HorizontalOptions="Fill" VerticalOptions="Fill"
+            WidthRequest="300" HeightRequest="70"
+            BarcodeFormat="CODE_128"
+            BarcodeValue="DoggyVulcan123">
+            <Zxing:ZXingBarcodeImageView.BarcodeOptions>
+                <ZxingCommon:EncodingOptions Width="300" Height="40" />
+            </Zxing:ZXingBarcodeImageView.BarcodeOptions>
+        </Zxing:ZXingBarcodeImageView>
+    </StackLayout>
+</ContentPage>
