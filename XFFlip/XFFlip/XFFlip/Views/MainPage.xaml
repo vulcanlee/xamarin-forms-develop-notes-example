@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFFlip.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <StackLayout
+            HorizontalOptions="Center"
+            Orientation="Horizontal">
+            <!--https://msdn.microsoft.com/en-us/library/aa970677(v=vs.110).aspx-->
+            <Label Text="&lt;" FontSize="24" VerticalOptions="Center" />
+            <controls:CarouselViewControl 
+            Orientation="Horizontal" 
+            InterPageSpacing="10" Position="0" 
+            ItemsSource="{Binding Zoos}" 
+                Arrows="True"
+            HeightRequest="100" WidthRequest="250"
+            VerticalOptions="FillAndExpand" HorizontalOptions="Center">
+                <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                        >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+                            <Grid Grid.Row="1" BackgroundColor="#80000000" >
+                                <Label 
+                                TextColor="White" 
+                                Text="{Binding Name}" 
+                                FontSize="16" FontAttributes="Bold"
+                                />
+                            </Grid>
+                        </Grid>
+
+                    </DataTemplate>
+                </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+            <Label Text="&gt;" FontSize="24" VerticalOptions="Center" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
