@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFHListView.Views.SimpleSamplePage"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             Title="簡單範例">
+
+    <flv:FlowListView
+        FlowColumnCount="3"
+        SeparatorVisibility="None"
+        HasUnevenRows="False"
+        FlowItemTappedCommand="{Binding 使用者點選Command}"
+        FlowLastTappedItem="{Binding 使用者點選項目}"
+        FlowItemsSource="{Binding MyDatas}" HeightRequest="100"
+        >
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <Label HorizontalOptions="Fill" VerticalOptions="Fill" 
+						XAlign="Center" YAlign="Center" Text="{Binding Title}"/>
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+
+    </flv:FlowListView>
+</ContentPage>

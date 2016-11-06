@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="XFHListView.Views.SimpleGalleryPage"
+             Title="圖片畫廊">
+
+    <flv:FlowListView
+        FlowColumnCount="3"
+        SeparatorVisibility="None"
+        HasUnevenRows="True"
+        FlowItemTappedCommand="{Binding 使用者點選Command}"
+        FlowLastTappedItem="{Binding 使用者點選項目}"
+        FlowItemsSource="{Binding MyDatas}"
+        FlowColumnMinWidth="110"
+        >
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <Grid Padding="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ffimageloading:CachedImage 
+                        HeightRequest="100" 
+                        Aspect="AspectFill"
+                        DownsampleHeight="100" DownsampleUseDipUnits="false" 
+                        LoadingPlaceholder="image_loading.png" ErrorPlaceholder="image_error.png"
+                        Source="{Binding ImageUrl}"/>
+
+                    <Label x:Name="Label" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="End"
+						BackgroundColor="Black" Opacity="0.5" 
+                           TextColor="{Binding Color}"
+                           Text="{Binding Title}"/>
+                </Grid>
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+
+    </flv:FlowListView>
+</ContentPage>
