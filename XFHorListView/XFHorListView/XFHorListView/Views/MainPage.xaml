@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:Controls="clr-namespace:XFHorListView.Controls"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             x:Class="XFHorListView.Views.MainPage"
+             Title="MainPage"
+             x:Name="ThisPage">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Controls:HorizontalListView
+				ItemsSource="{Binding MyDatas}"
+            HorizontalOptions="Fill"
+				>
+            <Controls:HorizontalListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="Transparent">
+                        <Image
+							Source="{Binding ImageUrl}"
+							Aspect="AspectFit">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer
+									Command="{Binding Path=BindingContext.使用者點選Command, Source={x:Reference ThisPage}}"
+									CommandParameter="{Binding}" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <BoxView 
+                            HeightRequest="30"
+                            VerticalOptions="End"
+                            Color="{Binding Color}" />
+                        <Label
+                            Margin="0,0,0,10"
+                            VerticalOptions="End"
+                            TextColor="White"
+                            Text="{Binding Title}" />
+                    </Grid>
+                </DataTemplate>
+            </Controls:HorizontalListView.ItemTemplate>
+        </Controls:HorizontalListView>
+        <ListView
+            ItemsSource="{Binding MyDatas}"
+            SelectedItem="{Binding 使用者點選項目}"
+            >
+            <ListView.Behaviors>
+                <behaviors:EventHandlerBehavior EventName="ItemTapped">
+                    <behaviors:InvokeCommandAction Command="{Binding ListView使用者點選Command}"  />
+                </behaviors:EventHandlerBehavior>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image 
+                                Grid.Column="0"
+                                Source="{Binding ImageUrl}" Aspect="AspectFit" />
+                            <BoxView 
+                                Grid.Column="1"
+                                Color="{Binding Color}" />
+                            <Label 
+                                Grid.Column="1"
+                                TextColor="White"
+                                Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
