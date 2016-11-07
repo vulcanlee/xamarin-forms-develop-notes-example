@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:local="clr-namespace:XFRoundedBoxView.Customs"
+             x:Class="XFRoundedBoxView.Views.MainPage"
+             Title="MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <Style x:Key="RoundedBoxViewStyle" TargetType="local:RoundedBoxView">
+                <Setter Property="BackgroundColor" Value="Red" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="WidthRequest" Value="100" />
+            </Style>
+            <Style x:Key="RoundedBoxViewStyleWithBorder" TargetType="local:RoundedBoxView">
+                <Setter Property="BackgroundColor" Value="#f1f1f1" />
+                <Setter Property="BorderColor" Value="#e57494" />
+                <Setter Property="HeightRequest" Value="100" />
+                <Setter Property="WidthRequest" Value="100" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+        <Label Text="{Binding Title}" />
+        <local:RoundedBoxView 
+            HorizontalOptions="Center" VerticalOptions="Center"
+            WidthRequest="250" HeightRequest="70"
+            BackgroundColor="#f5f8fd" BorderColor="#e57494" 
+            CornerRadius="15" BorderThickness="5" />
+
+        <local:RoundedBoxView 
+            HorizontalOptions="Center" VerticalOptions="Center"
+            WidthRequest="100" HeightRequest="100"
+            BackgroundColor="Blue" BorderColor="Transparent" 
+            CornerRadius="100" BorderThickness="0" />
+
+        <local:RoundedBoxView 
+            HorizontalOptions="Center" VerticalOptions="Center"
+            WidthRequest="70" HeightRequest="150"
+            BackgroundColor="#e57494" BorderColor="#95969a" 
+            CornerRadius="10" BorderThickness="2" />
+
+    </StackLayout>
+</ContentPage>
