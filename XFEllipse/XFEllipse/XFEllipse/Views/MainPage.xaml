@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:local="clr-namespace:XFEllipse.Customs"
+             x:Class="XFEllipse.Views.MainPage"
+             Title="MainPage">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Grid
+            HorizontalOptions="Center" VerticalOptions="Center"
+            >
+            <local:EllipseView 
+                HorizontalOptions="Start" VerticalOptions="Start"
+                WidthRequest="40" HeightRequest="40"
+                Color="Red" 
+                />
+            <local:EllipseView 
+                HorizontalOptions="Start" VerticalOptions="Start"
+                WidthRequest="10" HeightRequest="10"
+                Margin="15"
+                Color="White" 
+                />
+        </Grid>
+        <local:EllipseView 
+                HorizontalOptions="Start" VerticalOptions="Start"
+                WidthRequest="140" HeightRequest="80"
+                Color="Green" Opacity="0.4" 
+                />
+        <local:EllipseView 
+                HorizontalOptions="Start" VerticalOptions="Start"
+                WidthRequest="40" HeightRequest="180"
+                Color="Blue" Opacity="0.4" 
+                />
+
+        <Button 
+            HorizontalOptions="Start" VerticalOptions="Start"
+            WidthRequest="150" HeightRequest="40"
+            Text="我是按鈕"
+            BackgroundColor="White"
+            BorderColor="Red"
+            BorderWidth="3"
+            BorderRadius="10"
+                />
+    </StackLayout>
+
+</ContentPage>
