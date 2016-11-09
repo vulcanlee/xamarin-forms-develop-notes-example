@@ -11,7 +11,8 @@ namespace XFHListView
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("NaviPage/MainPage?title=Hello%20from%20Xamarin.Forms");
+            //NavigationService.NavigateAsync("NaviPage/MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("SimpleGalleryPage");
         }
 
         protected override void RegisterTypes()
