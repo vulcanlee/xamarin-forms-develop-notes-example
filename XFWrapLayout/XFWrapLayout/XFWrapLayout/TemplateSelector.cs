@@ -19,15 +19,82 @@ namespace XFWrapLayout
         /// <summary>
         /// Property definition for the <see cref="Templates"/> Bindable Property
         /// </summary>
-        public static BindableProperty TemplatesProperty = BindableProperty.Create<TemplateSelector, DataTemplateCollection>(x => x.Templates, default(DataTemplateCollection), BindingMode.OneWay, null, TemplatesChanged);
+        //public static BindableProperty TemplatesProperty = BindableProperty.Create<TemplateSelector, DataTemplateCollection>
+        //(x => x.Templates, default(DataTemplateCollection),
+        //    BindingMode.OneWay, null, TemplatesChanged);
         /// <summary>
         /// Property definition for the <see cref="SelectorFunction"/> Bindable Property
         /// </summary>
-        public static BindableProperty SelectorFunctionProperty = BindableProperty.Create<TemplateSelector, Func<Type, DataTemplate>>(x => x.SelectorFunction, null);
+        //public static BindableProperty SelectorFunctionProperty = BindableProperty.Create<TemplateSelector, Func<Type, DataTemplate>>(x => x.SelectorFunction, null);
         /// <summary>
         /// Property definition for the <see cref="ExceptionOnNoMatch"/> Bindable Property
         /// </summary>
-        public static BindableProperty ExceptionOnNoMatchProperty = BindableProperty.Create<TemplateSelector, bool>(x => x.ExceptionOnNoMatch, true);
+        //public static BindableProperty ExceptionOnNoMatchProperty = BindableProperty.Create<TemplateSelector, bool>(x => x.ExceptionOnNoMatch, true);
+
+        #region Templates BindableProperty
+        public static readonly BindableProperty TemplatesProperty =
+            BindableProperty.Create("Templates", // 屬性名稱 
+                typeof(DataTemplateCollection), // 回傳類型 
+                typeof(TemplateSelector), // 宣告類型 
+                default(DataTemplateCollection), // 預設值 
+                propertyChanged: TemplatesChanged);
+
+        public DataTemplateCollection Templates
+        {
+            set
+            {
+                SetValue(TemplatesProperty, value);
+            }
+            get
+            {
+                return (DataTemplateCollection)GetValue(TemplatesProperty);
+            }
+        }
+        #endregion
+
+        #region SelectorFunction BindableProperty
+        public static readonly BindableProperty SelectorFunctionProperty =
+            BindableProperty.Create("SelectorFunction", // 屬性名稱 
+                typeof(Func<Type, DataTemplate>), // 回傳類型 
+                typeof(TemplateSelector), // 宣告類型 
+                null // 預設值 
+                );
+
+        public Func<Type, DataTemplate> SelectorFunction
+        {
+            set
+            {
+                SetValue(SelectorFunctionProperty, value);
+            }
+            get
+            {
+                return (Func<Type, DataTemplate>)GetValue(SelectorFunctionProperty);
+            }
+        }
+        #endregion
+
+        #region ExceptionOnNoMatch BindableProperty
+        public static readonly BindableProperty BindablePropertyTypeProperty =
+            BindableProperty.Create("ExceptionOnNoMatch", // 屬性名稱 
+                typeof(bool), // 回傳類型 
+                typeof(TemplateSelector), // 宣告類型 
+                true // 預設值 
+                );
+
+        public bool ExceptionOnNoMatch
+        {
+            set
+            {
+                SetValue(BindablePropertyTypeProperty, value);
+            }
+            get
+            {
+                return (bool)GetValue(BindablePropertyTypeProperty);
+            }
+        }
+        #endregion
+
+
 
         /// <summary>
         /// Initialize the TemplateCollections so that each 
@@ -43,16 +110,30 @@ namespace XFWrapLayout
         /// <param name="bo"></param>
         /// <param name="oldval"></param>
         /// <param name="newval"></param>
-        public static void TemplatesChanged(BindableObject bo, DataTemplateCollection oldval, DataTemplateCollection newval)
+        //public static void TemplatesChanged(BindableObject bo, DataTemplateCollection oldval, DataTemplateCollection newval)
+        //{
+        //    var ts = bo as TemplateSelector;
+        //    if (ts == null)
+        //        return;
+        //    if (oldval != null)
+        //        oldval.CollectionChanged -= ts.TemplateSetChanged;
+        //    newval.CollectionChanged += ts.TemplateSetChanged;
+        //    ts.Cache = null;
+        //}
+
+        private static void TemplatesChanged(BindableObject bo, object oldValue, object newValue)
         {
             var ts = bo as TemplateSelector;
             if (ts == null)
                 return;
+            var oldval = oldValue as DataTemplateCollection;
+            var newval = newValue as DataTemplateCollection;
             if (oldval != null)
                 oldval.CollectionChanged -= ts.TemplateSetChanged;
             newval.CollectionChanged += ts.TemplateSetChanged;
             ts.Cache = null;
         }
+
 
         /// <summary>
         /// Clear the cache on any template set change
@@ -80,31 +161,31 @@ namespace XFWrapLayout
         /// determine if a <see cref="NoDataTemplateMatchException"/> is thrown when 
         /// there is no matching template found
         /// </summary>
-        public bool ExceptionOnNoMatch
-        {
-            get
-            {
-                return (bool)GetValue(ExceptionOnNoMatchProperty);
-            }
-            set
-            {
-                SetValue(ExceptionOnNoMatchProperty, value);
-            }
-        }
+        //public bool ExceptionOnNoMatch
+        //{
+        //    get
+        //    {
+        //        return (bool)GetValue(ExceptionOnNoMatchProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(ExceptionOnNoMatchProperty, value);
+        //    }
+        //}
         /// <summary>
         /// The collection of DataTemplates
         /// </summary>
-        public DataTemplateCollection Templates
-        {
-            get
-            {
-                return (DataTemplateCollection)GetValue(TemplatesProperty);
-            }
-            set
-            {
-                SetValue(TemplatesProperty, value);
-            }
-        }
+        //public DataTemplateCollection Templates
+        //{
+        //    get
+        //    {
+        //        return (DataTemplateCollection)GetValue(TemplatesProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(TemplatesProperty, value);
+        //    }
+        //}
 
         /// <summary>
         /// A user supplied function of type
@@ -112,17 +193,17 @@ namespace XFWrapLayout
         /// If this function has been supplied it is always called first in the match 
         /// process.
         /// </summary>
-        public Func<Type, DataTemplate> SelectorFunction
-        {
-            get
-            {
-                return (Func<Type, DataTemplate>)GetValue(SelectorFunctionProperty);
-            }
-            set
-            {
-                SetValue(SelectorFunctionProperty, value);
-            }
-        }
+        //public Func<Type, DataTemplate> SelectorFunction
+        //{
+        //    get
+        //    {
+        //        return (Func<Type, DataTemplate>)GetValue(SelectorFunctionProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(SelectorFunctionProperty, value);
+        //    }
+        //}
 
 
         /// <summary>
@@ -252,45 +333,88 @@ namespace XFWrapLayout
     [ContentProperty("WrappedTemplate")]
     public class DataTemplateWrapper<T> : BindableObject, IDataTemplateWrapper
     {
+        #region The wrapped template property
+        public static readonly BindableProperty BindablePropertyTypeProperty =
+            BindableProperty.Create("WrappedTemplate", // 屬性名稱 
+                typeof(DataTemplate), // 回傳類型 
+                typeof(DataTemplateWrapper<T>), // 宣告類型 
+                null // 預設值 
+                );
+
+        public DataTemplate WrappedTemplate
+        {
+            set
+            {
+                SetValue(BindablePropertyTypeProperty, value);
+            }
+            get
+            {
+                return (DataTemplate)GetValue(BindablePropertyTypeProperty);
+            }
+        }
+        #endregion
+
+        #region The is default property
+        public static readonly BindableProperty IsDefaultProperty =
+            BindableProperty.Create("IsDefault", // 屬性名稱 
+                typeof(bool), // 回傳類型 
+                typeof(DataTemplateWrapper<T>), // 宣告類型 
+                false // 預設值 
+                );
+
+        public bool IsDefault
+        {
+            set
+            {
+                SetValue(IsDefaultProperty, value);
+            }
+            get
+            {
+                return (bool)GetValue(IsDefaultProperty);
+            }
+        }
+        #endregion
+
+
         /// <summary>
         /// The wrapped template property
         /// </summary>
-        public static readonly BindableProperty WrappedTemplateProperty = BindableProperty.Create<DataTemplateWrapper<T>, DataTemplate>(x => x.WrappedTemplate, null);
+        //public static readonly BindableProperty WrappedTemplateProperty = BindableProperty.Create<DataTemplateWrapper<T>, DataTemplate>(x => x.WrappedTemplate, null);
         /// <summary>
         /// The is default property
         /// </summary>
-        public static readonly BindableProperty IsDefaultProperty = BindableProperty.Create<DataTemplateWrapper<T>, bool>(x => x.IsDefault, false);
+        //public static readonly BindableProperty IsDefaultProperty = BindableProperty.Create<DataTemplateWrapper<T>, bool>(x => x.IsDefault, false);
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is default.
         /// </summary>
         /// <value><c>true</c> if this instance is default; otherwise, <c>false</c>.</value>
-        public bool IsDefault
-        {
-            get
-            {
-                return (bool)GetValue(IsDefaultProperty);
-            }
-            set
-            {
-                SetValue(IsDefaultProperty, value);
-            }
-        }
+        //public bool IsDefault
+        //{
+        //    get
+        //    {
+        //        return (bool)GetValue(IsDefaultProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(IsDefaultProperty, value);
+        //    }
+        //}
         /// <summary>
         /// Gets or sets the wrapped template.
         /// </summary>
         /// <value>The wrapped template.</value>
-        public DataTemplate WrappedTemplate
-        {
-            get
-            {
-                return (DataTemplate)GetValue(WrappedTemplateProperty);
-            }
-            set
-            {
-                SetValue(WrappedTemplateProperty, value);
-            }
-        }
+        //public DataTemplate WrappedTemplate
+        //{
+        //    get
+        //    {
+        //        return (DataTemplate)GetValue(WrappedTemplateProperty);
+        //    }
+        //    set
+        //    {
+        //        SetValue(WrappedTemplateProperty, value);
+        //    }
+        //}
 
         /// <summary>
         /// Gets the type.

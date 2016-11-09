@@ -11,63 +11,175 @@ namespace XFWrapLayout
 {
     public class WrapView : Layout<View>
     {
+        #region Orientation BindableProperty
         public static readonly BindableProperty OrientationProperty =
-            BindableProperty.Create<WrapView, StackOrientation>(w => w.Orientation, StackOrientation.Vertical,
+            BindableProperty.Create("Orientation", // 屬性名稱 
+                typeof(StackOrientation), // 回傳類型 
+                typeof(WrapView), // 宣告類型 
+                StackOrientation.Vertical, // 預設值 
                 propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
 
         public StackOrientation Orientation
         {
-            get { return (StackOrientation)GetValue(OrientationProperty); }
-            set { SetValue(OrientationProperty, value); }
+            set
+            {
+                SetValue(OrientationProperty, value);
+            }
+            get
+            {
+                return (StackOrientation)GetValue(OrientationProperty);
+            }
         }
+        #endregion
 
-        public readonly BindableProperty SpacingProperty =
-            BindableProperty.Create<WrapView, double>(w => w.Spacing, 6,
+
+        //public static readonly BindableProperty OrientationProperty =
+        //    BindableProperty.Create<WrapView, StackOrientation>(w => w.Orientation, StackOrientation.Vertical,
+        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
+
+        //public StackOrientation Orientation
+        //{
+        //    get { return (StackOrientation)GetValue(OrientationProperty); }
+        //    set { SetValue(OrientationProperty, value); }
+        //}
+
+
+
+        #region Spacing BindableProperty
+        public static readonly BindableProperty SpacingProperty =
+            BindableProperty.Create("Spacing", // 屬性名稱 
+                typeof(double), // 回傳類型 
+                typeof(WrapView), // 宣告類型 
+                6.0, // 預設值 
                 propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
 
         public double Spacing
         {
-            get { return (double)GetValue(SpacingProperty); }
-            set { SetValue(SpacingProperty, value); }
+            set
+            {
+                SetValue(SpacingProperty, value);
+            }
+            get
+            {
+                return (double)GetValue(SpacingProperty);
+            }
         }
+        #endregion
 
+
+        //public readonly BindableProperty SpacingProperty =
+        //    BindableProperty.Create<WrapView, double>(w => w.Spacing, 6,
+        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
+
+        //public double Spacing
+        //{
+        //    get { return (double)GetValue(SpacingProperty); }
+        //    set { SetValue(SpacingProperty, value); }
+        //}
+
+        #region ItemTemplate BindableProperty
         public static readonly BindableProperty ItemTemplateProperty =
-            BindableProperty.Create<WrapView, DataTemplate>(w => w.ItemTemplate, null,
+            BindableProperty.Create("ItemTemplate", // 屬性名稱 
+                typeof(DataTemplate), // 回傳類型 
+                typeof(WrapView), // 宣告類型 
+                null, // 預設值 
                 propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
 
         public DataTemplate ItemTemplate
         {
-            get { return (DataTemplate)GetValue(ItemTemplateProperty); }
-            set { SetValue(ItemTemplateProperty, value); }
+            set
+            {
+                SetValue(ItemTemplateProperty, value);
+            }
+            get
+            {
+                return (DataTemplate)GetValue(ItemTemplateProperty);
+            }
         }
+        #endregion
 
+        //public static readonly BindableProperty ItemTemplateProperty =
+        //    BindableProperty.Create<WrapView, DataTemplate>(w => w.ItemTemplate, null,
+        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
+
+        //public DataTemplate ItemTemplate
+        //{
+        //    get { return (DataTemplate)GetValue(ItemTemplateProperty); }
+        //    set { SetValue(ItemTemplateProperty, value); }
+        //}
+
+        #region ItemsSource BindableProperty
         public static readonly BindableProperty ItemsSourceProperty =
-            BindableProperty.Create<WrapView, IEnumerable>(w => w.ItemsSource, null,
+            BindableProperty.Create("ItemsSource", // 屬性名稱 
+                typeof(IEnumerable), // 回傳類型 
+                typeof(WrapView), // 宣告類型 
+                null, // 預設值 
                 propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).ItemsSource_OnPropertyChanged(bindable, oldvalue, newvalue));
 
         public IEnumerable ItemsSource
         {
-            get { return (IEnumerable)GetValue(ItemsSourceProperty); }
-            set { SetValue(ItemsSourceProperty, value); }
+            set
+            {
+                SetValue(ItemsSourceProperty, value);
+            }
+            get
+            {
+                return (IEnumerable)GetValue(ItemsSourceProperty);
+            }
         }
+        #endregion
 
+        //public static readonly BindableProperty ItemsSourceProperty =
+        //    BindableProperty.Create<WrapView, IEnumerable>(w => w.ItemsSource, null,
+        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).ItemsSource_OnPropertyChanged(bindable, oldvalue, newvalue));
+
+        //public IEnumerable ItemsSource
+        //{
+        //    get { return (IEnumerable)GetValue(ItemsSourceProperty); }
+        //    set { SetValue(ItemsSourceProperty, value); }
+        //}
+
+        #region TemplateSelector BindableProperty
         public static readonly BindableProperty TemplateSelectorProperty =
-            BindableProperty.Create<WrapView, TemplateSelector>(w => w.TemplateSelector, null,
+            BindableProperty.Create("TemplateSelector", // 屬性名稱 
+                typeof(TemplateSelector), // 回傳類型 
+                typeof(WrapView), // 宣告類型 
+                null, // 預設值 
                 propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
 
         public TemplateSelector TemplateSelector
         {
-            get { return (TemplateSelector)GetValue(TemplateSelectorProperty); }
-            set { SetValue(TemplateSelectorProperty, value); }
+            set
+            {
+                SetValue(TemplateSelectorProperty, value);
+            }
+            get
+            {
+                return (TemplateSelector)GetValue(TemplateSelectorProperty);
+            }
         }
+        #endregion
+
+
+        //public static readonly BindableProperty TemplateSelectorProperty =
+        //    BindableProperty.Create<WrapView, TemplateSelector>(w => w.TemplateSelector, null,
+        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
+
+        //public TemplateSelector TemplateSelector
+        //{
+        //    get { return (TemplateSelector)GetValue(TemplateSelectorProperty); }
+        //    set { SetValue(TemplateSelectorProperty, value); }
+        //}
 
         public WrapView()
         {
 
         }
 
-        private void ItemsSource_OnPropertyChanged(BindableObject bindable, IEnumerable oldvalue, IEnumerable newvalue)
+        private void ItemsSource_OnPropertyChanged(BindableObject bindable, object oldval, object newval)
         {
+         var   oldvalue = oldval as IEnumerable;
+            var newvalue = newval as IEnumerable;
             if (oldvalue != null)
             {
                 var observableCollection = oldvalue as INotifyCollectionChanged;
