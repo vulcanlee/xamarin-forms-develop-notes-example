@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:XFMoreWrapLayout"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFMoreWrapLayout.Views.MainPage"
+             Title="MainPage"
+             Height="{Binding Height, Mode=OneWayToSource}"
+             Width="{Binding Width, Mode=OneWayToSource}"
+             x:Name="ThisPage"
+             >
+    <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Label Text="{Binding Width}" />
+        <Label Text="{Binding Height}" />
+        <ScrollView
+            Orientation="Vertical"
+            >
+            <local:WrapView 
+                                    ItemsSource="{Binding Path=MyCategories}" 
+                                    Orientation="Vertical"
+                                    Margin="10" 
+                                    HorizontalOptions="Start" VerticalOptions="Start"
+                                    >
+                <local:WrapView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                        >
+                            <StackLayout
+                        Orientation="Vertical"
+                        Spacing="0"
+                        >
+                                <Grid
+                        RowSpacing="0" ColumnSpacing="0"
+                        HorizontalOptions="Fill" VerticalOptions="Fill"                        
+                        >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <BoxView
+                                        Color="Lime" >
+                                        <BoxView.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
+                                        </BoxView.GestureRecognizers>
+                                    </BoxView>
+                                    <Label 
+                            WidthRequest="{Binding Path=BindingContext.RecordWidth, Source={x:Reference ThisPage}}"
+                            Grid.Row="0" Grid.Column="0"
+                            HorizontalOptions="Start" VerticalOptions="Center"
+                            Text="{Binding CategoryName}"
+                            >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label 
+                            Grid.Row="0" Grid.Column="0"
+                            HorizontalOptions="End" VerticalOptions="Center"
+                            Text="{Binding Arrow}"
+                            />
+                                </Grid>
+                                <local:WrapView 
+                                    ItemsSource="{Binding MyItems}" 
+                                    Orientation="Horizontal"
+                                    IsVisible="{Binding 顯示}"
+                                    HorizontalOptions="Start" VerticalOptions="Start"
+                                    Margin="0,15"
+                                    >
+                                    <local:WrapView.ItemTemplate>
+                                        <DataTemplate>
+                                            <!--此處要設定 WidthRequest 寬度，否則，在計算整個高度的時候，會有計算錯誤的可能-->
+                                            <Grid
+                                        RowSpacing="0" ColumnSpacing="0"
+                                        HorizontalOptions="Start" VerticalOptions="Start"
+                                        >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <local:RoundedBoxView 
+                                                    HorizontalOptions="Fill" VerticalOptions="Center"
+                                                    HeightRequest="30"
+                                                    BackgroundColor="Yellow" BorderColor="Navy" 
+                                                    CornerRadius="7" BorderThickness="3" >
+                                                    <local:RoundedBoxView.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列項目Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
+                                                    </local:RoundedBoxView.GestureRecognizers>
+                                                </local:RoundedBoxView>
+                                                <Label 
+                                            Grid.Row="0" Grid.Column="0"
+                                                Margin="15,0"
+                                            HorizontalOptions="Start" VerticalOptions="Center"
+                                            Text="{Binding Name}"
+                                            >
+                                                    <Label.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列項目Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
+                                                    </Label.GestureRecognizers>
+                                                </Label>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </local:WrapView.ItemTemplate>
+                                </local:WrapView>
+                            </StackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </local:WrapView.ItemTemplate>
+            </local:WrapView>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
