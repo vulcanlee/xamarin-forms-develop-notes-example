@@ -71,7 +71,6 @@
                                     >
                                     <local:WrapView.ItemTemplate>
                                         <DataTemplate>
-                                            <!--此處要設定 WidthRequest 寬度，否則，在計算整個高度的時候，會有計算錯誤的可能-->
                                             <Grid
                                         RowSpacing="0" ColumnSpacing="0"
                                         HorizontalOptions="Start" VerticalOptions="Start"
