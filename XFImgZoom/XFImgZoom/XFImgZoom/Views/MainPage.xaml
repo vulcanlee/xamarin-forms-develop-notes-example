@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behaviors="clr-namespace:XFImgZoom"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFImgZoom.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}"
+               FontSize="30">
+            <Label.Behaviors>
+                <behaviors:MultiTouchBehavior IsScaleEnabled="True" IsTranslateEnabled="True" />
+            </Label.Behaviors>
+        </Label>
+        <Grid>
+            <ContentView>
+                <Image Source="desert.jpg" BindingContext="{Binding}">
+                    <Image.Behaviors>
+                        <behaviors:MultiTouchBehavior IsScaleEnabled="True" IsTranslateEnabled="False" />
+                    </Image.Behaviors>
+                </Image>
+            </ContentView>
+        </Grid>
+    </StackLayout>
+</ContentPage>
