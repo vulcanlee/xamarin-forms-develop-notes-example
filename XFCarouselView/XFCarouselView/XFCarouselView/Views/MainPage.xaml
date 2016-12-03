@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:local="clr-namespace:XFCarouselView"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFCarouselView.Views.MainPage"
+             Title="MainPage"
+             x:Name="ThisPage"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SelectedItemChangedEventArgsConverter x:Key="SelectedItemChangedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources> 
+   
+    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <cv:CarouselView x:Name="CarouselZoos"
+            ItemsSource="{Binding Zoos}" 
+            HorizontalOptions="Fill"
+            HeightRequest="180" WidthRequest="300">
+            <cv:CarouselView.Behaviors>
+                <behaviors:EventHandlerBehavior EventName="ItemSelected">
+                    <behaviors:InvokeCommandAction Command="{Binding CarouselView點選Command}"
+                                                  />
+                    <!--<behaviors:InvokeCommandAction Command="{Binding CarouselView點選Command}"
+                                                   Converter="{StaticResource SelectedItemChangedEventArgsConverter}"/>-->
+                </behaviors:EventHandlerBehavior>
+            </cv:CarouselView.Behaviors>
+            <cv:CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+                        <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+                            <Label TextColor="White" Text="{Binding Name}" FontSize="16" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                    </Grid>
+                </DataTemplate>
+            </cv:CarouselView.ItemTemplate>
+        </cv:CarouselView>
+        <Label Text="{Binding Title}" />
+    </StackLayout>
+</ContentPage>

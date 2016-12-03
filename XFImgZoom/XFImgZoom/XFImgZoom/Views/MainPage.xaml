@@ -9,9 +9,6 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}"
                FontSize="30">
-            <Label.Behaviors>
-                <behaviors:MultiTouchBehavior IsScaleEnabled="True" IsTranslateEnabled="True" />
-            </Label.Behaviors>
         </Label>
         <Grid>
             <ContentView>
