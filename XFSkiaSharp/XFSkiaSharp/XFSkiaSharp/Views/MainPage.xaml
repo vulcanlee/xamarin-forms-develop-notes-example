@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFSkiaSharp.Views.MainPage"
+             Title="MainPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <views:SKCanvasView  
+            HorizontalOptions="Fill" VerticalOptions="Start"
+            HeightRequest="400"
+            x:Name="Canvas" PaintSurface="OnPaintSample"
+            Margin="0,0,0,0" />
+        <Label Text="{Binding Title}" />
+        <StackLayout
+            Orientation="Horizontal">
+            <Button x:Name="myBtn收集資料" Text="收集資料" />
+            <Button x:Name="myBtn畫點" Text="畫點" />
+            <Button x:Name="myBtn畫線" Text="畫線" />
+            <Button x:Name="myBtn清除" Text="清除" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
