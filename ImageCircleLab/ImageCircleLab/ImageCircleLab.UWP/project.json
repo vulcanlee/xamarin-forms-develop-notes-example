@@ -7,7 +7,7 @@
     "Prism.Unity.Forms": "6.2.0",
     "Unity": "4.0.1",
     "Xam.Plugins.Forms.ImageCircle": "1.8.0.5",
-    "Xamarin.Forms": "2.3.1.114"
+    "Xamarin.Forms": "2.3.3.180"
   },
   "frameworks": {
     "uap10.0": {}

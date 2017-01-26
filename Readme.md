@@ -30,12 +30,13 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/Dyn
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/ElementTree
 
-# 
+# ImageCircleLab
 
-## 
+## 顯示一有圓形遮罩修飾過的個圖片
 
+要讓圖片被圓形遮罩給修飾，您需要定義額外命名空間，指向 ImageCircle 這套件的組件，就可以將有圓形遮罩的圖片，顯示在螢幕上
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/ImageCircleLab
 
 # 
 

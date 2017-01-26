@@ -5,7 +5,8 @@
              xmlns:LocalImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ImageCircleLab.Views.MainPage"
-             Title="MainPage">
+             Title="顯示一有圓形遮罩修飾過的個圖片">
+    
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
         <Image
@@ -14,6 +15,8 @@
             WidthRequest="200"
             HeightRequest="200"
             />
+    
+        <!--要讓圖片被圓形遮罩給修飾，您需要定義額外命名空間(LocalImage)，指向 ImageCircle 這套件的組件，並使用底下方式，顯示在螢幕上-->
         <LocalImage:CircleImage
             Source="platformImage.jpg"
             Aspect="AspectFill"
