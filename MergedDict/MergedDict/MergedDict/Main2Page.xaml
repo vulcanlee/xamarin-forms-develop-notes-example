@@ -5,62 +5,69 @@
              Title="沒有頁面資料字典"
              x:Class="MergedDict.Main2Page">
 
-  <ContentPage.Resources>
-    <!--在這個頁面，將不會合併其他樣式資源-->
-    <ResourceDictionary >
-      <!--在底下定義，RedLabel會找不到，雖然在 App.xaml 中也合併該樣式，
-      不過，合併的全域樣式，無法在頁面中引用
-      
-      解除底下註解，執行時候，將會產生例外異常
-      Xamarin.Forms.Xaml.XamlParseException: Position 16:14. StaticResource not found for key RedLabel
-      -->
-      <!--<Style x:Key="GrayLabel" TargetType="Label"
-             BasedOn="{StaticResource RedLabel}">
-        <Setter Property="TextColor" Value="Gray" />
-      </Style>-->
-    </ResourceDictionary>
-  </ContentPage.Resources>
+    <ContentPage.Resources>
+        <!--在這個頁面，將不會合併其他樣式資源-->
+        <ResourceDictionary >
+            <!--在底下定義，BasedOn RedLabel會找不到，雖然在 App.xaml 中也合併該樣式，
+            不過，合併的全域樣式，無法在頁面中引用(限制說明，請參考 MainPage.xaml 內的註解      
+            解除底下註解，執行時候，將會產生例外異常
+            Xamarin.Forms.Xaml.XamlParseException: Position 16:14. StaticResource not found for key RedLabel
+            -->
+            <!--<Style x:Key="GrayLabel" TargetType="Label"
+            BasedOn="{StaticResource RedLabel}">
+                <Setter Property="TextColor" Value="Gray" />
+            </Style>-->
 
-  <StackLayout
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout
     VerticalOptions="Center"
     HorizontalOptions="Center">
-    <!--這裡 Label 的樣式，將會由全域合併樣式中定義-->
-    <Label Text="沒有設定任何 樣式"
+        <!--這裡 Label 的隱含樣式，將會由全域合併樣式中定義-->
+        <!--??? 請思考，這裡為什麼會是紅色文字呢 ???
+        這是因為，在 App.xaml 引用的外部資源字典，在外部資源字典檔案內定義的隱含樣式，是可以被繼承使用的
+        反之，明確樣式，是無法被繼承使用的(這裡指的是在 App.xaml內合併進來的定義)-->
+        <Label Text="沒有設定任何樣式，使用 Label 的隱含樣式"
              VerticalOptions="Center"
              HorizontalOptions="Center" />
-    <Label Text="使用 全域PinkLabel 樣式"
+        
+        <Label Text="使用 全域PinkLabel 樣式"
              VerticalOptions="Center"
-             HorizontalOptions="Center"
+             HorizontalOptions="Center"               
              Style="{StaticResource PinkLabel}" />
-    <!--
-    在全域 App.xaml 中，合併進來的明確樣式，無法在其他頁面中使用
-    若解除底下 Label 註解，執行期間，將會發生例外異常
-    -->
-    <!--<Label Text="使用 全域合併RedLabel 樣式"
+        
+        <!--
+        在全域 App.xaml 中，合併進來的明確樣式，無法在其他頁面中使用
+        若解除底下 Label 註解，執行期間，將會發生例外異常
+        -->
+        <!--<Label Text="使用 全域合併RedLabel 樣式"
              VerticalOptions="Center"
              HorizontalOptions="Center"
              Style="{StaticResource RedLabel}" />-->
-    <Label Text="使用 RedLabel 樣式(自已引用資源)"
+        
+        <Label Text="使用 RedLabel 樣式(自已引用資源)"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            HorizontalTextAlignment="Center"
            Style="{StaticResource RedLabel}">
-      <Label.Resources>
-        <ResourceDictionary MergedWith="themes:RedTheme">
-        </ResourceDictionary>
-      </Label.Resources>
-    </Label>
-    <Label Text="沒有設定任何 樣式(自已引用資源)"
+            <Label.Resources>
+                <ResourceDictionary MergedWith="themes:RedTheme">
+                </ResourceDictionary>
+            </Label.Resources>
+        </Label>
+        
+        <Label Text="沒有設定任何 樣式(自已引用資源)"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            HorizontalTextAlignment="Center"
            Style="{StaticResource RedLabel}">
-      <Label.Resources>
-        <ResourceDictionary MergedWith="themes:RedTheme">
-        </ResourceDictionary>
-      </Label.Resources>
-    </Label>
+            <Label.Resources>
+                <ResourceDictionary MergedWith="themes:RedTheme">
+                </ResourceDictionary>
+            </Label.Resources>
+        </Label>
 
-  </StackLayout>
+    </StackLayout>
 
 </ContentPage>

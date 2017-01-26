@@ -2,12 +2,14 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MergedDict.Themes.RedTheme">
-  <Style TargetType="Label">
-    <Setter Property="TextColor" Value="Red" />
-    <Setter Property="FontSize" Value="24" />
-  </Style>
-  <Style x:Key="RedLabel" TargetType="Label">
-    <Setter Property="TextColor" Value="Red" />
-    <Setter Property="FontSize" Value="24" />
-  </Style>
+
+    <!--在這裡定義兩個樣式兩個都是是有紅色文字的 Label，一個是隱含樣式，一個是明確定義的樣式，名稱分別為 RedLabel-->
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
+    <Style x:Key="RedLabel" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="FontSize" Value="24" />
+    </Style>
 </ResourceDictionary>

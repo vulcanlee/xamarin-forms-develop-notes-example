@@ -40,8 +40,10 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/Ima
 
 # 
 
-## 
+## 資料字典合併的用法
 
+我們可以將資料字典定義在另外一個 .xaml 檔案中，並且在您要顯示的頁面中，將這個資料字典定義的內容，合併進來使用，是個相當實用的功能，因為，您可以將常用的資料字典資源整理在一個地方，方便管理。
+您將會學習到如何定義資源項目、明確樣式、隱含樣式、控制項自己宣告資源字典、合併資源字典、宣告樣式但繼承某個已宣告的樣式、樣式的繼承(合併不會跨檔案繼承)。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
