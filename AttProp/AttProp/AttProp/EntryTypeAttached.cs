@@ -13,6 +13,9 @@ namespace AttProp
     /// </summary>
     public class EntryTypeAttached
     {
+        // 關於附加屬性，可以參考底下說明
+        // https://developer.xamarin.com/guides/xamarin-forms/xaml/attached-properties/
+
         // 可以使用程式碼片段 vlAttachedProperty 快速產生要設計的程式碼
         #region EntryType Attached Property
         /// <summary>

@@ -7,8 +7,12 @@ using Xamarin.Forms;
 
 namespace BindProp
 {
+    /// <summary>
+    /// 繼承原有控制項，並在新的控制項中，加入一個新的可綁定屬性，使得新的控制項可以具有另外一種表現能力
+    /// </summary>
     public class DoggyEntry : Entry
     {
+        // 關於可綁定屬性，可以參考底下文章
         // https://developer.xamarin.com/guides/xamarin-forms/xaml/bindable-properties/
 
         #region EntryType BindableProperty
