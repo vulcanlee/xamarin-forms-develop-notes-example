@@ -8,8 +8,9 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/Att
 
 # BindProp
 
-## 
+## 客製控制項並且加入一個可綁定屬性，以便擴充新控制項的能力
 
+繼承原有控制項，並在新的控制項中，加入一個新的可綁定屬性，使得新的控制項可以具有另外一種表現能力
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/BindProp
 

@@ -5,11 +5,18 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:CustomControl="clr-namespace:BindProp"
              x:Class="BindProp.Views.MainPage"
-             Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="自訂綁定屬性 Bindable Property" />
-    <CustomControl:DoggyEntry EntryType="Email" />
-    <CustomControl:DoggyEntry EntryType="Phone" />
-    <CustomControl:DoggyEntry EntryType="Number" />
-  </StackLayout>
+             Title="自訂綁定屬性">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="自訂綁定屬性 Bindable Property" />
+
+        <!--要使用 DoggyEntry 這個客製控制項，需要在 ContentPage 中，
+        加入一個新的命名空間 xmlns:CustomControl="clr-namespace:BindProp"
+        當要使用這個客製化控制項的時候，需要將命名空間名稱放在控制項名稱前。-->
+        
+        <!--現在，先建立的客製控制項，擁有了 EntryType 屬性，透過該屬性，可以產生預設浮水印文字-->
+        <CustomControl:DoggyEntry EntryType="Email" />
+        <CustomControl:DoggyEntry EntryType="Phone" />
+        <CustomControl:DoggyEntry EntryType="Number" />
+    </StackLayout>
 </ContentPage>
