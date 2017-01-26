@@ -2,53 +2,72 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DynaStat"
-             x:Class="DynaStat.MainPage">
+             Title="靜態與動態資源項目"
+             x:Class="DynaStat.MainPage"
+             >
 
-  <ContentPage.Resources>
+    <!--
+    這些資源項目，是定義在 App.xaml 內，因此，在這個 XAML 檔案可以直接存取與使用這些資源項目
     <ResourceDictionary>
-      <Color x:Key="backgroundColor">#ccffcc</Color>
-      <Color x:Key="textColor">#ff6600</Color>
-      <x:Double x:Key="fontSize">24</x:Double>
-    </ResourceDictionary>
-  </ContentPage.Resources>
+        <Color x:Key="GlobalbackgroundColor">#ccffcc</Color>
+        <Color x:Key="GlobaltextColor">#ff6600</Color>
+        <x:Double x:Key="GlobalfontSize">24</x:Double>
+    </ResourceDictionary
+    >-->
 
-  <StackLayout
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="backgroundColor">#ccffcc</Color>
+            <Color x:Key="textColor">#ff6600</Color>
+            <x:Double x:Key="fontSize">24</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout
     Orientation="Vertical"
     HorizontalOptions="Center"
     VerticalOptions="Center"
-  >
-    <Label Text="使用 StaticResource"
+        >
+        <Label Text="使用 StaticResource"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            TextColor="{StaticResource textColor}"
            BackgroundColor="{StaticResource backgroundColor}"
            FontSize="{StaticResource fontSize}"
          />
-    <Label Text="使用 DynamicResource"
+        <Label Text="使用 DynamicResource"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            TextColor="{DynamicResource textColor}"
            BackgroundColor="{DynamicResource backgroundColor}"
            FontSize="{DynamicResource fontSize}"
          />
-    <Button x:Name="btnDynamic" Text="變更動態資源"/>
-    <Label Text="使用全域 DynamicResource"
+        <!--按下這個按鈕，將會動態變更在這個頁面中，使用 DynamicResource 的 Xaml 內容，使用 StaticResource 的則不受到影響-->
+        <Button x:Name="btnDynamic" Text="變更動態資源"/>
+
+        <Label Text="使用全域 DynamicResource"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            TextColor="{DynamicResource GlobaltextColor}"
            BackgroundColor="{DynamicResource GlobalbackgroundColor}"
            FontSize="{DynamicResource GlobalfontSize}"
          />
-    <Button x:Name="btnGlobalDynamic" Text="變更全域動態資源"/>
-    <Label Text="使用 公開靜態屬性"
+        <!--按下這個按鈕，將會動態變更在應用程式內的資源項目，使用 DynamicResource 的 Xaml 內容，使用 StaticResource 的則不受到影響
+        可以使用 this.Resources 與 App.Current.Resources 來執行-->
+        <Button x:Name="btnGlobalDynamic" Text="變更全域動態資源"/>
+
+        <Label Text="使用 公開靜態屬性"
            VerticalOptions="Center"
            HorizontalOptions="Center"
            TextColor="{x:Static local:PubStat.文字顏色}"
            BackgroundColor="{x:Static local:PubStat.背景顏色}"
            FontSize="{x:Static local:PubStat.文字尺寸}"
          />
-    <Button x:Name="btnStatic" Text="變更公開靜態屬性"/>
-    <Button x:Name="btnReset" Text="重新啟動該頁面"/>
-  </StackLayout>
+        <!--按下這個按鈕，將會修改 .NET 靜態屬性的值，可是，不會立即顯示出變更後的效果，必須重現建立該頁面，才會看的出來-->
+        <Button x:Name="btnStatic" Text="變更公開靜態屬性"/>
+
+        <!--按下這個按鈕，將會重新產生這個頁面物件，因此，大部分的樣式內容，將會被覆蓋掉(因為，頁面重新建立了)，唯獨使用 x:Static 方式參考 .NET 靜態屬性的 XAML 屬性，不會有變動到-->
+        <Button x:Name="btnReset" Text="重新啟動該頁面"/>
+    </StackLayout>
 
 </ContentPage>
