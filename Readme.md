@@ -20,14 +20,15 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/Bin
 
 在這個範例中，將會展示如何在 Xamarin.Forms 中使用靜態與動態資源，並且如何在執行時期來變更動態資源的用法，也會展示出資源項目的繼承關係與變化。另外，也會練習使用 .NET 的靜態屬性作為 XAML 屬性的設定值。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/DynaStat
 
-# 
+# ElementTree
 
-## 
+## 資源樣式的定義與使用說明
 
+說明如何使用資源樣式的用法，並且了解到階層式的資源樣式用法與覆蓋方式
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/ElementTree
 
 # 
 

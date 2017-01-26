@@ -4,39 +4,53 @@
              xmlns:local="clr-namespace:ElementTree"
              x:Class="ElementTree.MainPage">
 
-  <StackLayout
+    <!--
+    底下為宣告在 App.xaml 內的資源樣式
+    <ResourceDictionary>
+        <Style x:Key="StyleForLabel" TargetType="Label">
+            <Setter Property="Text" Value="App 資源字典" />
+            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="FontSize" Value="32" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ResourceDictionary>-->
+    
+    <StackLayout
     Orientation="Vertical"
     VerticalOptions="Center"
     >
-    <Label Style="{StaticResource StyleForLabel}"/>
-    <StackLayout
+        <Label Style="{StaticResource StyleForLabel}"/>
+        <StackLayout
       Orientation="Vertical">
-      <StackLayout.Resources>
-        <ResourceDictionary>
-          <Style x:Key="StyleForLabel" TargetType="Label">
-            <Setter Property="Text" Value="StackLayour 資源字典" />
-            <Setter Property="TextColor" Value="Red" />
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="VerticalOptions" Value="Center" />
-            <Setter Property="HorizontalOptions" Value="Center" />
-          </Style>
-        </ResourceDictionary>
-      </StackLayout.Resources>
-      <Label Style="{StaticResource StyleForLabel}" />
-      <Label Style="{StaticResource StyleForLabel}" >
-        <Label.Resources>
-          <ResourceDictionary>
-            <Style x:Key="StyleForLabel" TargetType="Label">
-              <Setter Property="Text" Value="Label 資源字典" />
-              <Setter Property="TextColor" Value="Green" />
-              <Setter Property="FontSize" Value="24" />
-              <Setter Property="VerticalOptions" Value="Center" />
-              <Setter Property="HorizontalOptions" Value="Center" />
-            </Style>
-          </ResourceDictionary>
-        </Label.Resources>
-      </Label>
+            <!--這裡定義了 StackLayout 自己本身會用到的資源樣式，因為與 App.xaml 內的樣式名稱一樣，所以，會覆蓋掉 App.xaml 內的樣式定義-->
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="StyleForLabel" TargetType="Label">
+                        <Setter Property="Text" Value="StackLayour 資源字典" />
+                        <Setter Property="TextColor" Value="Red" />
+                        <Setter Property="FontSize" Value="18" />
+                        <Setter Property="VerticalOptions" Value="Center" />
+                        <Setter Property="HorizontalOptions" Value="Center" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+            <Label Style="{StaticResource StyleForLabel}" />
+            <Label Style="{StaticResource StyleForLabel}" >
+                <!--在這裡定義了 Label 控制項會用到的資源樣式，不過，與上層結點，也就是，StackLayer 名稱一樣，因此，會覆蓋掉 StackLayer 內的樣式定義-->
+                <Label.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="StyleForLabel" TargetType="Label">
+                            <Setter Property="Text" Value="Label 資源字典" />
+                            <Setter Property="TextColor" Value="Green" />
+                            <Setter Property="FontSize" Value="24" />
+                            <Setter Property="VerticalOptions" Value="Center" />
+                            <Setter Property="HorizontalOptions" Value="Center" />
+                        </Style>
+                    </ResourceDictionary>
+                </Label.Resources>
+            </Label>
+        </StackLayout>
     </StackLayout>
-  </StackLayout>
 
 </ContentPage>
