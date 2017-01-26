@@ -5,12 +5,20 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:CustomAttached="clr-namespace:AttProp"
              x:Class="AttProp.Views.MainPage"
-             Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="自訂附加屬性 Attached Property" />
-    <Entry />
-    <Entry CustomAttached:EntryTypeAttached.EntryType="Email" />
-    <Entry CustomAttached:EntryTypeAttached.EntryType="Phone" />
-    <Entry CustomAttached:EntryTypeAttached.EntryType="Number" />
-  </StackLayout>
+             Title="自訂附加屬性">
+    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="自訂附加屬性 Attached Property" />
+        
+        <!--沒有使用 自訂附加屬性 的使用方式-->
+        <Entry />
+        
+        <!--使用 自訂附加屬性 的使用方式-->
+        <Entry CustomAttached:EntryTypeAttached.EntryType="Email" />
+        <Entry CustomAttached:EntryTypeAttached.EntryType="Phone" />
+        <Entry CustomAttached:EntryTypeAttached.EntryType="Number" />
+        
+        <!--使用一個不存在的附加屬性值，會如何呢?-->
+        <Entry CustomAttached:EntryTypeAttached.EntryType="不存在" />
+    </StackLayout>
 </ContentPage>
