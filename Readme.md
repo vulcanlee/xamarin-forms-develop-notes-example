@@ -127,10 +127,11 @@ Xamarin.Forms 內的 Behaviors ，讓您可以將一些功能加入到 Xamarin.F
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFAttBehavior
 
-# 
+# XFCarouselView
 
-## 
+## 練習使用旋轉木馬控制項
 
+這個練習中，將會學習如何在 Xamarin.Forms 中使用旋轉木馬控制項。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 

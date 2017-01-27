@@ -19,7 +19,8 @@ namespace XFCarouselView.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
-        #region Zoos
+
+        #region Zoos 在這裡定義 CarouselView 要顯示的來源集合資料 
         private ObservableCollection<Zoo> _Zoos;
         /// <summary>
         /// Zoos

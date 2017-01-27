@@ -15,11 +15,14 @@
         <ResourceDictionary>
             <local:SelectedItemChangedEventArgsConverter x:Key="SelectedItemChangedEventArgsConverter" />
         </ResourceDictionary>
-    </ContentPage.Resources> 
-   
-    
+    </ContentPage.Resources>
+
+
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
+        
+        <!--要使用 CarouselView 控制項，請先加入 CarouselView 這個 NuGet 套件
+        並且在這個頁面中，定義要引用這個控制項的命名空間-->
         <cv:CarouselView x:Name="CarouselZoos"
             ItemsSource="{Binding Zoos}" 
             HorizontalOptions="Fill"
@@ -32,6 +35,7 @@
                                                    Converter="{StaticResource SelectedItemChangedEventArgsConverter}"/>-->
                 </behaviors:EventHandlerBehavior>
             </cv:CarouselView.Behaviors>
+            <!--使用 ItemTemplate 來定義每個項目要出現的樣貌-->
             <cv:CarouselView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
