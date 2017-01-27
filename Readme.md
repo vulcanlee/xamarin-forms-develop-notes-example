@@ -61,15 +61,18 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVV
 
 ## 不透過任何 MVVM 開發套件，自行製作 MVVM 開發方法的規範需求
 
+若您不依賴任何 MVVM 開發框架工具，則您需要在每個 ViewModel 內來實作出 INotifyPropertyChanged (INPC) 介面，如此，當 View 中的控制項所綁定的屬性或者 ViewModel 內的屬性有異動的時候，才會根據綁定模式，自動地進行異動後的資料更新。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+在這個專案中，您將需要定義一個 ViewModel 類別，並且設定頁面中的 BindingContext 屬性上。
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVVM2
 
 # MVVM3
 
 ## 使用 Prism 開發框架工具，進行 Xamarin.Forms + MVVM 專案開發
 
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVVM3
 
 # 
 
