@@ -9,9 +9,13 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
+        
+        <!--透過裡面兩個橢圓控制項，將會產生出一個 Radio 按鈕的效果-->
         <Grid
             HorizontalOptions="Center" VerticalOptions="Center"
             >
+            
+            <!--這個控制項，是我們在專案內自行建立的一個控制項，要使用這個控制項，您需要加入一個可以參考到這個控制項的命名空間-->
             <local:EllipseView 
                 HorizontalOptions="Start" VerticalOptions="Start"
                 WidthRequest="40" HeightRequest="40"
@@ -24,6 +28,7 @@
                 Color="White" 
                 />
         </Grid>
+        
         <local:EllipseView 
                 HorizontalOptions="Start" VerticalOptions="Start"
                 WidthRequest="140" HeightRequest="80"

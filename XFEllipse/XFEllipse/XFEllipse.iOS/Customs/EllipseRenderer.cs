@@ -9,6 +9,9 @@ using XFEllipse.iOS.Customs;
 [assembly: ExportRenderer(typeof(EllipseView), typeof(EllipseRenderer))]
 namespace XFEllipse.iOS.Customs
 {
+    /// <summary>
+    /// 在這裡使用了 ExportRenderer 來告知 Xamarin，我們需要由 EllipseRenderer 來顯示出 EllipseView 控制項
+    /// </summary>
     public class EllipseRenderer : VisualElementRenderer<EllipseView>
     {
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -21,6 +24,7 @@ namespace XFEllipse.iOS.Customs
 
         public override void Draw(CGRect rect)
         {
+            // 這裡將會是呼叫 iOS 原生 API 
             using (var context = UIGraphics.GetCurrentContext())
             {
                 var path = CGPath.EllipseFromRect(rect);

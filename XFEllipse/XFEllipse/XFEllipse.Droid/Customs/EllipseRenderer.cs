@@ -19,6 +19,9 @@ using System.ComponentModel;
 [assembly: ExportRenderer(typeof(EllipseView), typeof(EllipseRenderer))]
 namespace XFEllipse.Droid.Customs
 {
+    /// <summary>
+    /// 在這裡使用了 ExportRenderer 來告知 Xamarin，我們需要由 EllipseRenderer 來顯示出 EllipseView 控制項
+    /// </summary>
     public class EllipseRenderer : VisualElementRenderer<EllipseView>
     {
         public EllipseRenderer()
@@ -36,6 +39,7 @@ namespace XFEllipse.Droid.Customs
 
         protected override void OnDraw(Canvas canvas)
         {
+            // 這裡將會是呼叫 Android 原生 API 
             var element = this.Element;
             var rect = new Rect();
             this.GetDrawingRect(rect);

@@ -135,10 +135,11 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFA
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
-# 
+# XFEllipse
 
-## 
+## 在 Xamarin.Forms 應用程式，可以產生橢圓或圓形的圖形
 
+我們將會來練習一個 Xamarin.Forms 內沒有的一個控制項，那就是要顯示圓形或者橢圓的形狀；在這裡將會繼承 View 控制項，產生出一個 EllipseView 新控制項，並且使用 Renderer 核心功能，在 Android / iOS / UWP 內，使用原生 API 來產生出這個圓形或橢圓形的形狀。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 

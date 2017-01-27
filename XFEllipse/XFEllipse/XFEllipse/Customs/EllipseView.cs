@@ -9,7 +9,10 @@ namespace XFEllipse.Customs
 {
     public class EllipseView : View
     {
+        //建立一個可綁定屬性
+        //您可以使用程式碼片段 vlBindableProperty 自動產生這個可綁定屬性的定義
         #region BindablePropertyType BindableProperty
+        //透過這個可綁定屬性，讓您可以在 XAML中，指定這個形狀的顏色
         public static readonly BindableProperty ColorProperty =
             BindableProperty.Create("BindablePropertyType", // 屬性名稱 
                 typeof(Color), // 回傳類型 
