@@ -119,12 +119,13 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFA
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFAnimation
 
-# 
+# XFAttBehavior
 
-## 
+## 說明了如何製作出一個 Attached Behaviors
 
+Xamarin.Forms 內的 Behaviors ，讓您可以將一些功能加入到 Xamarin.Forms所提供的控制項中，但是卻不需要繼承原有控制項類別，做出一個客製化控制項；透過了 Attached Behavior ，就可以任您的控制項，擁有不同的行為表現；另外， Behaviors 可以讓您原先在 Code Behind 內的處理邏輯，隱藏起來，透過 XAML 語法，進而啟用這些功能
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFAttBehavior
 
 # 
 

@@ -4,27 +4,35 @@
              xmlns:local="clr-namespace:XFAttBehavior"
              x:Class="XFAttBehavior.MainPage">
 
-  <ContentPage.Padding>40</ContentPage.Padding>
+    <ContentPage.Padding>40</ContentPage.Padding>
 
-  <StackLayout>
-    
-  <Label 
-    Text="請登入系統"
-    VerticalOptions="Center" HorizontalOptions="Center" />
+    <StackLayout>
 
-    <Entry
-      Placeholder="請輸入帳號"
-      local:EmptyHighlightBehavior.EmptyHighlight="true"
-      />
+        <!--這裡使用了 XAlign 讓文字置中對齊-->
+        <Label 
+            Text="帳號與密碼，不足6個字元，會顯示出紅色文字，反之會出現預設文字"
+            XAlign="Center"
+            VerticalOptions="Center" HorizontalOptions="Center" />
+        
+        <Label 
+            Text="請登入系統"
+            VerticalOptions="Center" HorizontalOptions="Center" />
 
-    <Entry
-      Placeholder="請輸入密碼"
-      IsPassword="True"
-      local:EmptyHighlightBehavior.EmptyHighlight="true"
-      />
-    
-    
+        <!--在這裡，透過了 Attached Behavior ，就可以任您的控制項，擁有不同的行為表現-->
+        <!--要使用這個 Attached Behavior，需要定義一個新命名空間，透過這個新命名空間，才能夠參考到這個新的 Attached Behavior-->
+        <Entry
+            Placeholder="請輸入帳號"
+            local:EmptyHighlightBehavior.EmptyHighlight="true"
+            />
 
-  </StackLayout>
+        <Entry
+            Placeholder="請輸入密碼"
+            IsPassword="True"
+            local:EmptyHighlightBehavior.EmptyHighlight="true"
+            />
+
+
+
+    </StackLayout>
 
 </ContentPage>
