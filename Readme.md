@@ -75,12 +75,15 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVV
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVVM3
 
-# 
+# PickerLab 
 
-## 
+## 在 Xamarin.Forms 中使用具有可綁定功能的 Picker 控制項
 
+在 Xamarin.Forms 中的 Picker 控制項，是沒有提供可綁定資料與命令功能，這對於採用 MVVM 開發方式的開發者而言，是相當的不方便(不過，在2017第二季之後，Xamarin.Forms 將會提供這項功能)。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+不過，在此之前，若想要使用這樣的功能，您可以使用本範例中提供的 BindablePicker 來做這樣功能，您也可以順便學習與了解，在 Xamarin.Forms 中，要如何自己客製化一個控制項，做出屬於您自己的 XAML 控制項。
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/PickerLab
 
 # 
 
