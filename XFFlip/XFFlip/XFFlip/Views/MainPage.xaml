@@ -6,6 +6,7 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFFlip.Views.MainPage"
              Title="MainPage">
+
     <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
         <StackLayout
@@ -13,6 +14,7 @@
             Orientation="Horizontal">
             <!--https://msdn.microsoft.com/en-us/library/aa970677(v=vs.110).aspx-->
             <Label Text="&lt;" FontSize="24" VerticalOptions="Center" />
+            
             <controls:CarouselViewControl 
             Orientation="Horizontal" 
             InterPageSpacing="10" Position="0" 

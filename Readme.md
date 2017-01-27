@@ -151,10 +151,11 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFE
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
-# 
+# XFFlip
 
-## 
+## 使用 CarouselViewControl 來做出有旋轉木馬效果的控制項
 
+這裡有另外一個控制項 CarouselViewControl，非 Xamarin 官方提供的外加控制項，一樣可以做到有旋轉木馬的功能。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
