@@ -47,23 +47,26 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/Ima
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MergedDict
 
-# 
+# MVVM1
 
-## 
+## 開發 Xamarin.Forms 專案，不使用 MVVM 開發方式的作法
+
+MVVM 是您要開發 Xamarin.Forms 專案時候必備的開發技能，若您不使用 MVVM 開發方式與選擇一個合適您的 MVVM 開發框架工具；那麼，當您進行專案開發的時候，將會遇到很多不方便處理的問題。
+
+在這裡將會體驗如何使用 Code Behind 的方式來開發 Xamarin.Forms 的專案
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVVM1
+
+# MVVM2
+
+## 不透過任何 MVVM 開發套件，自行製作 MVVM 開發方法的規範需求
 
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
-# 
+# MVVM3
 
-## 
-
-
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
-
-# 
-
-## 
+## 使用 Prism 開發框架工具，進行 Xamarin.Forms + MVVM 專案開發
 
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
