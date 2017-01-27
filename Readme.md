@@ -133,7 +133,7 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFA
 
 這個練習中，將會學習如何在 Xamarin.Forms 中使用旋轉木馬控制項。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFCarouselView
 
 # XFEllipse
 
@@ -141,12 +141,13 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
 我們將會來練習一個 Xamarin.Forms 內沒有的一個控制項，那就是要顯示圓形或者橢圓的形狀；在這裡將會繼承 View 控制項，產生出一個 EllipseView 新控制項，並且使用 Renderer 核心功能，在 Android / iOS / UWP 內，使用原生 API 來產生出這個圓形或橢圓形的形狀。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFEllipse
 
-# 
+# XFFirst
 
-## 
+## 使用 Xamarin.Forms 的專案樣板，建立您第一個 Xamarin.Forms 專案
 
+在這個練習中，只會使用 Xamarin.Forms 的預設專案樣板，建立您第一個 Xamarin.Forms 的專案，並不會在 Xaml / Code Behind / ViewModel 中做任何設計。這個練習的目的，是在於學會如何建立一個 Xamarin.Forms 專案，並且可以成功在不同平台的模擬器下來執行。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
