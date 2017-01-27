@@ -85,12 +85,13 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVV
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/PickerLab
 
-# 
+# sampleListView
 
-## 
+## 練習如何使用 ListView 控制項
 
+學習 Xamarin.Forms 的 ListView 使用方法：產生一個 ViewModel類別，將 ViewModel 綁訂到 ListView 上、定義每筆紀錄要顯示的視覺內容
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/sampleListView
 
 # 
 

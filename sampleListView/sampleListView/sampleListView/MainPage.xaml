@@ -4,12 +4,16 @@
              xmlns:local="clr-namespace:sampleListView"
              x:Class="sampleListView.MainPage">
 
+    <!--在這裡將會把頁面的 BindingContext 物件，設定為這個頁面會用到的 ViewModel 物件-->
     <ContentPage.BindingContext>
         <local:ViewModel />
     </ContentPage.BindingContext>
 
+    <!--使用 ListView.ItemsSource 屬性，設定這個 ListView 要顯示集合紀錄的來源-->
     <ListView x:Name="listView" ItemsSource="{Binding MyItemList}" >
+        <!--使用 ItemTemplate 定義每筆紀錄在 ListView 要出現的樣貌-->
         <ListView.ItemTemplate>
+            <!--在這裡使用 ListView 預設的 TextCell 來定義要顯示的視覺，不過，您可以使用 ViewCell 來自行定義任何視覺控制項-->
             <DataTemplate>
                 <TextCell Text="{Binding sometext}" Detail="{Binding othertext}"></TextCell>
             </DataTemplate>
