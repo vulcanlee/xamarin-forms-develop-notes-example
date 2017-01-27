@@ -103,10 +103,11 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/sam
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
-# 
+# XFALM
 
-## 
+## Xamarin.Forms 內提供的頁面應用程式生命週期練習
 
+在這裡，我們將會學習兩個事件 OnAppearing / OnDisappearing 的使用方式，以及，這兩個事件將會於甚麼時候被執行。透過了 Visual Studio 輸出視窗，您可以看到這些事件被呼叫的過程與順序。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
