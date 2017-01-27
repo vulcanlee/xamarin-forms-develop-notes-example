@@ -93,10 +93,13 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/Pic
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/sampleListView
 
-# 
+# XFAlert
 
-## 
+## 學習如何使用 Xamarin.Forms 提供的對話窗功能
 
+您可以在 Code Behind 程式碼中，直接使用 DisplayAlert / DisplayActionSheet 對話窗，這些對話窗將會在每個平台，以原生對話窗的樣貌出現(因為，就是呼叫原生平台的對話窗 API)。
+
+另外，我們也將學習如何在 ViewModel 中使用 Prism 提供的 IPageDialogService 介面的 DisplayAlertAsync / DisplayActionSheetAsync 對話窗功能；在這裡，您需要在 ViewModel 的建構式中，注入 IPageDialogService 實作物件。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 

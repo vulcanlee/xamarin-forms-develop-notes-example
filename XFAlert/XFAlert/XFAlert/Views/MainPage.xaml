@@ -5,37 +5,42 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFAlert.Views.MainPage"
              Title="MainPage">
-  <StackLayout
+    
+    <StackLayout
     HorizontalOptions="Center" VerticalOptions="Center">
-    <Button
+        
+        <!--這兩個按鈕，將會使用 Code Behind 的方式，使用 Xamarin.Forms 提供的顯示對話窗服務-->
+        <Button
       x:Name="btnAlert"
       Text="顯示 Xamarin.Forms 警告視窗"
       />
-    <Label
+        <Label
       x:Name="lblXF選擇結果"
       Text="Xamarin.Forms 選擇結果"
       />
-    <Button
+        <Button
       x:Name="btnActionSheet"
       Text="顯示 Xamarin.Forms 動作表單"
       />
-     <Label
+        <Label
       x:Name="lblXF動作表單選擇結果"
       Text="Xamarin.Forms 動作表單 選擇結果"
       />
-    <Button
+
+        <!--這兩個按鈕，將會使用 ViewModel 內的 ICommand 物件，使用 Prism 提供的顯示對話窗服務-->
+        <Button
       Text="顯示 Prism 警告視窗"
       Command="{Binding PrismAlertCommand}"
       />
-    <Label
+        <Label
       Text="{Binding PrismAlert輸出結果}"
       />
-    <Button
+        <Button
       Text="顯示 Prism 動作表單"
       Command="{Binding PrismActionSheetCommand}"
       />
-    <Label
+        <Label
       Text="{Binding PrismActionSheet輸出結果}"
       />
- </StackLayout>
+    </StackLayout>
 </ContentPage>

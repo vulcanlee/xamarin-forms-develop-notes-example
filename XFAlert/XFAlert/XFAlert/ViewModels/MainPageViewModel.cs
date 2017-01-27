@@ -32,10 +32,16 @@ namespace XFAlert.ViewModels
         }
         #endregion
 
+        /// <summary>
+        /// 使用 Prism 提供的相依性服務注入能力，在建構式中，注入 Prism 提供的 IPageDialogService 實作物件，
+        /// 透過這個物件，就可以操作與顯示對話窗能力
+        /// </summary>
+        /// <param name="dialogService"></param>
         public MainPageViewModel(IPageDialogService dialogService)
         {
             _dialogService = dialogService;
 
+            //這裡，使用 ICommand 來執行顯示對話窗的功能
             PrismAlertCommand = new DelegateCommand(PrismAlert);
             PrismActionSheetCommand = new DelegateCommand(PrismActionSheet);
 
