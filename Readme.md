@@ -101,7 +101,7 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/sam
 
 另外，我們也將學習如何在 ViewModel 中使用 Prism 提供的 IPageDialogService 介面的 DisplayAlertAsync / DisplayActionSheetAsync 對話窗功能；在這裡，您需要在 ViewModel 的建構式中，注入 IPageDialogService 實作物件。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFAlert
 
 # XFALM
 
@@ -109,14 +109,15 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
 在這裡，我們將會學習兩個事件 OnAppearing / OnDisappearing 的使用方式，以及，這兩個事件將會於甚麼時候被執行。透過了 Visual Studio 輸出視窗，您可以看到這些事件被呼叫的過程與順序。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFALM
 
-# 
+# XFAnimation
 
-## 
+## 學習如何在 Xamarin.Forms 中，使用動畫效果功能
 
+在這裡，您將學習如何使用每個控制項都會具有的動畫處理方法，由於，這些動畫處理方法都是依附在每個控制項中，因此，我們需要在 Code Behind 來撰寫相關動畫處理邏輯，若您想要把這些 Code Behind 程式碼移除，直接在 ViewModel 中呼叫，您可以客製化一個 Behavior。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFAnimation
 
 # 
 

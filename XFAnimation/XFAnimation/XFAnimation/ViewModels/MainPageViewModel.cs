@@ -22,31 +22,31 @@ namespace XFAnimation.ViewModels
 
         private readonly INavigationService _navigationService;
 
-        public Action 各自動畫Delegate;
-        public Action 串接動畫Delegate;
-        public Action 頁面消失動畫Delegate;
+        public Func<Task> 各自動畫Delegate;
+        public Func<Task> 串接動畫Delegate;
+        public Func<Task> 頁面消失動畫Delegate;
         public MainPageViewModel(INavigationService navigationService)
         {
 
             _navigationService = navigationService;
-            下一頁Command = new DelegateCommand(下一頁);
-            各自動畫Command = new DelegateCommand(各自動畫);
-            串接動畫Command = new DelegateCommand(串接動畫);
+            下一頁Command = DelegateCommand.FromAsyncHandler(下一頁);
+            各自動畫Command = DelegateCommand.FromAsyncHandler(各自動畫);
+            串接動畫Command = DelegateCommand.FromAsyncHandler(串接動畫);
         }
 
-        private void 串接動畫()
+        private async Task 串接動畫()
         {
-            串接動畫Delegate();
+            await 串接動畫Delegate();
         }
 
-        private void 各自動畫()
+        private async Task 各自動畫()
         {
-            各自動畫Delegate();
+           await 各自動畫Delegate();
         }
 
-        private async void 下一頁()
+        private async Task 下一頁()
         {
-            頁面消失動畫Delegate();
+            await 頁面消失動畫Delegate();
             await Task.Delay(1000);
             await _navigationService.NavigateAsync("NewPage", null, null, false);
         }
