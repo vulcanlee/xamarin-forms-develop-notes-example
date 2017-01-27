@@ -71,6 +71,7 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVV
 
 ## 使用 Prism 開發框架工具，進行 Xamarin.Forms + MVVM 專案開發
 
+在這個練習專案中，我們將會直接使用 Prism 這個 MVVM Framework；Prism 提供了相當多友善的 MVVM 開發解決方案，讓您在進行 Xamarin.Forms 專案開發的時候，可以，更加快速與簡潔的做出好用的應用程式。
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/MVVM3
 
