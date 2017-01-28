@@ -179,12 +179,13 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFFontAwesome
 
-# 
+# XFGenBarcode
 
-## 
+## 我們可以透過 NuGet 套件，讓應用程式顯示出各種不同條碼的圖片
 
+在這裡，我們學習如何在 XAML 中，使用 ZXingBarcodeImageView 控制項，顯示出一維 / 二維 條碼的圖片在螢幕上；要指定各種不同條碼格式，可以使用 BarcodeFormat 屬性。
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFGenBarcode
 
 # 
 
