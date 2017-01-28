@@ -5,11 +5,16 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFImage.Views.MainPage"
              Title="Xamarin.Forms 圖片控制項">
-  <StackLayout
-    Orientation="Vertical"
-    HorizontalOptions="Center" VerticalOptions="Center"
-    >
-    <Button Text="圖片大小與填滿" Command="{Binding 圖片大小與填滿Command}" />
-    <Button Text="平台專屬、PCL、本機圖片資源" Command="{Binding 圖片資源Command}" />
-  </StackLayout>
+    
+    <!--這個範例專案，讓您學習到 Xamarin.Forms 是 Image 相關使用方式與注意事項-->
+    <StackLayout
+        Orientation="Vertical" 
+        HorizontalOptions="Center" VerticalOptions="Center"
+        >
+         <!--按下這個按鈕，讓您了解 Image 的 LayoutOptions 與圖片大小之間的關係-->
+        <Button Text="圖片大小與填滿" Command="{Binding 圖片大小與填滿Command}" />
+        <!--按下這個按鈕，可以讓您學會在圖片存在於不同的地方，要如何顯示到螢幕上
+        這包括了：原生專案內、PCL專案內、網路上、下載到本機儲存空間內、每個平台都要指定不同的圖片方法等等-->
+        <Button Text="平台專屬、PCL、本機圖片資源" Command="{Binding 圖片資源Command}" />
+    </StackLayout>
 </ContentPage>

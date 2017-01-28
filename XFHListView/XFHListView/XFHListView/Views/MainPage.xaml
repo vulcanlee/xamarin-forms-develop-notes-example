@@ -5,9 +5,12 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFHListView.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <!--使用 FlowListView，顯示出 GridView 這樣效果的控制項，這個控制項相當的實用；這裡將會顯示文字內容-->
         <Button Text="簡單範例" Command="{Binding 簡單範例Command}" />
+        <!--使用 FlowListView，顯示出 GridView 這樣效果的控制項，這個控制項相當的實用；這裡將會顯示圖片內容-->
         <Button Text="圖片畫廊" Command="{Binding 圖片畫廊Command}" />
     </StackLayout>
 </ContentPage>

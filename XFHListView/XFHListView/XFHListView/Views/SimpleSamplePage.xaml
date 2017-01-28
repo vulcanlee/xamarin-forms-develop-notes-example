@@ -7,6 +7,10 @@
              xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView"
              Title="簡單範例">
 
+    <!--請先安裝 FlowListView NuGet 套件，並且加入一個命名空間，指向到這控制項-->
+
+    <!--這裡將會把每筆紀錄，以 3 Columns 的方式來顯示，至於其他的用法，大致與 ListView 相同
+    不過，對於紀錄點擊、選取的紀錄項目、集合資料來源，請參考底下的屬性名稱來使用-->
     <flv:FlowListView
         FlowColumnCount="3"
         SeparatorVisibility="None"
@@ -17,6 +21,7 @@
         >
         <flv:FlowListView.FlowColumnTemplate>
             <DataTemplate>
+                <!--在這裡定義出每筆紀錄要出憲的內容，在這個範例中，每筆紀錄，將不會佔據整個螢幕寬度，而是佔去 1/3 螢幕寬-->
                 <Label HorizontalOptions="Fill" VerticalOptions="Fill" 
 						XAlign="Center" YAlign="Center" Text="{Binding Title}"/>
             </DataTemplate>

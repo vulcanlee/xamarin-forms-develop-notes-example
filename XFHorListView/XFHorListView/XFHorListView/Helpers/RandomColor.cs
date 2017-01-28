@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace XFHorListView.Helpers
 {
+    /// <summary>
+    /// 這個支援類別，將提供動態顏色的物件
+    /// </summary>
     public static class RandomColor
     {
         static readonly Random random = new Random();
@@ -19,10 +22,14 @@ namespace XFHorListView.Helpers
 
         static readonly string[] colors;
 
+        /// <summary>
+        /// 隨機產生一個顏色物件
+        /// </summary>
         public static Xamarin.Forms.Color PickColor
         {
             get
             {
+                // 使用 FromHex 靜態方法，可以根據文字內容，產生一個 Xamarin.Forms 中會用到的 Color 物件
                 return Xamarin.Forms.Color.FromHex(colors[random.Next(colors.Length)]);
             }
         }

@@ -8,6 +8,10 @@
              x:Class="XFHListView.Views.SimpleGalleryPage"
              Title="圖片畫廊">
 
+    <!--請先安裝 FlowListView NuGet 套件，並且加入一個命名空間，指向到這控制項-->
+
+    <!--這裡將會把每筆紀錄，以 3 Columns 的方式來顯示，至於其他的用法，大致與 ListView 相同
+    不過，對於紀錄點擊、選取的紀錄項目、集合資料來源，請參考底下的屬性名稱來使用-->
     <flv:FlowListView
         FlowColumnCount="3"
         SeparatorVisibility="None"
@@ -15,10 +19,12 @@
         FlowItemTappedCommand="{Binding 使用者點選Command}"
         FlowLastTappedItem="{Binding 使用者點選項目}"
         FlowItemsSource="{Binding MyDatas}"
-        FlowColumnMinWidth="110"
         >
         <flv:FlowListView.FlowColumnTemplate>
             <DataTemplate>
+                <!--在這裡定義出每筆紀錄要出憲的內容，在這個範例中，每筆紀錄，將不會佔據整個螢幕寬度，而是佔去 1/3 螢幕寬-->
+                
+                <!--在這裡使用 Grid 的特性，造成多個控制項可以由重疊效果，是種不錯的設計技巧-->
                 <Grid Padding="3">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -27,6 +33,8 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
+                    <!--CachedImage 是個相當好用的第三方套件，有興趣的人，可以參考
+                    https://github.com/luberda-molinet/FFImageLoading-->
                     <ffimageloading:CachedImage 
                         HeightRequest="100" 
                         Aspect="AspectFill"

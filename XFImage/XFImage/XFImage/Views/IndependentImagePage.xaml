@@ -9,54 +9,57 @@
              Title="平台專屬、PCL、本機圖片資源"
   >
 
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <Converters:StringToLocalImage x:Key="StringToLocalImage" />
-    </ResourceDictionary>
-  </ContentPage.Resources>
-  
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="*" />
-      <RowDefinition Height="*" />
-      <RowDefinition Height="*" />
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="*"/>
-      <ColumnDefinition Width="*"/>
-    </Grid.ColumnDefinitions>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--在這裡，宣告一個數值轉換器於資料字典內，這樣，在這個頁面中，您就可以在 XAML 資料繫結中，使用這個數值轉換器-->
+            <Converters:StringToLocalImage x:Key="StringToLocalImage" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <!--這是讀取網路圖片的簡單用法-->
-    <!--<Image Source="https://developer.xamarin.com/demo/IMG_3256.JPG?width=640" />-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-    <Image Grid.Row="0" Grid.Column="0">
-      <Image.Source>
-        <UriImageSource Uri="https://developer.xamarin.com/demo/IMG_3256.JPG?width=640" />
-      </Image.Source>
-    </Image>
-    <Label Grid.Row="0" Grid.Column="0" Text="這是網路圖片" FontSize="24" TextColor="Black"/>
+        <!--這是讀取網路圖片的簡單用法-->
+        <!--<Image Source="https://developer.xamarin.com/demo/IMG_3256.JPG?width=640" />-->
+        <!--直接在 Source 中，指定網路圖片 URL 即可-->
+        <Image Grid.Row="0" Grid.Column="0">
+            <Image.Source>
+                <UriImageSource Uri="https://developer.xamarin.com/demo/IMG_3256.JPG?width=640" />
+            </Image.Source>
+        </Image>
+        <Label Grid.Row="0" Grid.Column="0" Text="這是網路圖片&#x0a;使用URL字串" FontSize="18" TextColor="Black"/>
 
-    <Image Grid.Row="0" Grid.Column="1" Source="{extMark:ImageResource XFImage.Assets.platformImage.jpg}"/>
-    <Label Grid.Row="0" Grid.Column="1" Text="這是PCL內圖片" FontSize="24" TextColor="Black"/>
+        <!--這裡圖片來源，將會透過 IMarkupExtension 來取得，您只需要將圖片檔案名稱，指定為這個標記延伸方法內即可-->
+        <Image Grid.Row="0" Grid.Column="1" Source="{extMark:ImageResource XFImage.Assets.platformImage.jpg}"/>
+        <Label Grid.Row="0" Grid.Column="1" Text="顯示核心PCL專案組件內資源屬圖片&#x0a;使用IMarkupExtension方法" FontSize="18" TextColor="Black"/>
 
-    <Image Grid.Row="1" Grid.Column="0" Source="platformImage.jpg" />
-    <Label Grid.Row="1" Grid.Column="0" Text="平台專屬圖片-指定" FontSize="18" TextColor="Red" />
-    
-    <BoxView Grid.Row="1" Grid.Column="1" Color="{Binding 下載背景顏色}" />
-    <Button Grid.Row="1" Grid.Column="1" Text="下載圖片" Command="{Binding 下載圖片Command}" 
+        <!--這裡指定一個原生專案組件中的一個資源檔案，做為要顯示這個圖片的來源-->
+        <Image Grid.Row="1" Grid.Column="0" Source="platformImage.jpg" />
+        <Label Grid.Row="1" Grid.Column="0" Text="指定原生專案內資源屬圖片&#x0a;使用檔案名稱字串" FontSize="18" TextColor="Red" />
+
+        <BoxView Grid.Row="1" Grid.Column="1" Color="{Binding 下載背景顏色}" />
+        <Button Grid.Row="1" Grid.Column="1" Text="從網路下載圖片到手機中" Command="{Binding 下載圖片Command}" 
             HorizontalOptions="Center" VerticalOptions="Center"/>
-    <!--<Button Grid.Row="1" Grid.Column="1" Text="下載圖片" x:Name="btn" 
+        <!--<Button Grid.Row="1" Grid.Column="1" Text="下載圖片" x:Name="btn" 
             HorizontalOptions="Center" VerticalOptions="Center"/>-->
+        <Image Grid.Row="1" Grid.Column="1" Source="{Binding MyImageSource}" />
+        <Label Grid.Row="1" Grid.Column="1" Text="顯示應用程式專屬儲存體圖片&#x0a;使用資料繫結方式" FontSize="18" TextColor="Black" />
 
-    <Image Grid.Row="2" Grid.Column="0" Source="{Binding LocalImage1}" />
-    <Label Grid.Row="2" Grid.Column="0" Text="平台專屬圖片-綁定" FontSize="18" TextColor="Red" />
 
-    <Image Grid.Row="1" Grid.Column="1" Source="{Binding MyImageSource}" />
-    <Label Grid.Row="1" Grid.Column="1" Text="本地圖片-使用綁定" FontSize="18" TextColor="Black" />
+        <Image Grid.Row="2" Grid.Column="0" Source="{Binding LocalImage1}" />
+        <Label Grid.Row="2" Grid.Column="0" Text="顯示原生專案內資源屬圖片&#x0a;使用資料繫結方式" FontSize="18" TextColor="Red" />
 
-    <Image Grid.Row="2" Grid.Column="1"
+        <Image Grid.Row="2" Grid.Column="1"
           Source="{Binding LocalImage2, Converter={StaticResource StringToLocalImage}}" />
-    <Label Grid.Row="2" Grid.Column="1" Text="本地圖片-使用轉換器" FontSize="18" TextColor="Black" />
+        <Label Grid.Row="2" Grid.Column="1" Text="顯示應用程式專屬儲存體圖片&#x0a;使用數值轉換器" FontSize="18" TextColor="Black" />
 
-  </Grid>
+    </Grid>
 </ContentPage>

@@ -9,15 +9,19 @@
              Title="MainPage"
              x:Name="ThisPage">
 
+    <!--在這裡，您需要加入一個命名空間，參考到我們定義的水平式 ListView 客製控制項-->
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
+
+        <!--這裡使用 HorizontalListView 定義一個具有水平捲動的 ListView 效果-->
         <Controls:HorizontalListView
-				ItemsSource="{Binding MyDatas}"
+            ItemsSource="{Binding MyDatas}"
             HorizontalOptions="Fill"
             BackgroundColor="Red"
-				>
+            >
             <Controls:HorizontalListView.ItemTemplate>
                 <DataTemplate>
+                    <!--在這裡定義每筆紀錄要出現的樣貌-->
                     <Grid BackgroundColor="Transparent">
                         <Image
 							Source="{Binding ImageUrl}"
@@ -41,6 +45,8 @@
                 </DataTemplate>
             </Controls:HorizontalListView.ItemTemplate>
         </Controls:HorizontalListView>
+        
+        <!--這裡是使用 Xamarin.Forms 內建的 ListView，具有垂直捲動的效果-->
         <ListView
             ItemsSource="{Binding MyDatas}"
             SelectedItem="{Binding 使用者點選項目}"
@@ -52,6 +58,7 @@
             </ListView.Behaviors>
             <ListView.ItemTemplate>
                 <DataTemplate>
+                    <!--在這裡定義每筆紀錄要出現的樣貌-->
                     <ViewCell>
                         <Grid>
                             <Grid.RowDefinitions>
