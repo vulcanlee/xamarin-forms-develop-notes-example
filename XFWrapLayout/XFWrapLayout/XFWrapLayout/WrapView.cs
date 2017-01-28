@@ -32,19 +32,6 @@ namespace XFWrapLayout
         }
         #endregion
 
-
-        //public static readonly BindableProperty OrientationProperty =
-        //    BindableProperty.Create<WrapView, StackOrientation>(w => w.Orientation, StackOrientation.Vertical,
-        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
-
-        //public StackOrientation Orientation
-        //{
-        //    get { return (StackOrientation)GetValue(OrientationProperty); }
-        //    set { SetValue(OrientationProperty, value); }
-        //}
-
-
-
         #region Spacing BindableProperty
         public static readonly BindableProperty SpacingProperty =
             BindableProperty.Create("Spacing", // 屬性名稱 
@@ -65,17 +52,6 @@ namespace XFWrapLayout
             }
         }
         #endregion
-
-
-        //public readonly BindableProperty SpacingProperty =
-        //    BindableProperty.Create<WrapView, double>(w => w.Spacing, 6,
-        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
-
-        //public double Spacing
-        //{
-        //    get { return (double)GetValue(SpacingProperty); }
-        //    set { SetValue(SpacingProperty, value); }
-        //}
 
         #region ItemTemplate BindableProperty
         public static readonly BindableProperty ItemTemplateProperty =
@@ -98,16 +74,6 @@ namespace XFWrapLayout
         }
         #endregion
 
-        //public static readonly BindableProperty ItemTemplateProperty =
-        //    BindableProperty.Create<WrapView, DataTemplate>(w => w.ItemTemplate, null,
-        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
-
-        //public DataTemplate ItemTemplate
-        //{
-        //    get { return (DataTemplate)GetValue(ItemTemplateProperty); }
-        //    set { SetValue(ItemTemplateProperty, value); }
-        //}
-
         #region ItemsSource BindableProperty
         public static readonly BindableProperty ItemsSourceProperty =
             BindableProperty.Create("ItemsSource", // 屬性名稱 
@@ -128,16 +94,6 @@ namespace XFWrapLayout
             }
         }
         #endregion
-
-        //public static readonly BindableProperty ItemsSourceProperty =
-        //    BindableProperty.Create<WrapView, IEnumerable>(w => w.ItemsSource, null,
-        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).ItemsSource_OnPropertyChanged(bindable, oldvalue, newvalue));
-
-        //public IEnumerable ItemsSource
-        //{
-        //    get { return (IEnumerable)GetValue(ItemsSourceProperty); }
-        //    set { SetValue(ItemsSourceProperty, value); }
-        //}
 
         #region TemplateSelector BindableProperty
         public static readonly BindableProperty TemplateSelectorProperty =
@@ -160,16 +116,6 @@ namespace XFWrapLayout
         }
         #endregion
 
-
-        //public static readonly BindableProperty TemplateSelectorProperty =
-        //    BindableProperty.Create<WrapView, TemplateSelector>(w => w.TemplateSelector, null,
-        //        propertyChanged: (bindable, oldvalue, newvalue) => ((WrapView)bindable).OnSizeChanged());
-
-        //public TemplateSelector TemplateSelector
-        //{
-        //    get { return (TemplateSelector)GetValue(TemplateSelectorProperty); }
-        //    set { SetValue(TemplateSelectorProperty, value); }
-        //}
 
         public WrapView()
         {

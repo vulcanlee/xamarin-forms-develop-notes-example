@@ -6,6 +6,9 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFSkiaSharp.Views.MainPage"
              Title="MainPage">
+
+    <!--SKCanvasView 控制項是一個具有畫布功能的控制項，可以讓您在這個控制項上進行各種繪圖動作-->
+
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <views:SKCanvasView  
             HorizontalOptions="Fill" VerticalOptions="Start"

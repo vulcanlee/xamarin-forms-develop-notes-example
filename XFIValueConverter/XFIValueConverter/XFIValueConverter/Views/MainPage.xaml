@@ -7,8 +7,11 @@
              x:Class="XFIValueConverter.Views.MainPage"
              Title="MainPage">
 
+    <!--在這個練習中，建立一個數值轉換器，接收一個字串文字，根據對應關係，會轉換成為一個顏色物件，若對應不起來，則回傳黑色-->
+    <!--若不透過數值轉換器，您可以在 ViewModel 內定義一個 Color 屬性，在 ViewModel 內自行處理這些轉換邏輯-->
     <ContentPage.Resources>
         <ResourceDictionary>
+            <!--在資源字典中，宣告這個數值轉換器，以便在 XAML 中使用-->
             <local:ColorTypeToColorConverter x:Key="ColorTypeToColorConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -16,6 +19,8 @@
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="輸入數值，可以變換顏色" />
         <Entry Text="{Binding ColorType, Mode=TwoWay}" />
+        <!--在此，ColorType是一個字串型別的物件-->
+        <!--在進行資料繫結過程中，會透過數值轉換器，將所綁定的 ViewModel 屬性，轉換成為一個顏色物件-->
         <BoxView Color="{Binding ColorType, Converter={StaticResource ColorTypeToColorConverter}}"
              WidthRequest="150" HeightRequest="150" />
     </StackLayout>

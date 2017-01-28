@@ -191,6 +191,7 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFG
 
 ## Xamarin.Forms 動態產生檢視項目的 WrapView
 
+使用 FlowListView，顯示出 GridView 這樣效果的控制項，這個控制項相當的實用；這裡將會顯示文字內容
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFHListView
 
@@ -198,6 +199,7 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFH
 
 ## 水平捲動的 ListView
 
+在這裡，您需要加入一個命名空間，參考到我們定義的水平式 ListView 客製控制項
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFHorListView
 
@@ -205,64 +207,159 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFH
 
 ## Xamarin.Forms 的 Image 相關使用方式與注意事項
 
+這個範例專案，讓您學習到 Xamarin.Forms 的 Image 相關使用方式與注意事項
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFImage
 
-# 
+# XFImgZoom
 
-## 
+## Xamarin.Forms Behavior 的製作與練習
 
+這個範例將會展示如何將放大等手勢操作功能，把原先需要在 Code Behind 寫的程式碼，包裝到 Xamarin.Forms Behaviors，並且在 XAML中來直接套用
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFImgZoom
 
-# 
+# XFIValueConverter
 
-## 
+## 練習建立一個數值轉換器
 
+在這個練習中，建立一個數值轉換器，接收一個字串文字，根據對應關係，會轉換成為一個顏色物件，若對應不起來，則回傳黑色，若不透過數值轉換器，您可以在 ViewModel 內定義一個 Color 屬性，在 ViewModel 內自行處理這些轉換邏輯
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFIValueConverter
 
-# 
+# XFLayoutOptions
 
-## 
+## 練習各種不同 LayoutOptions 所表現出來的特性
 
+這個專案，將練習 LayoutOptions 的六個列舉值的特性
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFLayoutOptions
 
-# 
+# XFLifeCycle
 
-## 
+## 練習 Xamarin.Forms 的應用程式生命週期
 
+這個專案練習將會練習 Xamarin.Forms 的應用程式生命週期，您需要執行這個專案，觀察 Visual Studio 內的輸出視窗，觀察輸出內容，請試著將應用程式切換為背景模式，並且再度切換成為前景
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFLifeCycle
 
-# 
+# XFListView
 
-## 
+## ListView 的各種不同用法展示
 
+這個範例展示出各種在 ListView 遇到的情境與問題解法
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFListView
 
-# 
+# XFMoreWrapLayout
 
-## 
+## 客製一個 WrapView 控制項，並做到動態收合效果
 
+這裡使用了 WrapView 與 RoundedBoxView 產生出具有折合效果的捲動清單
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFMoreWrapLayout
 
-# 
+# XFOnPlatform
 
-## 
+## 如何在 XAML 與 C# 內，使用 OnPlatform
 
+在這個範例，練習如何使用 OnPlatform 來設定不同平台的XAML控制項有著不同屬性
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFOnPlatform
 
+# XFPicker
 
+## 如何使用 Xamarin.Forms 內建的 Picker 控制項
 
+這裡將展示如何使用 Xamarin.Forms 內建的 Picker 控制項，您可以在 Xamarin中，定義靜態的可選擇項目，請使用 x:String 來指定每個紀錄內容
 
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFPicker
 
+# XFPmLM
 
+## Prism 的容器各種使用方式
 
+這個專案將會展示如何使用 Prism 的容器各種使用方式，包含了如何註冊、解析一個要注入的物件與藥注入物件生命週期管理
 
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFPmLM
 
+# XFPrismALM
+
+## 學習 Prism 與 Xamarin.Forms 的頁面事件的執行先後順序之差異
+
+這個專案將會用來測試 Code Behind 的 OnAppearing / OnDisappearing 和 Prism 的 INavigationAware 之 OnNavigatedFro / OnNavigatedTo 事件， 這些事件，在不同情況下、在不同平台下的執行順序，您將會看到不同平台下執行順序差異
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFPrismALM
+
+# XFRendCtrl
+
+## 客製專屬平台的控制項視覺
+
+會透過 Xamarin.Forms 提供的相依服務的 ExportRenderer 方法，會將自訂控制項使用每個專屬平台的額外程式碼進行修正，使這些平台上看到的控制項，儘可能一樣。在這裡，也會練習如何使用導航工具列的按鈕製作方式
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFRendCtrl
+
+# XFRoundedBoxView
+
+## 展示如何使用可以繪製圓角的控制項與其用法
+
+我們將需要自訂一個控制項，並且在每個平台使用 Renderer 來產生這個具有圓角的矩形
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFRoundedBoxView
+
+# XFScan
+
+## 這個專案展示如何進行一維或者二維條碼掃描
+
+不使用 ViewModel ，使用 Code Behind 來展示
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFScan
+
+# XFSkiaSharp
+
+## 如何在 Xamarin.Forms 使用類似 Canvas 畫布功能
+
+SKCanvasView 控制項是一個具有畫布功能的控制項，可以讓您在這個控制項上進行各種繪圖動作
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFSkiaSharp
+
+# XFTransforms
+
+## 學會如何使用繼承 VisualElement 之任何控制項都會擁有的 變換 Transforms 功能
+
+這個專案將會讓您操作 VisualElement 上的一些轉換行為，例如：平移、縮放、旋轉
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFTransforms
+
+# XFTrigger
+
+## 練習 Xamarin.Forms 提供的四種觸發功能 屬性觸發 / 資料觸發 / 事件觸發 / 多重觸發
+
+Trigger 可以讓您在 XAML 中，定義各種不同條件，當條件滿足之後，將會做出各種反應
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFTrigger
+
+# XFUserControl
+
+## 如何在 Xamarin.Forms 製作與使用一個使用者控制項 (User Control)
+
+這是一個使用者控制項的練習範例，在這裡，您定義另外一個 XAML 檔案，在這裡宣告一些控制項與版面配置，使其成為一個組合式的控制項，在這裡，不需要繼承任何類別，就可以組合成一個您經常使用的控制項
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFUserControl
+
+# XFWrapLayout
+
+## 自己客製一個 WrapView 控制項，並在 Xamarin.Forms 來使用
+
+WrapView 是 Xamarin.Forms 所欠缺的，在這裡將會練習如何使用 WrapView 這個自訂控制項
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFWrapLayout
+
+# XFxArray
+
+## 在 ListView 中，直接使用靜態的集合資料，無須透過 ViewModel來指定
+
+如何使用 x:Array 來指定一個靜態資料的 ListView 集合資料來源
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFxArray
 

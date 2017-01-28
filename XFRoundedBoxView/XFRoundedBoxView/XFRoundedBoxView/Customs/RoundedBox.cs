@@ -7,8 +7,12 @@ using Xamarin.Forms;
 
 namespace XFRoundedBoxView.Customs
 {
+    /// <summary>
+    /// 這個自訂控制項將會由每個平台的 Renderer 來產生出具有圓角效果的矩形
+    /// </summary>
     public class RoundedBoxView : BoxView
     {
+        // 指定圓角的半徑
         public static readonly BindableProperty CornerRadiusProperty =
             BindableProperty.Create("CornerRadius", typeof(double), typeof(RoundedBoxView), default(double),
                 propertyChanged:(b,s,e)=> { });
@@ -20,15 +24,12 @@ namespace XFRoundedBoxView.Customs
         }
 
         /// <summary>
-        /// Thickness property of border
+        /// 指定線條寬度
         /// </summary>
         public static readonly BindableProperty BorderThicknessProperty =
             BindableProperty.Create("BorderThickness", typeof(int), typeof(RoundedBoxView), default(int),
                 propertyChanged: (b, s, e) => { });
 
-        /// <summary>
-        /// Border thickness of circle image
-        /// </summary>
         public int BorderThickness
         {
             get { return (int)GetValue(BorderThicknessProperty); }
@@ -36,7 +37,7 @@ namespace XFRoundedBoxView.Customs
         }
 
         /// <summary>
-        /// Color property of border
+        /// 指定線條顏色
         /// </summary>
         public static readonly BindableProperty BorderColorProperty =
             BindableProperty.Create("BorderColor", typeof(Color), typeof(RoundedBoxView), Color.White,
@@ -47,9 +48,6 @@ namespace XFRoundedBoxView.Customs
             var fooEntry = bindable as RoundedBoxView;
         }
 
-        /// <summary>
-        /// Border Color of circle image
-        /// </summary>
         public Color BorderColor
         {
             get

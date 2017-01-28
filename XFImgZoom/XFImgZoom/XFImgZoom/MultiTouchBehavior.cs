@@ -34,6 +34,11 @@ using XFImgZoom.Extensions;
 
 namespace XFImgZoom
 {
+    //這是一個 Xamarin.Forms Behavior 的類別應用，
+    //Xamarin.Forms behaviors 將會由繼承 Behavior or Behavior<T> 類別來產生出一個新的類別
+    //您可以參考
+    //https://developer.xamarin.com/guides/xamarin-forms/behaviors/creating/
+
     /// <summary>
     /// Implements Multi-Touch manipulations
     /// Uses code from original Xamarin Forms samples: https://github.com/xamarin/xamarin-forms-samples/tree/master/WorkingWithGestures/PinchGesture

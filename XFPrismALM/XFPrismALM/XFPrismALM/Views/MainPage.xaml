@@ -5,8 +5,13 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFPrismALM.Views.MainPage"
              Title="主頁面">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-    <Button Text="開啟新頁面" Command="{Binding 開啟新頁面Command}" />
-  </StackLayout>
+    
+    <!--這個專案將會用來測試 Code Behind 的 OnAppearing / OnDisappearing 和
+    Prism 的 INavigationAware 之 OnNavigatedFro / OnNavigatedTo 事件
+    這些事件，在不同情況下、在不同平台下的執行順序，您將會看到不同平台下執行順序差異-->
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Button Text="開啟新頁面" Command="{Binding 開啟新頁面Command}" />
+    </StackLayout>
 </ContentPage>

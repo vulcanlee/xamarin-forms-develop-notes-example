@@ -6,14 +6,19 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFImgZoom.Views.MainPage"
              Title="MainPage">
+
+    <!--這個範例將會展示如何將放大等手勢操作功能，把原先需要在 Code Behind 寫的程式碼，包裝到 Xamarin.Forms Behaviors，並且在 XAML中來直接套用-->
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}"
                FontSize="30">
         </Label>
         <Grid>
+            <!--ContentView 就是一個複合式的控制項集合，您可以視為這是一個有很多控制項的集合-->
             <ContentView>
+                <!--在這個圖片中，加入了一個可以放大操作的行為，這樣，您就可以使用雙指手勢，進行圖片放大的效果-->
                 <Image Source="desert.jpg" BindingContext="{Binding}">
                     <Image.Behaviors>
+                        <!--只要套用這個行為，這張圖片控制項，立即轉變成為具有放大與移動的效果-->
                         <behaviors:MultiTouchBehavior IsScaleEnabled="True" IsTranslateEnabled="False" />
                     </Image.Behaviors>
                 </Image>

@@ -6,31 +6,35 @@
              Title="多奇菁英報名表"
              x:Class="XFRendCtrl.MainPage">
 
-  <ContentPage.ToolbarItems>
-    <ToolbarItem x:Name="Menu1" Text="確定" Order="Primary" Priority="0" />
-    <ToolbarItem x:Name="Menu2" Text="取消" Order="Primary" Priority="1" />
-  </ContentPage.ToolbarItems>
+    <!--客製專屬平台的控制項視覺-->
+    <!--會透過 Xamarin.Forms 提供的相依服務的 ExportRenderer 方法，會將自訂控制項使用每個專屬平台的額外程式碼進行修正，使這些平台上看到的控制項，儘可能一樣。-->
+    <!--在這裡，也會練習如何使用導航工具列的按鈕製作方式-->
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Menu1" Text="確定" Order="Primary" Priority="0" />
+        <ToolbarItem x:Name="Menu2" Text="取消" Order="Primary" Priority="1" />
+    </ContentPage.ToolbarItems>
 
-  <ContentPage.Padding>
-    <OnPlatform x:TypeArguments="Thickness"
-    iOS="20, 40, 20, 20"
-    Android="20, 20, 20, 20"
-    WinPhone="20, 20, 20, 20" />
-  </ContentPage.Padding>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 40, 20, 20"
+                    Android="20, 20, 20, 20"
+                    WinPhone="20, 20, 20, 20" />
+    </ContentPage.Padding>
 
-  <StackLayout
+    <StackLayout
     Orientation="Vertical"
     >
-    <Label Text="姓名" />
-    <local:MyEntry Placeholder="請輸入您的大名" BackgroundColor="#FFEAC4" />
-    <Label Text="職業" />
-    <local:MyEntry Placeholder="請輸入您的職業名稱" BackgroundColor="#FFEAC4" />
-    <Label Text="專長" />
-    <local:MyEntry Placeholder="請輸入您擅長的程式語言" BackgroundColor="#FFEAC4" />
-    <Label Text="部落格" />
-    <local:MyEntry Placeholder="請輸入您的部落格網址" BackgroundColor="#FFEAC4" />
-    <Label Text="成就" />
-    <local:MyEntry Placeholder="請輸入您曾經做過的案子" BackgroundColor="#FFEAC4" />
-  </StackLayout>
+        <Label Text="姓名(使用沒有客製化的文字輸入盒)" />
+        <Entry Placeholder="請輸入您的大名" BackgroundColor="#FFEAC4" />
+        <Label Text="職業" />
+        <local:MyEntry Placeholder="請輸入您的職業名稱" BackgroundColor="#FFEAC4" />
+        <Label Text="專長" />
+        <local:MyEntry Placeholder="請輸入您擅長的程式語言" BackgroundColor="#FFEAC4" />
+        <Label Text="部落格" />
+        <local:MyEntry Placeholder="請輸入您的部落格網址" BackgroundColor="#FFEAC4" />
+        <Label Text="成就" />
+        <local:MyEntry Placeholder="請輸入您曾經做過的案子" BackgroundColor="#FFEAC4" />
+    </StackLayout>
 
 </ContentPage>

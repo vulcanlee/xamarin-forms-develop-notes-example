@@ -6,21 +6,24 @@
   Margin="20,0,20,10"
   BackgroundColor="Lime"
   >
-  
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="80" />
-    <ColumnDefinition Width="*"/>
-  </Grid.ColumnDefinitions>
-  <Label 
-    Text="欄位名稱" 
-    Grid.Row="0" Grid.Column="0"
-    FontSize="20" TextColor="Blue"
-    LineBreakMode="TailTruncation"
-    VerticalOptions="Center" HorizontalOptions="Start" />
-  <Entry 
-    Placeholder="請輸入您的電話號碼"
-    Grid.Row="0" Grid.Column="1"
-    Keyboard="Telephone"
-    VerticalOptions="Center" HorizontalOptions="Fill"
-    />
+
+    <!--通常，我們會設定使用者控制項的根項目為 ContentView，在這裡，我們設定根項目為 Grid-->
+    
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="80" />
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Label 
+        Text="欄位名稱" 
+        Grid.Row="0" Grid.Column="0"
+        FontSize="20" TextColor="Blue"
+        LineBreakMode="TailTruncation"
+        VerticalOptions="Center" HorizontalOptions="Start" />
+    
+    <Entry 
+        Placeholder="請輸入您的電話號碼"
+        Grid.Row="0" Grid.Column="1"
+        Keyboard="Telephone"
+        VerticalOptions="Center" HorizontalOptions="Fill"
+        />
 </Grid>

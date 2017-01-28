@@ -5,8 +5,12 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFScan.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+
+    <!--這個專案展示如何進行一維或者二維條碼掃描-->
+    <!--不使用 ViewModel ，使用 Code Behind 來展示-->
+    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
         <Button Text="Scan" Clicked="Button_Clicked" />
     </StackLayout>
 </ContentPage>

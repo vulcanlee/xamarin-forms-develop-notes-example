@@ -6,11 +6,16 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFWrapLayout.Views.MainPage"
              Title="MainPage">
+
+    <!--WrapView 是 Xamarin.Forms 所欠缺的，在這裡將會練習如何使用 WrapView 這個自訂控制項-->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+
+        <!--使用水平排列的 WrapView-->
         <local:WrapView Grid.Row="0" ItemsSource="{Binding MyItems}" Orientation="Horizontal">
             <local:WrapView.ItemTemplate>
                 <DataTemplate>
@@ -20,6 +25,8 @@
                 </DataTemplate>
             </local:WrapView.ItemTemplate>
         </local:WrapView>
+
+        <!--使用垂直排列的 WrapView-->
         <local:WrapView Grid.Row="1" ItemsSource="{Binding MyItems}" Orientation="Vertical">
             <local:WrapView.ItemTemplate>
                 <DataTemplate>

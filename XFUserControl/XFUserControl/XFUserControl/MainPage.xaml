@@ -4,14 +4,24 @@
              xmlns:local="clr-namespace:XFUserControl"
              x:Class="XFUserControl.MainPage">
 
-  <StackLayout
-    Orientation="Vertical"
-    Spacing="0"
-    Padding="0,40,0,0"
-    >
-    <local:MyControl />
-    <local:MyControl />
-    <local:MyControl />
-    <local:MyControl />
-  </StackLayout>
+    <!--這是一個使用者控制項的練習範例，
+    在這裡，您定義另外一個 XAML 檔案，在這裡宣告一些控制項與版面配置，使其成為一個組合式的控制項
+    在這裡，不需要繼承任何類別，就可以組合成一個您經常使用的控制項-->
+    
+    <!--???
+    在這裡，當我們引用使用者控制項的時候，每個使用者控制項的樣貌長的都一樣，
+    是否有甚麼方式可以使用同一個使用者控制項，但會有不同的浮水印文字與不同的行為(例如，會做不同條件檢查)-->
+    
+    <StackLayout
+        Orientation="Vertical"  
+        Spacing="0"
+        Padding="0,40,0,0"
+        >
+        
+        <!--要使用使用者控制項，記得需要定義一個新的命名空間，並且在您要使用的使用者控制項前，加入這個命名空間-->
+        <local:MyControl />
+        <local:MyControl />
+        <local:MyControl />
+        <local:MyControl />
+    </StackLayout>
 </ContentPage>

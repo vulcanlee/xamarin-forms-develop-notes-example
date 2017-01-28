@@ -14,6 +14,9 @@ using XFRendCtrl.UWP;
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]
 namespace XFRendCtrl.UWP
 {
+    /// <summary>
+    /// 這個類別，將會透過 EntryRenderer ，客製 UWP 平台下的文字輸入盒
+    /// </summary>
     public class MyEntryRenderer : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)

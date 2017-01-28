@@ -5,10 +5,13 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFPmLM.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Button x:Name="btnType" Text="註冊與使用型別" />
-    <Button x:Name="btnObject" Text="註冊與使用物件" />
-    <Button x:Name="btnTest1" Text="Test1" />
-    <Button x:Name="btnTest2" Text="Test2" />
-  </StackLayout>
+
+    <!--這個專案將會展示如何使用 Prism 的容器各種使用方式，包含了如何註冊、解析一個要注入的物件與藥注入物件生命週期管理-->
+    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Button x:Name="btnType" Text="註冊與使用型別" />
+        <Button x:Name="btnObject" Text="註冊與使用物件" />
+        <Button x:Name="btnTest1" Text="Test1" />
+        <Button x:Name="btnTest2" Text="Test2" />
+    </StackLayout>
 </ContentPage>

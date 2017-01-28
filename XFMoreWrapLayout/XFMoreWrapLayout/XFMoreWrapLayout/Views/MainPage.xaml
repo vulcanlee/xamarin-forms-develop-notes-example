@@ -10,30 +10,36 @@
              Width="{Binding Width, Mode=OneWayToSource}"
              x:Name="ThisPage"
              >
+
+    <!--這裡使用了 WrapView 與 RoundedBoxView 產生出具有折合效果的捲動清單-->
+
     <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill">
         <Label Text="{Binding Width}" />
         <Label Text="{Binding Height}" />
         <ScrollView
             Orientation="Vertical"
             >
+            <!--這裡使用自訂的 WrapView，可以透過 ItemsSource 來增加物件，這個時候，WrapView 會自動產生 XAML 控制項-->
             <local:WrapView 
-                                    ItemsSource="{Binding Path=MyCategories}" 
-                                    Orientation="Vertical"
-                                    Margin="10" 
-                                    HorizontalOptions="Start" VerticalOptions="Start"
-                                    >
+                ItemsSource="{Binding Path=MyCategories}" 
+                Orientation="Vertical"
+                Margin="10" 
+                HorizontalOptions="Start" VerticalOptions="Start"
+                >
+                <!--在這裡定義每個紀錄要出現的控制項-->
                 <local:WrapView.ItemTemplate>
                     <DataTemplate>
                         <Grid
-                        >
+                            >
                             <StackLayout
-                        Orientation="Vertical"
-                        Spacing="0"
-                        >
+                                Orientation="Vertical"
+                                Spacing="0"
+                                >
+                                <!--這是第一個要出現的內容-->
                                 <Grid
-                        RowSpacing="0" ColumnSpacing="0"
-                        HorizontalOptions="Fill" VerticalOptions="Fill"                        
-                        >
+                                    RowSpacing="0" ColumnSpacing="0"
+                                    HorizontalOptions="Fill" VerticalOptions="Fill" 
+                                    >
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="50" />
                                     </Grid.RowDefinitions>
@@ -46,12 +52,19 @@
                                             <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
                                         </BoxView.GestureRecognizers>
                                     </BoxView>
+                                    <!--這裡有個非常重要的技巧，那就是若想要在 ListView 這類控制項裡面的紀錄內，要參考 ViewModel 內的相關屬性，
+                                    請使用這樣的方式，使用 DataBinding 的 Source 來參考到這個 XAML 頁面，
+                                    我們就可以在 Path 中，使用 BindingContext.您要參考的屬性-->
                                     <Label 
-                            WidthRequest="{Binding Path=BindingContext.RecordWidth, Source={x:Reference ThisPage}}"
-                            Grid.Row="0" Grid.Column="0"
-                            HorizontalOptions="Start" VerticalOptions="Center"
-                            Text="{Binding CategoryName}"
-                            >
+                                        WidthRequest="{Binding Path=BindingContext.RecordWidth, Source={x:Reference ThisPage}}"
+                                        Grid.Row="0" Grid.Column="0"
+                                        HorizontalOptions="Start" VerticalOptions="Center"
+                                        Text="{Binding CategoryName}"
+                                        >
+                                        <!--這裡有個非常重要的技巧，那就是若想要在 ListView 這類控制項裡面的紀錄內，要參考 ViewModel 內的相關屬性，
+                                        請使用這樣的方式，使用 DataBinding 的 Source 來參考到這個 XAML 頁面，
+                                        我們就可以在 Path 中，使用 BindingContext.您要參考的屬性-->
+                                        <!--透過這個方式，您只需要在 ViewModel 內定一個命令物件，不需要在每個集合紀錄內都建立一個 ICommand 物件-->
                                         <Label.GestureRecognizers>
                                             <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
                                         </Label.GestureRecognizers>
@@ -62,6 +75,8 @@
                             Text="{Binding Arrow}"
                             />
                                 </Grid>
+                                <!--這是第二個要出現的內容，但顯示時機，則是由 ViewModel 內所綁定的屬性來控制-->
+                                <!--WrapView 也是一個集合紀錄的控制項-->
                                 <local:WrapView 
                                     ItemsSource="{Binding MyItems}" 
                                     Orientation="Horizontal"
@@ -72,15 +87,16 @@
                                     <local:WrapView.ItemTemplate>
                                         <DataTemplate>
                                             <Grid
-                                        RowSpacing="0" ColumnSpacing="0"
-                                        HorizontalOptions="Start" VerticalOptions="Start"
-                                        >
+                                                RowSpacing="0" ColumnSpacing="0"
+                                                HorizontalOptions="Start" VerticalOptions="Start"
+                                                >
                                                 <Grid.RowDefinitions>
                                                     <RowDefinition Height="*" />
                                                 </Grid.RowDefinitions>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto" />
                                                 </Grid.ColumnDefinitions>
+                                                <!--這裡使用 RoundedBoxView 控制項，將會顯示具有圓角的矩形-->
                                                 <local:RoundedBoxView 
                                                     HorizontalOptions="Fill" VerticalOptions="Center"
                                                     HeightRequest="30"
@@ -91,11 +107,11 @@
                                                     </local:RoundedBoxView.GestureRecognizers>
                                                 </local:RoundedBoxView>
                                                 <Label 
-                                            Grid.Row="0" Grid.Column="0"
-                                                Margin="15,0"
-                                            HorizontalOptions="Start" VerticalOptions="Center"
-                                            Text="{Binding Name}"
-                                            >
+                                                    Grid.Row="0" Grid.Column="0"
+                                                    Margin="15,0"
+                                                    HorizontalOptions="Start" VerticalOptions="Center"
+                                                    Text="{Binding Name}"
+                                                    >
                                                     <Label.GestureRecognizers>
                                                         <TapGestureRecognizer Command="{Binding Path=BindingContext.點選資料列項目Command, Source={x:Reference ThisPage}}" CommandParameter="{Binding}" />
                                                     </Label.GestureRecognizers>

@@ -47,7 +47,6 @@ namespace XFMoreWrapLayout.ViewModels
         }
         #endregion
 
-
         #region RecordWidth
         private double _RecordWidht;
         /// <summary>
@@ -72,7 +71,6 @@ namespace XFMoreWrapLayout.ViewModels
         }
         #endregion
 
-
         public DelegateCommand<MyCategory> 點選資料列Command { get; set; }
         public DelegateCommand<MyItem> 點選資料列項目Command { get; set; }
 
@@ -87,6 +85,7 @@ namespace XFMoreWrapLayout.ViewModels
             _dialogService = dialogService;
             點選資料列Command = new DelegateCommand<MyCategory>(x =>
             {
+                // 這個 顯示 屬性，將會綁定到 IsVisible ，控制這個控制項是否要顯示在螢幕上
                 x.顯示 = !x.顯示;
             });
 

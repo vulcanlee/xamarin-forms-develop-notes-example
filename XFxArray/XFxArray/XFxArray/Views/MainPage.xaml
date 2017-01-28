@@ -5,7 +5,10 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFxArray.Views.MainPage"
              Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+    <!--如何使用 x:Array 來指定一個靜態資料的 ListView 集合資料來源-->
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <ListView>
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type Color}">
@@ -25,5 +28,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-  </StackLayout>
+    </StackLayout>
 </ContentPage>

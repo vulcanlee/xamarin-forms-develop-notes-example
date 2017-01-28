@@ -5,6 +5,9 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFPicker.Views.MainPage"
              Title="MainPage">
+
+    <!--這裡將展示如何使用 Xamarin.Forms 內建的 Picker 控制項
+    您可以在 Xamarin中，定義靜態的可選擇項目，請使用 x:String 來指定每個紀錄內容-->
     <StackLayout HorizontalOptions="Fill" VerticalOptions="Center">
         <Picker HorizontalOptions="Fill">
             <Picker.Items>
@@ -16,6 +19,7 @@
             </Picker.Items>
         </Picker>
 
+        <!--這裡將會由 Code Behind 來設定 Picker 要選擇的每個項目-->
         <Picker x:Name="MyPicker" />
     </StackLayout>
 </ContentPage>

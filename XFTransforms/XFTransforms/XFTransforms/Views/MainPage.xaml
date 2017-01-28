@@ -4,8 +4,12 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFTransforms.Views.MainPage"
-             Title="MainPage"> 
-  <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
+             Title="MainPage">
+
+    <!--這個專案將會讓您操作 VisualElement 上的一些轉換行為，例如：平移、縮放、旋轉
+    https://developer.xamarin.com/api/type/Xamarin.Forms.VisualElement/-->
+    
+    <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
         <Frame x:Name="frame" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" OutlineColor="Accent">
             <Label Text="這是Xamarin.Forms" FontSize="Large" />
         </Frame>
@@ -24,6 +28,8 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
+                
+                <!--這裡使用資料繫結方法，直接綁定 Label 這個控制項的相關屬性，只需要對 Slider 控制項操作，就可以看到這些屬性的功用-->
                 <Slider Grid.Row="0" Grid.Column="0" Minimum="-200" Maximum="200" Value="{Binding Source={x:Reference frame}, Path=TranslationX}" />
                 <Slider Grid.Row="0" Grid.Column="1" Minimum="-200" Maximum="200" Value="{Binding Source={x:Reference frame}, Path=TranslationY}" />
                 <Slider Grid.Row="1" Grid.Column="0" Minimum="-10" Maximum="10" Value="{Binding Source={x:Reference frame}, Path=Scale}" />

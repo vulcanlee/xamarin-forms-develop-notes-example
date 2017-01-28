@@ -6,7 +6,7 @@
              x:Class="XFImage.Views.MainPage"
              Title="Xamarin.Forms 圖片控制項">
     
-    <!--這個範例專案，讓您學習到 Xamarin.Forms 是 Image 相關使用方式與注意事項-->
+    <!--這個範例專案，讓您學習到 Xamarin.Forms 的 Image 相關使用方式與注意事項-->
     <StackLayout
         Orientation="Vertical" 
         HorizontalOptions="Center" VerticalOptions="Center"

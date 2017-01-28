@@ -13,6 +13,7 @@ namespace XFOnPlatform
         {
             InitializeComponent();
 
+            //若要在 C# 中，根據不同作業系統，來處理相關事務，可以使用這個靜態方法 Device.OnPlatform
             Device.OnPlatform(
                     Android: () =>
                     {

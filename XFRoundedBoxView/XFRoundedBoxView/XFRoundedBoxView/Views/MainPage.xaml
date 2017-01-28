@@ -7,17 +7,22 @@
              x:Class="XFRoundedBoxView.Views.MainPage"
              Title="MainPage">
 
+    <!--展示如何使用可以繪製圓角的控制項與其用法-->
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="LabelStyle" TargetType="Label">
                 <Setter Property="TextColor" Value="Black" />
             </Style>
 
+            <!--這裡宣告一個 RoundedBoxView 明確樣式-->
             <Style x:Key="RoundedBoxViewStyle" TargetType="local:RoundedBoxView">
                 <Setter Property="BackgroundColor" Value="Red" />
                 <Setter Property="HeightRequest" Value="100" />
                 <Setter Property="WidthRequest" Value="100" />
             </Style>
+
+            <!--這裡宣告一個 RoundedBoxView 明確樣式-->
             <Style x:Key="RoundedBoxViewStyleWithBorder" TargetType="local:RoundedBoxView">
                 <Setter Property="BackgroundColor" Value="#f1f1f1" />
                 <Setter Property="BorderColor" Value="#e57494" />
@@ -28,22 +33,26 @@
 
         </ResourceDictionary>
     </ContentPage.Resources>
-  
+
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
         <Label Text="{Binding Title}" />
+        
+        <!--使用一個具有圓角的控制項-->
         <local:RoundedBoxView 
             HorizontalOptions="Center" VerticalOptions="Center"
             WidthRequest="250" HeightRequest="70"
             BackgroundColor="#f5f8fd" BorderColor="#e57494" 
             CornerRadius="15" BorderThickness="5" />
 
+        <!--使用一個具有圓角的控制項-->
         <local:RoundedBoxView 
             HorizontalOptions="Center" VerticalOptions="Center"
             WidthRequest="100" HeightRequest="100"
             BackgroundColor="Blue" BorderColor="Transparent" 
             CornerRadius="100" BorderThickness="0" />
 
+        <!--使用一個具有圓角的控制項-->
         <local:RoundedBoxView 
             HorizontalOptions="Center" VerticalOptions="Center"
             WidthRequest="70" HeightRequest="150"
