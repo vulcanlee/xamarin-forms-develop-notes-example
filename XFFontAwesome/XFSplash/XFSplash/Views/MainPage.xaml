@@ -7,68 +7,85 @@
              x:Class="XFSplash.Views.MainPage"
              Title="MainPage">
 
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <OnPlatform x:Key="FontAwesome"
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--定義一個字串資源，方便在底下控制項中使用，可以簡化 XAML 的設計-->
+            <OnPlatform x:Key="FontAwesome"
                x:TypeArguments="x:String"
                iOS="fontawesome"
                Android="fontawesome"
                WinPhone="/Assets/Fonts/fontawesome.ttf#FontAwesome" />
-    </ResourceDictionary>
-  </ContentPage.Resources>
-  <Grid>
-    <Image
-      Aspect="AspectFill"
-      >
-      <Image.Source>
-        <OnPlatform
-          x:TypeArguments="ImageSource"
-          iOS="MainPageImg.jpg"
-          Android="MainPageImg.jpg"
-          WinPhone="Assets/MainPageImg.jpg"
-          />
-      </Image.Source>
-    </Image>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-      <Label Text="{Binding Title}" FontSize="30"
-             HorizontalTextAlignment="Center"
-             TextColor="#a64dff"
-             />
-      <StackLayout
-        Orientation="Horizontal"
-        HorizontalOptions="Center"
-        >
-        <Renderers:FontAwesomeLabel Text="&#xf164;"
-             TextColor="#ff3333"
-             HorizontalOptions="Center"
-             FontSize="60"
-             Margin="0,0,20,0"
-           />
-        <Label Text="&#xf164;"
-               TextColor="#ff3333"
-               HorizontalOptions="Center"
-               FontSize="60"
-               Margin="0,0,20,0"
-          >
-          <Label.FontFamily>
-            <OnPlatform
-            x:TypeArguments="x:String"
-            iOS="fontawesome"
-            Android="fontawesome"
-            WinPhone="/Assets/Fonts/fontawesome.ttf#FontAwesome"
-          />
-          </Label.FontFamily>
-        </Label>
-        <Label Text="&#xf164;"
-             TextColor="#ff3333"
-             HorizontalOptions="Center"
-             FontSize="60"
-             FontFamily="{StaticResource FontAwesome}"
-             Margin="0,0,20,0"
-          />
-      </StackLayout>
+    <!--這個 Grid 存在的目的，是為了要放置一個圖片，作為這個頁面的背景圖片-->
+    <Grid>
+        <Image
+            Aspect="AspectFill"
+            >
+            <Image.Source>
+                <!--這裡展示了，透過 OnPlatform 可以讓您指定，當在不同平台下執行的時候，所要顯示圖片檔案來源-->
+                <OnPlatform
+                    x:TypeArguments="ImageSource"
+                    iOS="MainPageImg.jpg"
+                    Android="MainPageImg.jpg"
+                    WinPhone="Assets/MainPageImg.jpg"
+                    />
+            </Image.Source>
+        </Image>
 
-    </StackLayout>
-  </Grid>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label 
+                Text="{Binding Title}" FontSize="30"
+                HorizontalTextAlignment="Center"
+                TextColor="#a64dff"
+                />
+            
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center"
+                >
+
+                <!--這裡使用自動控制項 FontAwesomeLabel 來顯示出 Font Awesome 字體-->
+                <Renderers:FontAwesomeLabel
+                    Text="&#xf164;"
+                    TextColor="#ff3333"
+                    HorizontalOptions="Center"
+                    FontSize="60"
+                    Margin="0,0,20,0"
+                    />
+                
+                <!--因為顯示文字有使用到 FontAwesome 字體，因此，有相對應的 Renderer 會切換使用 Font Awesome 字體-->
+                <!--這裡也將練習，如何在 XAML 中，指定要顯示那些 Font Awesome 的字型符號-->
+                <Label 
+                    Text="&#xf164;"
+                    TextColor="#ff3333"  
+                    HorizontalOptions="Center"
+                    FontSize="60"
+                    Margin="0,0,20,0"
+                    >
+                    
+                    <Label.FontFamily>
+                        <OnPlatform
+                            x:TypeArguments="x:String"
+                            iOS="fontawesome"
+                            Android="fontawesome"
+                            WinPhone="/Assets/Fonts/fontawesome.ttf#FontAwesome"
+                            />
+                    </Label.FontFamily>
+                </Label>
+
+                <!--這裡使用了資源字典定義的一個字串資源項目，簡化字體檔案的指定-->
+                <Label 
+                    Text="&#xf164;"
+                    TextColor="#ff3333"
+                    HorizontalOptions="Center"
+                    FontSize="60"
+                    FontFamily="{StaticResource FontAwesome}"
+                    Margin="0,0,20,0"
+                    />
+            </StackLayout>
+
+        </StackLayout>
+    </Grid>
 </ContentPage>

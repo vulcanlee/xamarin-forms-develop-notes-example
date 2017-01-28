@@ -5,66 +5,77 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFSplash.Views.SplashPage">
 
-  <ContentPage.Padding>
-    <OnPlatform
-      x:TypeArguments="Thickness"
-      iOS="0,20,0,0"
-      Android="0"
-      WinPhone="0,0"
-      />
-  </ContentPage.Padding>
-
-  <Grid
-    >
-    <Image
-      Aspect="AspectFill"
-      >
-      <Image.Source>
+    <!--這個頁面所有的動態資訊與狀態，皆會透過 ViewModel 來更新，無須透過 Code Behind 來處理-->
+    
+    <!--這是一個技巧，避免在 iOS 平台下執行的時候，會蓋掉最上方的狀態列的處理方法-->
+    <ContentPage.Padding>
         <OnPlatform
-          x:TypeArguments="ImageSource"
-          iOS="SplashBG.jpg"
-          Android="SplashBG.jpg"
-          WinPhone="Assets/SplashBG.jpg"
-          />
-      </Image.Source>
-    </Image>
+            x:TypeArguments="Thickness"
+            iOS="0,20,0,0"
+            Android="0"
+            WinPhone="0,0"
+            />
+    </ContentPage.Padding>
 
+    <!--這個 Grid 存在的目的，是為了要放置一個圖片，作為這個頁面的背景圖片-->
     <Grid
+        >
+        <Image
+            Aspect="AspectFill"
+            >
+            <Image.Source>
+                <!--這裡展示了，透過 OnPlatform 可以讓您指定，當在不同平台下執行的時候，所要顯示圖片檔案來源-->
+                <OnPlatform
+                    x:TypeArguments="ImageSource"
+                    iOS="SplashBG.jpg"
+                    Android="SplashBG.jpg"
+                    WinPhone="Assets/SplashBG.jpg"
+                    />
+            </Image.Source>
+        </Image>
+
+        <!--透過 Grid 版面配置，您可以將頁面製作成更加豐富的樣貌-->
+        <Grid
       Margin="20,50,20,30"
       >
-      <Grid.RowDefinitions>
-        <RowDefinition Height="200"/>
-        <RowDefinition Height="50" />
-        <RowDefinition Height="*" />
-        <RowDefinition Height="50" />
-      </Grid.RowDefinitions>
-      <Label
-        Grid.Row="0" Grid.Column="0"
-        Text="多奇創意行動應用"
-        TextColor="White"
-        FontSize="40"
-        Opacity="0.3"
-        HorizontalOptions="Center" VerticalOptions="Center"
-        />
-      <ProgressBar
-        Grid.Row="1" Grid.Column="0"
-        Progress="{Binding 處理進度百分比, Mode=TwoWay}"
-      />
-      <Label
-        Grid.Row="2" Grid.Column="0"
-        HorizontalOptions="Center" VerticalOptions="Start"
-        Text="{Binding 處理訊息, Mode=TwoWay}"
-        TextColor="White"
-        FontSize="20"
-        LineBreakMode="TailTruncation"
-        />
-      <Label
-        Grid.Row="3" Grid.Column="0"
-        HorizontalOptions="End" VerticalOptions="Start"
-        Margin="0,0,0,0"
-        Text="{Binding 版本資訊, Mode=TwoWay}"
-        TextColor="Yellow"
-      />
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0" Grid.Column="0"
+                Text="多奇數位創意行動應用"
+                TextColor="White"
+                FontSize="32"
+                Opacity="0.3"
+                HorizontalOptions="Center" VerticalOptions="Center"
+                />
+            
+            <!--透過 ProgressBar 控制項，可以清楚讓使用者知道，應用程式處理進度狀況-->
+            <ProgressBar
+                Grid.Row="1" Grid.Column="0"
+                Progress="{Binding 處理進度百分比, Mode=TwoWay}"
+                />
+            
+            <!--這是一個很好的技巧，動態更新處理工作內容，讓使用者更加安心與明瞭應用程式正在做哪些事情-->
+            <Label
+                Grid.Row="2" Grid.Column="0"
+                HorizontalOptions="Center" VerticalOptions="Start"
+                Text="{Binding 處理訊息, Mode=TwoWay}"
+                TextColor="White"
+                FontSize="20"
+                LineBreakMode="TailTruncation"
+                />
+            
+            <Label
+                Grid.Row="3" Grid.Column="0"
+                HorizontalOptions="End" VerticalOptions="Start"
+                Margin="0,0,0,0"
+                Text="{Binding 版本資訊, Mode=TwoWay}"
+                TextColor="Yellow"
+                />
+        </Grid>
     </Grid>
-  </Grid>
 </ContentPage>

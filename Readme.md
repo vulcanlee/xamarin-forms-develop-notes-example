@@ -159,12 +159,25 @@ https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
 https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
 
-# 
+# XFFontAwesome
 
-## 
+## 如何在 Xamarin.Forms 使用與顯示 Font Awesome
 
+這是一個綜合應用練習在這個練習中，您將會學習到
 
-https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/
+* 如何將 Font Awesome 字體檔案加入到個原生專案內，並且做出相關設定，讓原生系統可以使用這個字體檔案。
+
+* 建置一個自訂控制項，用來可以顯示 Font Awesome 的字體圖示
+
+* 學習使用 Renderer 技術，改變預設控制項在不同平台顯示的樣貌與內容
+
+* 在 XAML 中指定要顯示 Font Awesome 文字方式
+
+* 練習一個應用程式啟動畫面，進行系統資料讀取與更新的長時間工作，當工作結束後，可以切換到主換面上
+
+* 了解非同步工作的開發與設計方式和注意事項
+
+https://github.com/vulcanlee/xamarin-forms-develop-notes-example/tree/master/XFFontAwesome
 
 # 
 
