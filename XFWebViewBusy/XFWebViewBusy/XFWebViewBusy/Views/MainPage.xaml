@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFWebViewBusy.Views.MainPage"
+             Title="MainPage">
+    <Grid
+        >
+        <WebView x:Name="webview" Source="{Binding Url}" 
+                 HorizontalOptions="Fill" VerticalOptions="Fill"/>
+
+        <ActivityIndicator 
+            IsRunning="{Binding Isbusy}"
+            HorizontalOptions="Center" VerticalOptions="Center"
+            />
+
+        <Button
+            Text="Reload"
+            Clicked="Button_Clicked"
+            HorizontalOptions="Center" VerticalOptions="End"
+            Margin="0,0,50,0"/>
+    </Grid>
+</ContentPage>

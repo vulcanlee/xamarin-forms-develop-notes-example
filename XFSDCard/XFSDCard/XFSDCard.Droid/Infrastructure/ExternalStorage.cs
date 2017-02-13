@@ -25,6 +25,7 @@ namespace XFSDCard.Droid.Infrastructure
             // Gets the current state of the primary "external" storage device.
             if (Android.OS.Environment.ExternalStorageState == Android.OS.Environment.MediaMounted)
             {
+                var foo = Android.OS.Environment.GetExternalStoragePublicDirectory("");
                 var fooFullPath2 = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, path);
                 // 確認這個目錄是否存在
                 if (Directory.Exists(fooFullPath2) == false)

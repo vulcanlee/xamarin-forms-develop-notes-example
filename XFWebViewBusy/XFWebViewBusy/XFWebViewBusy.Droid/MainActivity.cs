@@ -8,17 +8,12 @@ using Android.Widget;
 using Android.OS;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
-using Android;
-using System.IO;
 
-[assembly: UsesPermission(Manifest.Permission.WriteExternalStorage)]
-[assembly: UsesPermission(Manifest.Permission.ReadExternalStorage)]
-namespace XFSDCard.Droid
+namespace XFWebViewBusy.Droid
 {
-    [Activity(Label = "XFSDCard", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "XFWebViewBusy", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
-        public static Java.IO.File[] fooPaths;
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.tabs;
@@ -26,10 +21,7 @@ namespace XFSDCard.Droid
 
             base.OnCreate(bundle);
 
-            fooPaths = GetExternalFilesDirs(null);
-
             global::Xamarin.Forms.Forms.Init(this, bundle);
-
             LoadApplication(new App(new AndroidInitializer()));
         }
     }
