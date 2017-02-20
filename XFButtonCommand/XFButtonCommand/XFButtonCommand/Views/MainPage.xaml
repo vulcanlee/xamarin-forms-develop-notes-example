@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFButtonCommand.Views.MainPage"
+             Title="MainPage"
+             x:Name="ThisPage">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Button 
+            Text="1 命令綁定、CmdPara(.)"
+            Command="{Binding 按鈕命令綁定測試Command}"
+            CommandParameter="{Binding .}"
+            IsEnabled="{Binding 按鈕命令綁定測試狀態}"/>
+
+        <Button 
+            Text="2 命令綁定"
+            Command="{Binding 按鈕命令綁定沒有參數測試Command}"
+            IsEnabled="{Binding 按鈕命令綁定測試狀態}"/>
+
+        <Button 
+            Text="3 命令綁定、CmdPara(.)、Source"
+            Command="{Binding Path=BindingContext.按鈕命令綁定測試Command, Source={x:Reference ThisPage}}"
+            CommandParameter="{Binding .}"
+            IsEnabled="{Binding 按鈕命令綁定測試狀態}"/>
+
+        <Button 
+            Text="3.1 命令綁定、CmdPara(.)、Source"
+            Command="{Binding Path=BindingContext.按鈕命令綁定CanExecute測試Command, Source={x:Reference ThisPage}}"
+            CommandParameter="{Binding .}"
+            IsEnabled="{Binding 按鈕命令綁定測試狀態}"/>
+
+        <Button 
+            Text="4 命令綁定、Source"
+            Command="{Binding Path=BindingContext.按鈕命令綁定沒有參數測試Command, Source={x:Reference ThisPage}}"
+            IsEnabled="{Binding 按鈕命令綁定測試狀態}"/>
+
+        <Button 
+            Text="5 命令綁定、CmdPara(文字)、Source"
+            Command="{Binding Path=BindingContext.按鈕命令綁定文字測試Command, Source={x:Reference ThisPage}}"
+            CommandParameter="abc"
+            IsEnabled="False"/>
+
+        <Button 
+            Text="6 不存在按鈕命令綁定測試"
+            Command="{Binding 不存在按鈕命令綁定測試Command}"
+            IsEnabled="{Binding 不存在按鈕命令綁定測試狀態}"/>
+
+        <Button 
+            Text="7 沒有按鈕命令綁定測試"
+            IsEnabled="{Binding 沒有按鈕命令綁定測試狀態}"/>
+
+    </StackLayout>
+</ContentPage>
