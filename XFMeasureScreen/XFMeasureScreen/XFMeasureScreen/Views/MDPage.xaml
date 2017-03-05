@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="XFMeasureScreen.Views.MDPage"
+                  >
+
+    <MasterDetailPage.Master>
+        <ContentPage 
+            Title="導航抽屜"
+            Width="{Binding Width, Mode=OneWayToSource}"
+            >
+            <StackLayout
+                HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="抽屜面板螢幕的設計尺寸" />
+                <Label Text="{Binding Width, StringFormat='抽屜面板螢幕寬度 : {0}'}" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

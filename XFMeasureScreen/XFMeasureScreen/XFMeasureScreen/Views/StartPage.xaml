@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFMeasureScreen.Views.StartPage"
+             Width="{Binding Width, Mode=OneWayToSource}"
+             Height="{Binding Height, Mode=OneWayToSource}"
+             >
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        <Label Text="全螢幕的設計尺寸" />
+        <Label Text="{Binding Width, StringFormat='螢幕寬度 : {0}'}" />
+        <Label Text="{Binding Height, StringFormat='螢幕寬度 : {0}'}" />
+        <Button Text="切換到導航抽屜" Command="{Binding 切換到切換到導航抽屜}" />
+    </StackLayout>
+</ContentPage>

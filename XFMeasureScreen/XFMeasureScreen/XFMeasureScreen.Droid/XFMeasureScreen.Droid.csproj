@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DDD47AC9-D75E-4E2C-8D3E-10D0FDD43A5C}</ProjectGuid>
+    <ProjectGuid>{F52C4ADB-30CB-4EA2-8BC1-C62A59AE0022}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XFMoreWrapLayout.Droid</RootNamespace>
-    <AssemblyName>XFMoreWrapLayout.Droid</AssemblyName>
+    <RootNamespace>XFMeasureScreen.Droid</RootNamespace>
+    <AssemblyName>XFMeasureScreen.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -131,8 +131,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoundedBoxViewRenderer.cs" />
-    <Compile Include="UIViewExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -156,8 +154,8 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\XFMoreWrapLayout\XFMoreWrapLayout.csproj">
-      <Name>XFMoreWrapLayout</Name>
+    <ProjectReference Include="..\XFMeasureScreen\XFMeasureScreen.csproj">
+      <Name>XFMeasureScreen</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
