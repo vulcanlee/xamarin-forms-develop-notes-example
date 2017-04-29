@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFPrismBehavior.Views.MainPage"
+             Title="MainPage">
+    
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding Title}" />
+        
+        <Button
+           Text="{Binding 請按下我1}"
+           >
+            <Button.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="Clicked"
+                    Command="{Binding 請按下我Command}"
+                    CommandParameter="{Binding 請按下我1}"/>
+            </Button.Behaviors>
+        </Button>
+        
+        <Button
+           Text="{Binding 請按下我2}"
+           >
+            <Button.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="Clicked"
+                    Command="{Binding 請按下我Command}"
+                    CommandParameter="請按下我2"/>
+            </Button.Behaviors>
+        </Button>
+
+    </StackLayout>
+</ContentPage>
