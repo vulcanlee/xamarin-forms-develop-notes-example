@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:customControl="clr-namespace:XFCorelPicker.CustomControls"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFCorelPicker.Views.MainPage"
+             Title="關聯式可綁定Picker Lab">
+    <StackLayout
+        Margin="30,0"
+        HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <Label
+            Text="{Binding fooMyTask.Name}"/>
+        <customControl:BindablePicker
+            Title="請選擇主分類"
+            SelectedItem="{Binding SelectedMainCategory}"
+            ItemsSource="{Binding MainCategoryList}"
+            SelectedItemCommand="{Binding MainCategoryChangeCommand}"
+            TextColor="Red"
+            />
+        <customControl:BindablePicker
+            Title="請選擇主分類"
+            SelectedItem="{Binding SelectedSubCategory}"
+            ItemsSource="{Binding SubCategoryList}"
+            TextColor="Red"
+            />
+        <Button
+            Text="變更工作名稱"
+            Command="{Binding 變更工作名稱Command}"
+            />
+    </StackLayout>
+</ContentPage>
