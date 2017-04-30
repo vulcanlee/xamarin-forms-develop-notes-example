@@ -12,7 +12,7 @@ namespace XFCorelPicker.ViewModels
 {
 
     [ImplementPropertyChanged]
-    public class MainPageViewModel : INavigationAware
+    public class EventToCommandBehaviorPageViewModel : INavigationAware
     {
         #region Repositories (遠端或本地資料存取)
 
@@ -21,7 +21,6 @@ namespace XFCorelPicker.ViewModels
         #region ViewModel Property (用於在 View 中作為綁定之用)
 
         #region 基本型別與類別的 Property
-        public MyTaskVM fooMyTask { get; set; } = new MyTaskVM();
         public string SelectedMainCategory { get; set; }
         public string SelectedSubCategory { get; set; }
         #endregion
@@ -41,9 +40,7 @@ namespace XFCorelPicker.ViewModels
 
         #region 命令物件欄位
 
-        public DelegateCommand 變更工作名稱Command { get; set; }
         public DelegateCommand MainCategoryChangeCommand { get; set; }
-        public DelegateCommand 使用EventToCommandBehaviorCommand { get; set; }
 
         #endregion
 
@@ -54,7 +51,7 @@ namespace XFCorelPicker.ViewModels
         #endregion
 
         #region Constructor 建構式
-        public MainPageViewModel(INavigationService navigationService)
+        public EventToCommandBehaviorPageViewModel(INavigationService navigationService)
         {
 
             #region 相依性服務注入的物件
@@ -63,21 +60,14 @@ namespace XFCorelPicker.ViewModels
             #endregion
 
             #region 頁面中綁定的命令
-            變更工作名稱Command = new DelegateCommand(() =>
-            {
-                fooMyTask.Name = $"現在時間:{DateTime.Now.ToString()}";
-            });
             MainCategoryChangeCommand = new DelegateCommand(() =>
             {
+                if(string.IsNullOrEmpty(SelectedMainCategory) == false)
                 SubCategoryList.Clear();
                 for (int i = 0; i < 50; i++)
                 {
                     SubCategoryList.Add($"{SelectedMainCategory} - {i}");
                 }
-            });
-            使用EventToCommandBehaviorCommand = new DelegateCommand(async () =>
-            {
-                await _navigationService.NavigateAsync("EventToCommandBehaviorPage");
             });
             #endregion
 
@@ -122,8 +112,6 @@ namespace XFCorelPicker.ViewModels
         /// <returns></returns>
         private async Task ViewModelInit()
         {
-            fooMyTask.Name = "Xamarin.Forms 您好";
-
             MainCategoryList.Clear();
             for (int i = 0; i < 30; i++)
             {

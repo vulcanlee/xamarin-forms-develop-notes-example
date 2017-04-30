@@ -2,35 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-             xmlns:customControl="clr-namespace:XFCorelPicker.CustomControls"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="XFCorelPicker.Views.MainPage"
-             Title="關聯式可綁定Picker Lab">
+             x:Class="XFCorelPicker.Views.EventToCommandBehaviorPage"
+             Title="使用 EventToCommandBehavior">
+
     <StackLayout
         Margin="30,0"
         HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-        <Label
-            Text="{Binding fooMyTask.Name}"/>
-        <customControl:BindablePicker
+        <Picker
             Title="請選擇主分類"
             SelectedItem="{Binding SelectedMainCategory}"
             ItemsSource="{Binding MainCategoryList}"
-            SelectedItemCommand="{Binding MainCategoryChangeCommand}"
             TextColor="Red"
-            />
-        <customControl:BindablePicker
+            >
+            <Picker.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="SelectedIndexChanged"
+                    Command="{Binding MainCategoryChangeCommand}"
+                    />
+            </Picker.Behaviors>
+        </Picker>
+        <Picker
             Title="請選擇次分類"
             SelectedItem="{Binding SelectedSubCategory}"
             ItemsSource="{Binding SubCategoryList}"
             TextColor="Red"
             />
-        <Button
-            Text="變更工作名稱"
-            Command="{Binding 變更工作名稱Command}"
-            />
-        <Button
-            Text="使用 EventToCommandBehavior"
-            Command="{Binding 使用EventToCommandBehaviorCommand}"
-            />
     </StackLayout>
+
 </ContentPage>

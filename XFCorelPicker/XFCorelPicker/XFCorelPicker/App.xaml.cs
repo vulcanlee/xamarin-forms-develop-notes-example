@@ -19,6 +19,7 @@ namespace XFCorelPicker
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<EventToCommandBehaviorPage>();
         }
     }
 }
