@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFListShowImg.Views.MainPage"
+             Title="MainPage"
+             x:Name="ThisPage">
+
+    <Grid
+        RowSpacing="0" ColumnSpacing="0">
+
+        <ListView
+            ItemsSource="{Binding MyItems}"
+            SelectedItem="{Binding SelectedMyItem}"
+            HasUnevenRows="True"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label 
+                                Grid.Row="0" Grid.Column="0"
+                                Text="{Binding Number}"/>
+                            <BoxView
+                                Grid.Row="1" Grid.Column="0"
+                                Color="{Binding BoxColor}">
+                                <BoxView.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        Command="{Binding Path=BindingContext.TapBoxCommand, Source={x:Reference ThisPage}}"
+                                        CommandParameter="{Binding}"/>
+                                </BoxView.GestureRecognizers>
+                            </BoxView>
+                            <Image
+                                Grid.Row="0" Grid.Column="1"
+                                Grid.RowSpan="2"
+                                HorizontalOptions="Fill" VerticalOptions="Fill"
+                                Aspect="AspectFill"
+                                Source="{Binding ImageUrl}"
+                                IsVisible="{Binding ShowImage}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
