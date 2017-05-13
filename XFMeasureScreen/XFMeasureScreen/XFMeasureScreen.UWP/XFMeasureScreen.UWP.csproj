@@ -108,6 +108,11 @@
     <None Include="XFMeasureScreen.UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Facebook.scale-100..png" />
+    <Content Include="Assets\Facebook.scale-150.png" />
+    <Content Include="Assets\Facebook.scale-200.png" />
+    <Content Include="Assets\Facebook.scale-300.png" />
+    <Content Include="Assets\Facebook.scale-400.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

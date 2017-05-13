@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using XFMeasureScreen.Helpers;
 
 namespace XFMeasureScreen.iOS
 {
@@ -25,6 +26,21 @@ namespace XFMeasureScreen.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            #region 取得當時螢幕的相關尺寸
+            // http://stackoverflow.com/questions/25756087/detecting-iphone-6-6-screen-sizes-in-point-values
+            // 取得當時應用程式視窗的設計尺寸
+            AppGlobal.DisplayScreenWidth = (double)UIScreen.MainScreen.Bounds.Size.Width;
+            AppGlobal.DisplayScreenHeight = (double)UIScreen.MainScreen.Bounds.Size.Height;
+
+            // 取得縮放比率
+            AppGlobal.DisplayScaleFactor = (double)UIScreen.MainScreen.Scale;
+
+            // 取得當時應用程式視窗的實際畫素
+            AppGlobal.PhysicalDisplayScreenWidth = (double)UIScreen.MainScreen.Bounds.Size.Width* AppGlobal.DisplayScaleFactor;
+            AppGlobal.PhysicalDisplayScreenHeight = (double)UIScreen.MainScreen.Bounds.Size.Height* AppGlobal.DisplayScaleFactor;
+            #endregion
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

@@ -2,16 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:XFMeasureScreen.Helpers"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFMeasureScreen.Views.MainPage"
              Title="MainPage"
              Width="{Binding Width, Mode=OneWayToSource}"
              Height="{Binding Height, Mode=OneWayToSource}"
+             x:Name="ThisPage"
              >
+
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <Label Text="{Binding Title}" />
-        <Label Text="有導航工具列螢幕的設計尺寸" />
-        <Label Text="{Binding Width, StringFormat='螢幕寬度 : {0}'}" />
-        <Label Text="{Binding Height, StringFormat='螢幕寬度 : {0}'}" />
+
+        <Label Text="整個螢幕畫素" />
+        <Label Text="{Binding ., StringFormat='螢幕設計畫素縮放比 : {0}', Source={x:Static local:AppGlobal.DisplayScaleFactor}}" />
+        <Label Text="{Binding ., StringFormat='螢幕寬度實際畫素 : {0}', Source={x:Static local:AppGlobal.PhysicalDisplayScreenWidth}}" />
+        <Label Text="{Binding ., StringFormat='螢幕高度實際畫素 : {0}', Source={x:Static local:AppGlobal.PhysicalDisplayScreenHeight}}" />
+        <Label Text="{Binding ., StringFormat='螢幕寬度設計畫素 : {0}', Source={x:Static local:AppGlobal.DisplayScreenWidth}}" />
+        <Label Text="{Binding ., StringFormat='螢幕高度設計畫素 : {0}', Source={x:Static local:AppGlobal.DisplayScreenHeight}}" />
+
+        <Label Text="矩形控制項" Margin="0,20,0,0" />
+        <BoxView x:Name="boxview" WidthRequest="200" HeightRequest="50" Color="Red"
+                 HorizontalOptions="Start" VerticalOptions="Start"/>
+        <Label Text="{Binding Path=Width, StringFormat='BoxView 寬度設計畫素 : {0}', Source={x:Reference boxview}}" />
+        <Label Text="{Binding Path=Height, StringFormat='BoxView 高度設計畫素 : {0}', Source={x:Reference boxview}}" />
+
+        <Image Aspect="Fill" WidthRequest="50" HeightRequest="50"
+                   HorizontalOptions="Start" VerticalOptions="Start">
+            <Image.Source>
+                <OnPlatform 
+                        x:TypeArguments="ImageSource"
+                        iOS="Facebook.png" Android="Facebook.png" WinPhone="Assets/Facebook.png"/>
+            </Image.Source>
+        </Image>
+        <Label Text="ContentPage 頁面的設計尺寸" Margin="0,20,0,0" />
+        <!--<Label Text="{Binding Width, StringFormat='頁面寬度設計畫素 : {0}'}" />
+        <Label Text="{Binding Height, StringFormat='頁面高度設計畫素 : {0}'}" />-->
+        <Label Text="{Binding Path=BindingContext.Width, StringFormat='頁面寬度設計畫素 : {0}', Source={x:Reference ThisPage}}" />
+        <Label Text="{Binding Path=BindingContext.Height, StringFormat='頁面高度設計畫素 : {0}', Source={x:Reference ThisPage}}" />
     </StackLayout>
 </ContentPage>

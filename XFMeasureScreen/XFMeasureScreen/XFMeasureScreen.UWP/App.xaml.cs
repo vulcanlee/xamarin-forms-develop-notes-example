@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using XFMeasureScreen.Helpers;
 
 namespace XFMeasureScreen.UWP
 {
@@ -53,6 +54,19 @@ namespace XFMeasureScreen.UWP
             // just ensure that the window is active
             if (rootFrame == null)
             {
+                #region 取得當時螢幕的相關尺寸
+                // 取得當時應用程式視窗的設計尺寸
+                AppGlobal.DisplayScreenHeight = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds.Height;
+                AppGlobal.DisplayScreenWidth = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds.Width;
+
+                // 取得縮放比率
+                AppGlobal.DisplayScaleFactor = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
+
+                // 取得當時應用程式視窗的實際畫素
+                AppGlobal.PhysicalDisplayScreenHeight = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().ScreenHeightInRawPixels;
+                AppGlobal.PhysicalDisplayScreenWidth = Windows.Graphics.Display.DisplayInformation.GetForCurrentView().ScreenWidthInRawPixels;
+                #endregion
+
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
 

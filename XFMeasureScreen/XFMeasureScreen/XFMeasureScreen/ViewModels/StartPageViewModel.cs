@@ -61,7 +61,7 @@ namespace XFMeasureScreen.ViewModels
             #region 頁面中綁定的命令
             切換到切換到導航抽屜 = new DelegateCommand(async () =>
             {
-                await _navigationService.NavigateAsync("xf:///MDPage/NaviPage/MainPage?title=Hello%20from%20Xamarin.Forms");
+                await _navigationService.NavigateAsync("MDPage/NaviPage/MainPage?title=Hello%20from%20Xamarin.Forms");
             });
             #endregion
 
