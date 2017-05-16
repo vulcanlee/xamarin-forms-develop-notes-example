@@ -32,28 +32,5 @@ namespace XFMeasureScreen.Helpers
         public static double PhysicalDisplayScreenHeight = 0f;
         #endregion
 
-        #region 2017.05.13 因為Double無法用於 XAML 的 x:Static，所以，做成 CLR Property
-        public static string PropertyDisplayScreenWidth
-        {
-            get
-            {
-                return DisplayScreenWidth.ToString();
-            }
-        }
-        public static string PropertyDisplayScreenHeight
-        {
-            get
-            {
-                return DisplayScreenHeight.ToString();
-            }
-        }
-        public static string PropertyDisplayScaleFactor
-        {
-            get
-            {
-                return DisplayScaleFactor.ToString();
-            }
-        }
-        #endregion
     }
 }
