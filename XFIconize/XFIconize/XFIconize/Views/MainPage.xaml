@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:iconize="clr-namespace:FormsPlugin.Iconize;assembly=FormsPlugin.Iconize"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="XFIconize.Views.MainPage"
+             Title="使用者登入">
+
+    <Grid
+        Margin="30"
+        HorizontalOptions="Fill" VerticalOptions="Center"
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <iconize:IconLabel
+            Grid.Row="0" Grid.Column="0"
+            HorizontalOptions="Center" VerticalOptions="Center"
+            FontSize="60"
+            Text="fa-user" TextColor="Blue" />
+        <Entry
+            Grid.Row="0" Grid.Column="1"
+            HorizontalOptions="Fill" VerticalOptions="Center"
+            Placeholder="請輸入帳號"/>
+
+        <iconize:IconLabel
+            Grid.Row="1" Grid.Column="0"
+            HorizontalOptions="Center" VerticalOptions="Center"
+            FontSize="60"
+            Text="fa-keyboard-o" TextColor="Blue" />
+        <Entry
+            Grid.Row="1" Grid.Column="1"
+            HorizontalOptions="Fill" VerticalOptions="Center"
+            Placeholder="請輸入密碼"/>
+
+    </Grid>
+</ContentPage>
