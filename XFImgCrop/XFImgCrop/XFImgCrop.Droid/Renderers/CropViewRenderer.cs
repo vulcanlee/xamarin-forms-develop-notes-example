@@ -11,13 +11,12 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
+using XFImgCrop.CustomControls;
+using Com.Theartofdev.Edmodo.Cropper;
 using Android.Graphics;
 using System.IO;
-using XFImgCrop.CustomControls;
-using XFImgCrop.Droid.Renderers;
-using Com.Theartofdev.Edmodo.Cropper;
 
-[assembly: ExportRenderer(typeof(CropView), typeof(CropViewRenderer))]
+[assembly: ExportRenderer(typeof(CropView), typeof(XFImgCrop.Droid.Renderers.CropViewRenderer))]
 namespace XFImgCrop.Droid.Renderers
 {
     public class CropViewRenderer : PageRenderer

@@ -6,10 +6,7 @@ namespace XFImgCrop
 {
     public partial class App : PrismApplication
     {
-        #region 儲存截圖的圖片
         public static byte[] CroppedImage;
-        #endregion
-
         public App(IPlatformInitializer initializer = null) : base(initializer) { }
 
         protected override void OnInitialized()

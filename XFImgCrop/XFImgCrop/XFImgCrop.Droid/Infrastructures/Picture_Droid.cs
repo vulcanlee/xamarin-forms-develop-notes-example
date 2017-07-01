@@ -9,8 +9,8 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using XFImgCrop.Droid.Infrastructures;
 using Java.IO;
+using XFImgCrop.Droid.Infrastructures;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Picture_Droid))]
 namespace XFImgCrop.Droid.Infrastructures
