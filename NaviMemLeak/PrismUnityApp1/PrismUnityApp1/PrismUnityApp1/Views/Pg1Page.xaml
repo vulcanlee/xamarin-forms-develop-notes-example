@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="PrismUnityApp1.Views.Pg1Page"
+             Title="Page1"
+             >
+
+    <StackLayout
+        HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Welcome to Xamarin Forms!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <Button 
+            x:Name="GotoPage2"
+            Text="Goto Page2"
+            Command="{Binding GotoPage2Command}"/>
+        <Button 
+            Text="GoBack"
+            Command="{Binding GoBackCommand}"/>
+    </StackLayout>
+</ContentPage>
