@@ -4,6 +4,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
@@ -20,7 +21,13 @@ namespace XFFileDownload.ViewModels
 
         private readonly INavigationService _navigationService;
 
+
+        public ObservableCollection<string> FileSourceTypes { get; set; } = new ObservableCollection<string>();
+        public string FileSourceTypeSelect { get; set; }
+        public bool ShowMask { get; set; } = false;
         public DelegateCommand DownloadCommand { get; set; }
+        public DelegateCommand FileSourceTypeCommand { get; set; }
+
         IPublicFileSystem _PublicFileSystem;
         IOpenFileByName _OpenFileByName;
         public MainPageViewModel(INavigationService navigationService,
@@ -34,10 +41,41 @@ namespace XFFileDownload.ViewModels
 
             DownloadCommand = new DelegateCommand(async () =>
             {
-                //var filename = "vulcan.pdf";
-                //var url = "https://www.tutorialspoint.com/csharp/csharp_tutorial.pdf";
-                var filename = "vulcan.png";
-                var url = "https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png";
+                ShowMask = true;
+                #region 依據所選擇的項目，設定下載來源與檔案名稱
+                string filename = "";
+                string url = "";
+                if (FileSourceTypeSelect.ToLower() == "pdf")
+                {
+                    filename = "vulcan.pdf";
+                    url = "https://www.tutorialspoint.com/csharp/csharp_tutorial.pdf";
+                }
+                else if (FileSourceTypeSelect.ToLower() == "image")
+                {
+                    filename = "vulcan.png";
+                    url = "https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png";
+                }
+                else if (FileSourceTypeSelect.ToLower() == "mp3")
+                {
+                    filename = "vulcan.mp3";
+                    url = "http://video.ch9.ms/ch9/4855/ca67b144-e675-48a2-a0f2-706af9644855/DataTemplateSelector.mp3";
+                }
+                else if (FileSourceTypeSelect.ToLower() == "video")
+                {
+                    filename = "vulcan.mp4";
+                    url = "http://video.ch9.ms/ch9/4855/ca67b144-e675-48a2-a0f2-706af9644855/DataTemplateSelector.mp4";
+                }
+                else if (FileSourceTypeSelect.ToLower() == "ppt")
+                {
+                    filename = "vulcan.ppt";
+                    url = "http://people.csail.mit.edu/mrub/talks/small_world/Seminar07_rubinstein.ppt";
+                }
+                else if (FileSourceTypeSelect.ToLower() == "doc")
+                {
+                    filename = "vulcan.doc";
+                    url = "http://im2.nhu.edu.tw/download.php?filename=270_2af7568a.doc&dir=personal_subject/&title=C%23-%E7%AC%AC%E4%B8%80%E7%AB%A0";
+                }
+                #endregion
 
                 // 取得要存放該檔案的資料夾
                 // FileSystem 為 PCLStorage 提供的應用程式沙箱的相關資料夾
@@ -71,6 +109,7 @@ namespace XFFileDownload.ViewModels
                 {
                     Debug.WriteLine(ex.Message);
                 }
+                ShowMask = false;
             });
         }
 
@@ -86,6 +125,13 @@ namespace XFFileDownload.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
+            FileSourceTypes.Clear();
+            FileSourceTypes.Add("PDF");
+            FileSourceTypes.Add("Image");
+            FileSourceTypes.Add("MP3");
+            FileSourceTypes.Add("Video");
+            FileSourceTypes.Add("PPT");
+            FileSourceTypes.Add("Doc");
 
         }
 

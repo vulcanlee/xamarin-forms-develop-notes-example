@@ -2,12 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="XFFileDownload.Views.MainPage"
              Title="MainPage">
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <Label Text="{Binding Title}" />
-        <Button Text="下載檔案"
+    <Grid
+        BackgroundColor="White">
+        <StackLayout
+            HorizontalOptions="Center" VerticalOptions="Center">
+            <Picker
+            ItemsSource="{Binding FileSourceTypes}"
+            SelectedItem="{Binding FileSourceTypeSelect}"
+            >
+                <Picker.Behaviors>
+                    <behavior:EventToCommandBehavior
+                    EventName="SelectedIndexChanged"
+                    Command="{Binding FileSourceTypeCommand}"/>
+                </Picker.Behaviors>
+            </Picker>
+            <Button Text="下載檔案"
                 Command="{Binding DownloadCommand}"/>
-    </StackLayout>
+        </StackLayout>
+
+        <BoxView
+            Color="Gray"
+            IsVisible="{Binding ShowMask}"
+            />
+    </Grid>
 </ContentPage>
