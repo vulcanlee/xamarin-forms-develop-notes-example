@@ -26,7 +26,6 @@ namespace XFFileDownload.ViewModels
         public string FileSourceTypeSelect { get; set; }
         public bool ShowMask { get; set; } = false;
         public DelegateCommand DownloadCommand { get; set; }
-        public DelegateCommand FileSourceTypeCommand { get; set; }
 
         IPublicFileSystem _PublicFileSystem;
         IOpenFileByName _OpenFileByName;

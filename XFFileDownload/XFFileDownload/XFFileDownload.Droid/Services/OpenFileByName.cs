@@ -28,19 +28,20 @@ namespace XFFileDownload.Droid.Services
 
                 var bytes = File.ReadAllBytes(filePath);
 
-                //Copy the private file's data to the EXTERNAL PUBLIC location
+                //將這個檔案，複製到公開的資料夾內，也就是說，您下載的檔案，是可以儲存在應用程式沙箱資料夾內
                 string externalStorageState = global::Android.OS.Environment.ExternalStorageState;
                 var externalPath = global::Android.OS.Environment.ExternalStorageDirectory.Path + "/" + 
                     global::Android.OS.Environment.DirectoryDownloads + "/" + fileName;
                 File.WriteAllBytes(externalPath, bytes);
 
+                // 取得這個檔案的 Android File 物件
                 Java.IO.File file = new Java.IO.File(externalPath);
                 file.SetReadable(true);
 
                 string application = "";
                 string extension = Path.GetExtension(filePath);
 
-                // get mimeTye
+                // 設定 mimeType
                 switch (extension.ToLower())
                 {
                     case ".txt":
@@ -67,7 +68,7 @@ namespace XFFileDownload.Droid.Services
                         break;
                 }
 
-                //Android.Net.Uri uri = Android.Net.Uri.Parse("file://" + filePath);
+                // 開啟這個檔案
                 Android.Net.Uri uri = Android.Net.Uri.FromFile(file);
                 Intent intent = new Intent(Intent.ActionView);
                 intent.SetDataAndType(uri, application);

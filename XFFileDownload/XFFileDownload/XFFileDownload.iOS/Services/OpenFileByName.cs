@@ -18,7 +18,6 @@ namespace XFFileDownload.iOS.Services
             var filePath = fullFileName;
             var fileName = Path.GetFileName(fullFileName);
 
-            //Device.OpenUri(new Uri(filePath));
             var PreviewController = UIDocumentInteractionController.FromUrl(NSUrl.FromFilename(filePath));
             PreviewController.Delegate = new UIDocumentInteractionControllerDelegateClass(UIApplication.SharedApplication.KeyWindow.RootViewController);
             Device.BeginInvokeOnMainThread(() =>

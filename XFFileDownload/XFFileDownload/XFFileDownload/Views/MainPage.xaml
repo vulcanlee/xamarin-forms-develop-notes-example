@@ -13,13 +13,7 @@
             <Picker
             ItemsSource="{Binding FileSourceTypes}"
             SelectedItem="{Binding FileSourceTypeSelect}"
-            >
-                <Picker.Behaviors>
-                    <behavior:EventToCommandBehavior
-                    EventName="SelectedIndexChanged"
-                    Command="{Binding FileSourceTypeCommand}"/>
-                </Picker.Behaviors>
-            </Picker>
+            />
             <Button Text="下載檔案"
                 Command="{Binding DownloadCommand}"/>
         </StackLayout>
