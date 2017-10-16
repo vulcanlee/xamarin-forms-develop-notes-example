@@ -19,6 +19,17 @@ namespace XFFileDownload.Droid.Services
 {
     public class OpenFileByName : IOpenFileByName
     {
+        public void MakeDownloadFolder(string fullFileName, string mimeType)
+        {
+            var filePath = fullFileName;
+            var fileName = Path.GetFileName(fullFileName);
+            Java.IO.File file = new Java.IO.File(fullFileName);
+
+            var context = Android.App.Application.Context;
+            DownloadManager downloadManager = (DownloadManager)context.GetSystemService(Context.DownloadService);
+            downloadManager.AddCompletedDownload(fileName, fileName, true, mimeType, fullFileName, file.Length(), true);
+        }
+
         public void OpenFile(string fullFileName)
         {
             try

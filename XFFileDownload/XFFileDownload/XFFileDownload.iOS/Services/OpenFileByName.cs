@@ -13,6 +13,10 @@ namespace XFFileDownload.iOS.Services
 {
     public class OpenFileByName : IOpenFileByName
     {
+        public void MakeDownloadFolder(string fullFileName, string mimeType)
+        {
+        }
+
         public void OpenFile(string fullFileName)
         {
             var filePath = fullFileName;

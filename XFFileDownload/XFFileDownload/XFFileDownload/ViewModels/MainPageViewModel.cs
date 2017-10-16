@@ -41,37 +41,46 @@ namespace XFFileDownload.ViewModels
             DownloadCommand = new DelegateCommand(async () =>
             {
                 ShowMask = true;
+                // https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types
+                // http://www.feedforall.com/mime-types.htm
+                string mimeType = "text/plain";
                 #region 依據所選擇的項目，設定下載來源與檔案名稱
                 string filename = "";
                 string url = "";
                 if (FileSourceTypeSelect.ToLower() == "pdf")
                 {
                     filename = "vulcan.pdf";
+                    mimeType = "application/pdf";
                     url = "https://www.tutorialspoint.com/csharp/csharp_tutorial.pdf";
                 }
                 else if (FileSourceTypeSelect.ToLower() == "image")
                 {
                     filename = "vulcan.png";
+                    mimeType = "image/png";
                     url = "https://pluralsight.imgix.net/paths/path-icons/csharp-e7b8fcd4ce.png";
                 }
                 else if (FileSourceTypeSelect.ToLower() == "mp3")
                 {
                     filename = "vulcan.mp3";
+                    mimeType = "audio/mpeg";
                     url = "http://video.ch9.ms/ch9/4855/ca67b144-e675-48a2-a0f2-706af9644855/DataTemplateSelector.mp3";
                 }
                 else if (FileSourceTypeSelect.ToLower() == "video")
                 {
                     filename = "vulcan.mp4";
+                    mimeType = "video/mpeg";
                     url = "http://video.ch9.ms/ch9/4855/ca67b144-e675-48a2-a0f2-706af9644855/DataTemplateSelector.mp4";
                 }
                 else if (FileSourceTypeSelect.ToLower() == "ppt")
                 {
                     filename = "vulcan.ppt";
+                    mimeType = "application/vnd.ms-powerpoint";
                     url = "http://people.csail.mit.edu/mrub/talks/small_world/Seminar07_rubinstein.ppt";
                 }
                 else if (FileSourceTypeSelect.ToLower() == "doc")
                 {
                     filename = "vulcan.doc";
+                    mimeType = "application/msword";
                     url = "http://im2.nhu.edu.tw/download.php?filename=270_2af7568a.doc&dir=personal_subject/&title=C%23-%E7%AC%AC%E4%B8%80%E7%AB%A0";
                 }
                 #endregion
@@ -102,6 +111,7 @@ namespace XFFileDownload.ViewModels
                         }
                     }
 
+                    _OpenFileByName.MakeDownloadFolder(file.Path, mimeType);
                     _OpenFileByName.OpenFile(file.Path);
                 }
                 catch (Exception ex)

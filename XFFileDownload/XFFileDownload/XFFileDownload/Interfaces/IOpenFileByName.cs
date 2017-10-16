@@ -16,5 +16,7 @@ namespace XFFileDownload.Interfaces
         /// </summary>
         /// <param name="fullFileName"></param>
         void OpenFile(string fullFileName);
+
+        void MakeDownloadFolder(string fullFileName, string mimeType);
     }
 }
