@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             x:Class="XFListViewLazy.Views.MainPage"
+             Title="MainPage">
+    <Grid
+      >
+        <ListView
+            ItemsSource="{Binding MyDatas}"
+            SelectedItem="{Binding SelectedMyData}"
+            HasUnevenRows="True"
+            >
+            <ListView.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="ItemAppearing"
+                    Command="{Binding ItemAppearingCommand}"
+                    EventArgsParameterPath="Item"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding ID}"/>
+                            <Label Text="{Binding Name}" FontSize="30"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
