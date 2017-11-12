@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MyPrismPack2.Views.ListPage"
+             Title="資料清單"
+             x:Name="ThisPage"
+             >
+
+    <Grid
+        >
+        <ListView
+            ItemsSource="{Binding MySampleList}"
+            SelectedItem="{Binding MySampleListSelectedItem}"
+            HasUnevenRows="True"
+            >
+            <ListView.Behaviors>
+                <behavior:EventToCommandBehavior
+                    EventName="ItemTapped"
+                    Command="{Binding MySampleListItemSelectedCommand}"
+                    />
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <BoxView Color="White"/>
+                            <StackLayout>
+                                <Label Text="{Binding Title}" FontSize="24" TextColor="HotPink"/>
+                                <Label Text="{Binding Cost}"/>
+                                <Label Text="{Binding DateDetail}" FontSize="16" TextColor="LightSeaGreen"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

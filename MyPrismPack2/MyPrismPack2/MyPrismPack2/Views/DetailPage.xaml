@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MyPrismPack2.Views.DetailPage"
+             Title="記錄明細">
+
+    <Grid
+        >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Text="儲存"
+                Command="{Binding SaveCommand}"/>
+            <Button
+                Grid.Column="1"
+                Text="刪除"
+                Command="{Binding DeleteCommand}"/>
+            <Button
+                Grid.Column="2"
+                Text="取消"
+                Command="{Binding CancelCommand}"/>
+            <Button
+                Grid.Column="3"
+                Text="跳頁"
+                Command="{Binding SkipCommand}"/>
+        </Grid>
+
+        <StackLayout
+            Grid.Row="1"
+            Orientation="Vertical">
+            <Label Text="主題"/>
+            <Entry Text="{Binding CurrentSampleItem.Title}"/>
+            <Label Text="費用"/>
+            <Entry Text="{Binding CurrentSampleItem.Cost}"/>
+            <Label Text="日期"/>
+            <DatePicker Date="{Binding CurrentSampleItem.ShowDate}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
