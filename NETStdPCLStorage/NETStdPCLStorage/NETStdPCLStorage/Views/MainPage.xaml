@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NETStdPCLStorage.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Entry Text="{Binding MyEntry}"/>
+        <Button Text="Save" Command="{Binding SaveCommand}"/>
+        <Button Text="Clean" Command="{Binding CleanCommand}"/>
+        <Button Text="Load" Command="{Binding LoadCommand}"/>
+    </StackLayout>
+
+</ContentPage>
