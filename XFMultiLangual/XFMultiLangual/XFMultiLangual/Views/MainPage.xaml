@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:XFMultiLangual.Helpers"
+             xmlns:res="clr-namespace:XFMultiLangual.Resources"
+             x:Class="XFMultiLangual.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout Padding="20">
+        <Label 
+            Text="{i18n:Translate Account}"/>
+        <Label 
+            Text="{i18n:Translate Password}"/>
+    </StackLayout>
+
+</ContentPage>
